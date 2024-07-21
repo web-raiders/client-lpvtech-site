@@ -1,8 +1,11 @@
 ---
-const { title = 'IpvTech' } = Astro.props
+import Banner from './banner.astro'
+import Navbar from './navbar.tsx'
+const { title = 'IpvTech Website' } = Astro.props
 interface Props {
     title?: string
 }
+
 ---
 
 <!DOCTYPE html>
@@ -15,8 +18,11 @@ interface Props {
     <title>{title}</title>
   </head>
   <body>
-    <section class="container mx-auto max-w-screen-xl mt-10 px-8">
-        <slot />
-    </section>
+      <Banner />
+      <Navbar client:load />
+      <main class="relative mx-0 px-0">
+          <slot />
+      </main>
+    </div>
 </body>
 </html>
