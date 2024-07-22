@@ -8,6 +8,10 @@ import PropertyImg from "./property.jpg";
 import CommercialImg from "./commercial.jpg";
 import OffsetImg from "./offset.jpg";
 import ProjectImg from "./project.jpg";
+import ArticleOne from "./article_1.jpg"
+import ArticleTwo from "./article_2.jpg"
+import ArticleThree from "./article_3.jpg"
+import ArticleFour from "./article_4.jpg"
 
 export {
     SlideOne,
@@ -19,5 +23,9 @@ export {
     PropertyImg,
     CommercialImg,
     OffsetImg,
-    ProjectImg
+    ProjectImg,
+    ArticleOne,
+    ArticleTwo,
+    ArticleThree,
+    ArticleFour
 }

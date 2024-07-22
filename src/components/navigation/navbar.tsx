@@ -21,19 +21,19 @@ const Navbar = () => {
             <div className="_container">
                 <div className="_flex_box">
                     <div className='_logo'>
-                        <img src={Logo} alt='logo' width={"100"} height={"100"} />
+                        <a href='/'><img src={Logo} alt='logo' width={"100"} height={"100"} /></a>
                     </div>
                     <div className="_nav_menu">
                         <ul className="_nav_list">
                             {navlist.map((item) => (
                                 <div key={item?.name} onClick={() => handleToggle('subMenu', item?.name)}>
                                     <li className={item?.path === '/' ? '_nav_list_item active' : ' _nav_list_item desktop'}>
-                                    {item.name}
+                                    <a href={item.path}>{item.name}</a>
                                     {
                                         item.subMenu && (
                                         <ul className="_dropdown_list">
                                             {item.subMenu.map((link) => (
-                                                <li key={link?.name} className='_dropdown_list_item'>{link.name}</li>
+                                                <li key={link?.name} className='_dropdown_list_item'><a href={link.path}>{link.name}</a></li>
                                             ))}
                                         </ul>
                                         )
@@ -62,7 +62,7 @@ const Navbar = () => {
                                         <motion.li 
                                         className={item?.path === '/' ? '_nav_list_item_mobile active' : '_nav_list_item_mobile'}
                                         >
-                                        {item.name}
+                                        <motion.a href={item.path}>{item.name}</motion.a>
                                         {
                                             openMenu === item?.name && item.subMenu && (
                                             <motion.ul 
@@ -72,7 +72,7 @@ const Navbar = () => {
                                             >
                                                 {item.subMenu.map((link, i) => (
                                                     <li key={i} className='_sub_list_item_mobile'>
-                                                        {link.name}
+                                                        <a href={link.path}>{link.name}</a>
                                                     </li>
                                                 ))}
                                             </motion.ul>
