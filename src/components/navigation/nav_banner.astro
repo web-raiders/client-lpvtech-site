@@ -1,0 +1,36 @@
+---
+import { TiSocialFacebook, TiSocialTwitter } from "react-icons/ti";
+import { PiInstagramLogo } from "react-icons/pi";
+import { IoMdMail } from "react-icons/io";
+import { MdLocalPhone } from "react-icons/md";
+---
+
+<nav class="w-full bg-cyan-900">
+    <div class="container max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 md:w-4/5">
+        <div class="flex w-50">
+            <div class="inline-flex">
+                <span class="pt-.5 pr-1">
+                    <MdLocalPhone color={"#0FCC7C"} />
+                </span>
+                <span class="xs:text-xs text-white text-sm">+(234)-8180907820</span>
+            </div>
+            <div class="inline-flex ml-3">
+                <span class="pt-.5 pr-1">
+                    <IoMdMail color={"#0FCC7C"} />
+                </span>
+                <span class="xs:text-xs text-white text-sm">support@webraider.com.ng</span>
+            </div>
+        </div>
+        <div class="flex w-50">
+            <span>
+                <TiSocialFacebook size={'16px'} color="#fff" />
+            </span>
+            <span class="pl-3">
+                <TiSocialTwitter size={'16px'} color="#fff" />
+            </span>
+            <span class="pl-3">
+                <PiInstagramLogo size={'16px'} color="#fff" />
+            </span>
+        </div>
+    </div>
+</nav>

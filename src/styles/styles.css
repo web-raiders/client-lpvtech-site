@@ -1,0 +1,15 @@
+:root {
+    --deepBlue: #243973;
+    --darkBlue: #12263A;
+    --green: #43b549;
+    --lightGrey: #e5e5e5;
+}
+
+.mySwiper {
+    z-index: 1;
+}
+._card:hover ._button {
+    background-color: var(--darkBlue);
+    color: #fff;
+    transition: .1s all ease-in-out;
+}

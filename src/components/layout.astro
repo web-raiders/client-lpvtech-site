@@ -1,8 +1,10 @@
 ---
-const { title = 'IpvTech' } = Astro.props
+import { Navbar, NavBanner, Footer, FooterBanner } from './navigation'
+const { title = 'IpvTech Website' } = Astro.props
 interface Props {
     title?: string
 }
+
 ---
 
 <!DOCTYPE html>
@@ -15,8 +17,12 @@ interface Props {
     <title>{title}</title>
   </head>
   <body>
-    <section class="container mx-auto max-w-screen-xl mt-10 px-8">
+    <NavBanner />
+    <Navbar client:load />
+    <main class="relative mx-0 px-0">
         <slot />
-    </section>
-</body>
+    </main>
+    <Footer />
+    <FooterBanner />
+  </body>
 </html>
