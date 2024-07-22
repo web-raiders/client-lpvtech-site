@@ -17,13 +17,12 @@ interface Props {
     <title>{title}</title>
   </head>
   <body>
-      <NavBanner />
-      <Navbar client:load />
-      <main class="relative mx-0 px-0">
-          <slot />
-      </main>
-      <Footer />
-      <FooterBanner />
-    </div>
-</body>
+    <NavBanner />
+    <Navbar client:load />
+    <main class="relative mx-0 px-0">
+        <slot />
+    </main>
+    <Footer />
+    <FooterBanner />
+  </body>
 </html>
