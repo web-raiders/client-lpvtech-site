@@ -1,24 +1,29 @@
 ---
+import { Container } from "../common";
 import { Data } from "@utils/index";
-import { GoDotFill } from "react-icons/go";
+import { RiArrowRightSLine } from "react-icons/ri";
 const year = new Date().getFullYear()
 ---
 
 <footer class="w-full bg-cyan-900 py-4">
-    <div class="w-[70%] gap-x-6 mx-auto flex">
-        <!-- Footer Items -->
-        <ul class="flex gap-x-2">
-            {
-                Data.footer_banner_items.map(item => (
-                    <div class="flex">
-                        <GoDotFill size={"12px"} color="#0FCC7C" className="mt-1 mr-[1px]" />
-                        <li class="text-white text-[14px]"><a href={item.path}>{item.link}</a></li>
-                    </div>
-                ))
-            }
-        </ul>
-        <div>
-            <p class="text-white text-[14px]">Copyright © {year} LPV Technologies, Inc. All rights reserved. Present by Web-Raiders</p>
+    <Container>
+        <div class="w-full gap-x-6 mx-auto flex justify-between items-center">
+            <!-- Footer Items -->
+            <div>
+                <p class="text-white text-[14px]">Copyright © {year} LPV Technologies, Inc. All rights reserved. Present by Web-Raiders</p>
+            </div>
+            <ul class="flex gap-x-5">
+                {
+                    Data.footer_banner_items.map(item => (
+                        <div class="flex gap-x-1">
+                            <div class="w-[20px] h-[20px] bg-[#0FCC7C] flex justify-center items-center rounded-full">
+                                <RiArrowRightSLine size={"12px"}  className="text-cyan-900" />
+                            </div>
+                            <li class="text-white text-[14px]"><a href={item.path}>{item.link}</a></li>
+                        </div>
+                    ))
+                }
+            </ul>
         </div>
-    </div>
+    </Container>
 </footer>

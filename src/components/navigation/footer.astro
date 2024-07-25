@@ -2,10 +2,10 @@
 import { Container } from "../common";
 import { Logo } from "@assets/images";
 import { Data } from "@utils/index";
-import { RiArrowRightSLine } from "react-icons/ri";
-import { MdLocalPhone } from "react-icons/md";
-import { TiSocialFacebook, TiSocialTwitter } from "react-icons/ti";
-import { PiInstagramLogo } from "react-icons/pi";
+import { SocialIcons } from "../common";
+import { LiaLongArrowAltRightSolid } from "react-icons/lia";
+import { FiPhone } from "react-icons/fi";
+import { MdOutlineEmail } from "react-icons/md";
 ---
 
 <footer class="w-full h-[400px] bg-[#e1f5ec]">
@@ -15,7 +15,10 @@ import { PiInstagramLogo } from "react-icons/pi";
             <!-- Column 1 -->
             <div>
                 <img src={Logo} alt={"logo"} width={"200"} height={"200"} />
-                <p class="text-deepBlue mt-5">24, Karimu Kotun Street, Victoria Island, Lagos - Nigeria</p>
+                <p class="text-darkBlue mt-5 font-bold">24, Karimu Kotun Street, Victoria Island, Lagos - Nigeria</p>
+                <div class="mt-5">
+                    <SocialIcons size={'20px'} />
+                </div>
             </div>
 
             <!-- Column 2 -->
@@ -24,9 +27,11 @@ import { PiInstagramLogo } from "react-icons/pi";
                 <ul class="mt-5 cursor-pointer">
                     {
                         Data.footer_company.map(item => (
-                            <div class="flex mb-3">
-                                <RiArrowRightSLine color={"green"} size={"24px"} />
-                                <a href={item.path} class="font-semibold text-darkBlue text-[17px]">{item.link}</a>
+                            <div class="flex gap-2 mb-3">
+                                <div class="w-[20px] h-[20px] bg-[#0FCC7C] flex justify-center items-center rounded-full">
+                                    <LiaLongArrowAltRightSolid color={"#fff"} size={"18px"} />
+                                </div>
+                                <a href={item.path} class="font-semibold text-darkBlue">{item.link}</a>
                             </div>
                         ))
                     }
@@ -39,9 +44,11 @@ import { PiInstagramLogo } from "react-icons/pi";
                 <ul class="mt-5 cursor-pointer">
                     {
                         Data.footer_support.map(item => (
-                            <div class="flex mb-3">
-                                <RiArrowRightSLine color={"green"} size={"24px"} />
-                                <a href={item.path} class="font-semibold text-darkBlue text-[17px]">{item.link}</a>
+                            <div class="flex gap-2 mb-3">
+                                <div class="w-[20px] h-[20px] bg-[#0FCC7C] flex justify-center items-center rounded-full">
+                                    <LiaLongArrowAltRightSolid color={"#fff"} size={"18px"} />
+                                </div>
+                                <a href={item.path} class="font-semibold text-darkBlue">{item.link}</a>
                             </div>
                         ))
                     }
@@ -50,20 +57,28 @@ import { PiInstagramLogo } from "react-icons/pi";
 
             <!-- Column 4 -->
             <div class="mt-1">
-                <h3 class="text-[18px] text-darkBlue font-bold">24/7 Emergency Service</h3>
-                <div class="flex mt-2">
-                    <MdLocalPhone size={"24px"} color="green" className="mt-2" />
-                    <p class="text-[24px] text-green">+(234)-8180907820</p>
-                </div>
-                <div class="flex gap-x-2 mt-4">
-                    <div class="bg-cyan-900 p-1">
-                        <TiSocialFacebook color="#fff" size={'24px'} />
+                <h4 class="text-[24px] font-semibold text-darkBlue">Get in touch</h4>
+                <div class="flex-col mt-2">
+                    <!-- Circle -->
+                    <div class="flex gap-x-3 mt-5">
+                        <div class="w-[50px] h-[50px] p-4 bg-[#0FCC7C] flex justify-center items-center rounded-full">
+                            <MdOutlineEmail color={"#fff"} size={"30px"} />
+                        </div>
+                        <div class="flex-col">
+                            <p class="text-[18px] font-semibold text-gray-700">Email Support</p>
+                            <h6 class="text-[28px] font-semibold text-darkBlue">hello@domain.tld</h6>
+                        </div>
                     </div>
-                    <div class="bg-cyan-900 p-1">
-                        <TiSocialTwitter color="#fff" size={'24px'} />
-                    </div>
-                    <div class="bg-cyan-900 p-1">
-                        <PiInstagramLogo color="#fff" size={'24px'} />
+
+                    <!-- Circle -->
+                    <div class="flex gap-x-3 mt-5">
+                        <div class="w-[50px] h-[50px] p-4 bg-[#0FCC7C] flex justify-center items-center rounded-full">
+                            <FiPhone color={"#fff"} size={"30px"} />
+                        </div>
+                        <div class="flex-col">
+                            <p class="text-[18px] font-semibold text-gray-700">24/7 Emergency Service</p>
+                            <h6 class="text-[28px] font-semibold text-darkBlue">(888) 4000-2424</h6>
+                        </div>
                     </div>
                 </div>
             </div>
