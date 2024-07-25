@@ -19,7 +19,15 @@ import {
     PropertyImg, 
     SlideFive, 
     SlideFour,
-    ProjectTwo
+    ProjectTwo,
+    MemberOne,
+    MemberTwo,
+    MemberThree,
+    MemberFour,
+    MemberFive,
+    MemberSix,
+    MemberSeven,
+    MemberEight
 } from "@assets/images"
 import { LiaToolsSolid } from "react-icons/lia";
 import { IoSettingsOutline } from "react-icons/io5";
@@ -368,5 +376,69 @@ export const projects = [
         title: 'Jakarta Solar Farms',
         description: 'Justo dictumst id semper taciti lacus tortor per si habitasse platea vestibulum.',
         icon: PiCarBatteryLight
+    },
+]
+
+export const members = [
+    {
+        img: MemberOne,
+        name: 'Oscar Andrews',
+        title: 'Founder'
+    },
+    {
+        img: MemberTwo,
+        name: 'Jamie Williams',
+        title: 'Co-Founder'
+    },
+    {
+        img: MemberThree,
+        name: 'Zoe Mitchell',
+        title: 'Marketing Manager'
+    },
+    {
+        img: MemberFour,
+        name: 'Bethany Brooks',
+        title: 'Operational Manager'
+    },
+    {
+        img: MemberFive,
+        name: 'Oscar Andrews',
+        title: 'Founder'
+    },
+    {
+        img: MemberSix,
+        name: 'Oscar Andrews',
+        title: 'Founder'
+    },
+    {
+        img: MemberSeven,
+        name: 'Oscar Andrews',
+        title: 'Founder'
+    },
+    {
+        img: MemberEight,
+        name: 'Oscar Andrews',
+        title: 'Founder'
+    },
+]
+
+export const teams_value = [
+    {
+        title: 'Collective Expertise',
+        description: `Porttitor interdum augue 
+        venenatis rhoncus himenaeos mattis magna 
+        nostra adipiscing nam elementum.`
+    },
+    {
+        title: 'Efficient Resource Utilization',
+        description: `Porttitor interdum augue 
+        venenatis rhoncus himenaeos mattis magna 
+        nostra adipiscing nam elementum.`
+    },
+    {
+        title: 'Collaborative Synergy',
+        description: `Porttitor interdum augue 
+        venenatis rhoncus himenaeos mattis magna 
+        nostra adipiscing nam elementum.`
     },
 ]
