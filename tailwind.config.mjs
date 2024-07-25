@@ -37,7 +37,10 @@ export default {
 				'h3': 'semiBold',
 				'bodyText': 'medium',
 				'description': 'regular'
-			}
+			},
+			boxShadow: {
+				'xl': '0px 0px 60px 0px rgba(0, 0, 0, 0.1)'
+			},
 		},
 	},
 	plugins: [],

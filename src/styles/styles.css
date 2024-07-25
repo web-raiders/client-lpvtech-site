@@ -8,8 +8,11 @@
 .mySwiper {
     z-index: 1;
 }
-._card:hover ._button {
-    background-color: var(--darkBlue);
-    color: #fff;
-    transition: .1s all ease-in-out;
+
+._solutions_card:nth-child(2) {
+    background-color: #00d084;
+}
+
+._solutions_card:nth-child(2) > div  {
+    background-color: var(--white);
 }

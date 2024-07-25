@@ -1,6 +1,5 @@
 ---
 import { Layout, Helpers, Common } from "@components/index"
-import { HiOutlineLightBulb } from "react-icons/hi";
 import { Image } from "astro:assets";
 import { EnergyImg } from "@assets/images"
 import { Data } from "@utils/index";
@@ -13,16 +12,16 @@ import { IoMdCheckmark } from "react-icons/io";
 	<!-- Carousel -->
 	<Helpers.Carousel client:load />
 	<!-- Cards -->
-	<section class="absolute z-10 top-[800px] mx-auto w-full pb-10">
+	<section class="absolute z-10 top-[700px] mx-auto w-full pb-10">
 		<Common.Container>
 			<!-- First Card -->
-			<div class="w-[400px] text-white text-center shadow-2xl rounded-[20px] p-[30px] h-[300px] bg-green">
+			<div class="w-[400px] text-white text-center shadow-xl rounded-[20px] p-[30px] h-[300px] bg-green">
 				<h4 class="text-[24px] text-center font-bold mb-5">Since 2010, our customers have avoided</h4>
 				<Helpers.Counter client:load from={0} to={1000000} />
 				<h4 class="text-[24px] text-center font-bold mt-5">Pounds of CO2</h4>
 			</div>
 			<!-- Second Card -->
-			<div class="w-[750px] rounded-[20px] p-[50px] h-[300px] shadow-2xl bg-white">
+			<div class="w-[750px] rounded-[20px] p-[50px] h-[300px] shadow-xl bg-white">
 				<h4 class="text-[24px] text-deepBlue font-bold mb-5">Let's utilize sun, wind and water in a better way</h4>
 				<p class="text-base text-deepBlue">
 					Ac facilisi dolor lobortis a faucibus imperdiet sapien laoreet pellentesque vulputate. Euismod posuere viverra adipiscing gravida venenatis. Vitae augue potenti inceptos parturient ante porttitor dictum auctor.
@@ -39,82 +38,159 @@ import { IoMdCheckmark } from "react-icons/io";
 		<Common.Container>
 			<!-- Left Content -->
 			<div class="w-2/4 flex-col flex-wrap">
-				<h6 class="text-base font-bold text-green uppercase">About Us</h6>
+				<h6 class="text-base font-bold text-green uppercase">Who we are</h6>
 				<h2 class="text-[40px] leading-[45px] mt-5 text-deepBlue font-bold">Renewable Energy For a Sustainable World</h2>
-				<p class="text-base text-deepBlue mt-5 pr-10">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo
+				<p class="text-base text-deepBlue mt-5 pr-20">
+					Proin sem malesuada urna purus euismod lobortis magnis pretium nunc ad. 
+					Eleifend est auctor mus nisi senectus justo. Senectus penatibus pellentesque dui praesent eu interdum.
 				</p>
-				<!-- Card -->
-				<div class="w-[90%] mt-10 flex rounded-xl bg-lightGreen p-5">
-					<!-- Bulb Icon -->
-					<div>
-						<HiOutlineLightBulb color="#0FCC7C" size={'35px'} />
-					</div>
-					<div class="ml-4">
-						<h3 class="text-base text-deepBlue font-bold">The Idea</h3>
-						<p class="text-sm text-deepBlue mt-2">
-							Fermentum vehicula venenatis tellus dolor a luctus sodales lectus cras nullam senectus
-						</p>
-					</div>
+				<p class="text-base text-deepBlue mt-5 pr-20">
+					Proin sem malesuada urna purus euismod lobortis magnis pretium nunc ad. 
+					Eleifend est auctor mus nisi senectus justo. Senectus penatibus pellentesque dui praesent eu interdum.
+				</p>
+				<div class="mt-10">
+					<Common.Button path="#" className="py-3 px-10 font-semibold text-white bg-green rounded-full baseline hover:bg-darkBlue" text="Discover more" />
 				</div>
 			</div>
 			<!-- Right Image -->
 			<div class="w-2/4 h-full">
-				<Image src={EnergyImg} alt={"energy image"} class={"w-full h-full rounded-xl"} />
+				<div class="relative">
+					<Image src={EnergyImg} alt={"energy image"} class={"w-full h-full rounded-xl"} />
+				</div>
+				{/* Card */}
+				<div class="absolute w-[300px] h-[auto] py-10 px-7 bg-cyan-900 rounded-xl -mt-[220px] -ml-[30px]">
+					<h6 class="text-green font-semibold text-[18px]">A Roadmap to Your Sustainable Energy Future.</h6>
+					<p class="text-white pt-3 text-[14px]">Quis aliquam convallis nascetur per porta velit montes sagittis gravida euismod senectus</p>
+					<div class="mt-7">
+						<Common.Button path="#" className="py-2 px-5 text-white bg-green rounded-full baseline hover:bg-white hover:text-green" text="Learn more" />
+					</div>
+				</div>
 			</div>
 		</Common.Container>
 	</section>
 
-	<!-- Our Business Section -->
+	<!-- Our clients section -->
 	<section class="w-full mt-40">
-		<!-- Banner -->
-		<div class="w-full h-[600px] bg-cyan-900 pt-[150px] pb-10">
-			<Common.Container>
-				<div class="w-3/5 flex-col justify-center items-center mx-auto text-center">
-					<h6 class="text-base uppercase text-green font-bold">Our Business</h6>
-					<h2 class="text-[48px] text-white font-bold mt-3">Cleaner Energy for a Cleaner World</h2>
-					<p class="text-base text-white mt-3">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-					</p>
-				</div>
-			</Common.Container>
-		</div>
-		<!-- Properties -->
-		<div class="w-full pb-10 -mt-[100px]">
-			<Common.Container>
-				{
-					Data.businessData.map(item => (
-						<div class="w-[380px] h-[500px] shadow-2xl rounded-[20px]">
-							<Image src={item.thumbnail} alt={"property thumbnail"} class={"w-full h-[250px] rounded-tr-[20px] rounded-tl-[20px]"} />
-							<div class="h-auto text-center p-5">
-								<h3 class="text-deepBlue font-bold mb-2 text-[24px]">{item.property}</h3>
-								<p class="text-tinyGrey font-normal">{item.content}</p>
-								<div class="mt-10">
-								<Common.Button path="#" text="Learn More" className="py-2 px-4 text-white text-[14px] bg-green rounded-full baseline hover:bg-darkBlue" />
+		<Common.Container>
+			<!-- Background card -->
+			<div class="w-full h-auto py-7 bg-[#F5F7F8] rounded-xl mb-28">
+				<div class="w-[90%] mx-auto flex-col justify-center items-center">
+					<h3 class="text-center text-[28px] font-bold">LPV Tech is trusted by 6+ million users in <br /> 175+ countries.</h3>
+					<!-- Grid container -->
+					<div class="grid grid-cols-4 gap-4 my-10">
+						{
+							Data.clients.map(item => (
+								<div class="w-[250px] h-[100px] bg-white rounded-[10px] flex justify-center items-center cursor-pointer">
+									<Image src={item.img} alt="client" width={100} height={100} class={'grayscale hover:grayscale-0'} />
 								</div>
+							))
+						}
+					</div>
+				</div>
+			</div>
+		</Common.Container>
+		<hr />
+		<Common.Container>
+			<!-- Flex -->
+			<div class="flex justify-between items-center gap-5 mt-20">
+				{
+					Data.services.map(item => (
+						<div class="max-h-[250px] rounded-xl py-10 px-5 border border-solid border-gray-200 text-center cursor-pointer hover:shadow-xl">
+							{/* Top Icon */}
+							<div class={`w-[max-content] p-3 mx-auto bg-green rounded-xl`}>
+								<item.icon size={'35px'} color="#fff" />
 							</div>
+							<h6 class="text-deepBlue text-[18px] font-bold pt-5">{item.title}</h6>
+							<p class="pt-5">{item.description}</p>
 						</div>
 					))
 				}
-			</Common.Container>
+			</div>
+		</Common.Container>
+	</section>
+
+	<!-- Live Green Section -->
+	<section class="mt-20 pt-40 w-full min-h-[100vh] mb-20 bg-cover bg-no-repeat bg-center" style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(./images/green.jpg)'}}>
+		<div class="w-[40%] mx-auto flex-col justify-center items-center text-white text-center">
+			<h2 class="text-[60px] leading-[60px] font-bold">Live Green, Love Green, Think Green.</h2>
+			<p class="mt-4 text-[17px]">Est porta erat phasellus id penatibus. Iaculis commodo per quam potenti habitasse pretium conubia ultrices luctus praesent et.</p>
+			<div class="mt-10">
+				<Common.Button path="#" text="Discover more" className="py-3 px-8 text-white text-[16px] bg-green rounded-full baseline hover:bg-darkBlue" />
+			</div>
 		</div>
+		<!-- Bottom Banner -->
+		 <div class="w-full h-[150px] bg-cyan-900 mt-[180px] flex justify-center items-center">
+			<div class="w-4/5 h-[100px] flex justify-center items-center">
+				<div class="flex-col border-r-2 border-r-gray-300 pr-10">
+					<span class="text-green text-[46px] font-bold"><Helpers.Counter client:load from={0} to={73} />K+</span>
+					<p class="text-white text-center text-[18px] font-semibold">Happy Client</p>
+				</div>
+				<div class="flex-col border-r-2 border-r-gray-300 px-10">
+					<span class="text-green text-center text-[46px] font-bold"><Helpers.Counter client:load from={0} to={5} />K+</span>
+					<p class="text-white text-center text-[18px] font-semibold">Pro Technician</p>
+				</div>
+				<div class="flex-col border-r-2 border-r-gray-300 px-10">
+					<span class="text-green text-[46px] font-bold"><Helpers.Counter client:load from={0} to={4} />M+</span>
+					<p class="text-white text-center text-[18px] font-semibold">Wind Farms</p>
+				</div>
+				<div class="flex-col px-10">
+					<span class="text-green text-[46px] font-bold"><Helpers.Counter client:load from={0} to={11} />M+</span>
+					<p class="text-white text-center text-[18px] font-semibold">Solar Farms</p>
+				</div>
+			</div>
+		 </div>
+	</section>
+
+	<!-- Our projects section -->
+	<section class="w-full min-h-screen pt-20">
+		<Common.Container>
+			<div class="w-[45%] h-screen mr-20 bg-cover bg-no-repeat bg-center rounded-xl" style={{ backgroundImage: 'url(./images/project.jpg)'}}>
+				<div class="w-[200px] h-[200px] bg-white flex-col justify-center items-center rounded-full shadow-xl px-2 pt-8 text-center -mt-10 -ml-6">
+					<span class="text-green text-[60px] font-bold">25+</span>
+					<p class="text-[18px] text-darkBlue -mt-2">Years of Experience</p>
+				</div>
+			</div>
+			<div class="w-[55%]">
+				<h2 class="text-[40px] text-darkBlue font-bold mt-2 leading-10">The better source of energy for the better tomorrow</h2>
+				<p class="text-base text-gray-700 mt-6 mb-10">
+					Lorem ipsum dolor sit amet, 
+					consectetur adipiscing elit. 
+					Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+				</p>
+				<hr />
+				<div class="grid grid-cols-2 gap-5 mt-10">
+					{
+						Data.qualifications.map(item => (
+							<div class="w-[300px] h-auto items-center">
+									<div class="w-[60px] h-[60px] rounded-xl bg-[#e1f5ec] flex justify-center items-center">
+										<item.icon color="#0FCC7C" size={'32px'}/>
+									</div>
+									<h3 class="text-[18px] font-bold mt-5 text-deepBlue mb-3">{item.title}</h3>
+									<p class="text-base">{item.description}</p>
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</Common.Container>
 	</section>
 
 	<!-- What we offer section -->
-	<section class="w-full min-h-screen pt-40">
+	<section class="w-full bg-gray-100 min-h-screen pt-32 pb-40 mt-40">
 		<Common.Container flex="flex-col">
 			<div class="w-3/5 flex-col justify-center items-center mx-auto text-center">
 				<h6 class="text-base uppercase text-green font-bold">What we offer</h6>
-				<h2 class="text-[48px] text-darkBlue font-bold mt-3">Let's add green energy to life</h2>
-				<p class="text-base text-tinyGrey mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				<h2 class="text-[48px] text-darkBlue font-bold mt-3 leading-[50px]">Keep your environment clean make the earth green</h2>
 			</div>
 			<!-- Services Cards -->
 			<div class="grid grid-cols-3 gap-10 mt-20">
 				{
 					Data.servicesData.map(item => (
-						<div class="_card cursor-pointer w-[390px] h-auto py-10 shadow-2xl rounded-3xl">
+						<div class="bg-white cursor-pointer w-[390px] h-auto py-10 shadow-xl rounded-3xl hover:shadow-2xl">
 							<Common.Container flex="flex-col">
-								<div class="w-[60px] h-[60px] rounded-xl bg-[#e1f5ec]" />
+								<div class="w-[60px] h-[60px] rounded-xl bg-[#e1f5ec] flex justify-center items-center">
+									<item.icon color="#0FCC7C" size={'32px'}/>
+								</div>
 								<h3 class="text-[18px] font-bold mt-5 text-deepBlue mb-3">{item.service}</h3>
 								<p class="text-base">{item.description}</p>
 								<div class="mt-10">
@@ -128,77 +204,36 @@ import { IoMdCheckmark } from "react-icons/io";
 		</Common.Container>
 	</section>
 
-	<!-- Get a Quote Section -->
-	<section class="w-full min-h-screen mt-20 pt-[10%]">
-		<div class="w-full h-4/5 py-20 bg-darkBlue">
-			<Common.Container>
-				<!-- Form -->
-				<div class="w-3/5">
-					<div class="w-4/5 -mt-[200px] shadow-2xl rounded-2xl bg-white py-20 px-10">
-						<Common.Form />
-					</div>
-				</div>
-				<!-- Benefits -->
-				<div class="w-2/5 pt-7">
-					<h6 class="uppercase text-green">Get a Quote</h6>
-					<h2 class="text-[48px] text-white font-bold mt-3">Let's experience the power of the sun</h2>
-					<p class="text-base text-white mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-					<div class="mt-10 flex-col justify-center items-center">
-						{
-							Data.benefits.map(item => (
-								<div class="flex">
-									<IoMdCheckmark color="green" size={"24px"} />
-									<p class="text-white pb-2 pl-3">{item.benefit}</p>
-								</div>
-							))
-						}
-					</div>
-				</div>
-			</Common.Container>
+	<!-- Keep yuor environment green section -->
+	<section class="w-full min-h-[100vh] flex justify-center items-center bg-cover bg-no-repeat bg-center" style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./images/green_two.jpg)'}}>
+		<div class="w-2/5 border rounded-xl p-5 flex-col justify-center items-center text-center">
+			<h4 class="text-white text-center text-[60px] leading-[60px] font-bold">Keep your environment clean make the earth green.</h4>
+			<p class="text-white text-center mt-10">Est porta erat phasellus id penatibus. Iaculis commodo per quam potenti habitasse pretium conubia ultrices luctus praesent et.</p>
+			<div class="my-7">
+				<Common.Button path="#" text="Discover more" className="py-3 px-8 text-white text-[16px] bg-green rounded-full baseline hover:bg-darkBlue" />
+			</div>
 		</div>
 	</section>
 
-	<!-- Why choose us section -->
-	<section class="w-full min-h-screen pt-40">
-		<Common.Container flex="flex-col">
-			<div class="flex-col justify-center items-center mx-auto text-center">
-				<h6 class="uppercase text-green font-bold">Why choose us</h6>
-				<h2 class="text-[48px] text-darkBlue font-bold mt-2">10+ Years of Industry Experience.</h2>
-				<p class="text-base text-darkBlue mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-			</div>
-			<!-- Cards -->
-			<div class="grid grid-cols-3 gap-10 mt-20">
-				{
-					Data.qualifications.map(item => (
-						<div class="cursor-pointer transition ease-in-out delay-150 duration-400 w-[390px] h-auto py-10 hover:shadow-2xl hover:rounded-3xl">
-							<Common.Container flex="flex-col">
-								<div class="w-[60px] h-[60px] rounded-xl bg-[#e1f5ec]" />
-								<h3 class="text-[18px] font-bold mt-5 text-deepBlue mb-3">{item.title}</h3>
-								<p class="text-base">{item.description}</p>
-							</Common.Container>
-						</div>
-					))
-				}
-			</div>
-		</Common.Container>
-	</section>
-
-	<!-- Our projects section -->
-	<section class="w-full min-h-screen pt-20">
+	<!-- Why choose us -->
+	<section class="w-full min-h-[4/5] bg-gray-100 pb-20">
 		<Common.Container>
-			<div class="w-2/5 h-screen mr-20 bg-cover bg-no-repeat bg-center rounded-xl" style={{ backgroundImage: 'url(./images/project.jpg)'}} />
-			<div class="w-3/5">
-				<h6 class="uppercase text-green font-bold">Our Project</h6>
-				<h2 class="text-[40px] text-darkBlue font-bold mt-2 leading-10">The better source of energy for the better tomorrow</h2>
-				<p class="text-base text-darkBlue mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-				<div class="grid grid-cols-2 gap-5 mt-10">
+			<div class="w-full flex mt-20 gap-x-10">
+				<div class="w-[35%] flex-col flex-wrap pt-10">
+					<h6 class="uppercase text-green font-bold">Why choose us</h6>
+					<h2 class="text-[38px] text-darkBlue font-bold mt-4 leading-[45px]">Empowering Your World with Reliable Solutions.</h2>
+				</div>
+				<div class="w-[65%] flex gap-x-4">
 					{
-						Data.qualifications.map(item => (
-							<div class="w-[300px] h-auto items-center">
-									<div class="w-[60px] h-[60px] rounded-xl bg-[#e1f5ec]" />
-									<h3 class="text-[18px] font-bold mt-5 text-deepBlue mb-3">{item.title}</h3>
-									<p class="text-base">{item.description}</p>
+						Data.solutions.map(item => (
+						<div class="_solutions_card bg-white rounded-xl py-10 px-5 border border-solid border-gray-200 text-center cursor-pointer shadow-xl">
+							{/* Top Icon */}
+							<div class={`_top_icon w-[max-content] p-3 mx-auto bg-[#e1f5ec] rounded-xl`}>
+								<item.icon size={'35px'} color="#0FCC7C" />
 							</div>
+							<h6 class="text-darkBlue text-[18px] font-semibold pt-5">{item.title}</h6>
+							<p class="pt-5 text-gray-600">{item.description}</p>
+						</div>
 						))
 					}
 				</div>
@@ -206,43 +241,84 @@ import { IoMdCheckmark } from "react-icons/io";
 		</Common.Container>
 	</section>
 
-	<!-- Live Green Section -->
-	<section class="mt-40 pt-40 w-full min-h-[80vh] mb-20 bg-cover bg-no-repeat bg-center" style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(./images/offset.jpg)'}}>
-		<div class="w-2/4 mx-auto flex-col justify-center items-center text-white text-center">
-			<h2 class="text-[48px] font-bold">Live Green, Love Green, Think Green.</h2>
-			<p class="mt-4 text-[17px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-			<div class="mt-10">
-				<Common.Button path="#" text="Contact Us" className="py-3 px-8 text-white text-[16px] bg-green rounded-full baseline hover:bg-darkBlue" />
+	<!-- Featured Projects -->
+	<section class="w-full min-h-[100vh] pt-32">
+		<Common.Container flex="flex-col">
+			<div class="w-3/5 flex-col justify-center items-center mx-auto text-center">
+				<h6 class="text-base uppercase text-green font-bold">Featured Projects</h6>
+				<h2 class="text-[48px] text-darkBlue font-bold mt-3 leading-[52px]">Keep your environment clean make the earth green</h2>
 			</div>
-		</div>
-	</section>
-
-	<!-- New & Articles Section -->
-	<section class="w-full min-h-screen mt-40">
-		<Common.Container>
-			<div class="flex-col">
-				<h6 class="uppercase text-green font-bold">Insight</h6>
-				<h3 class="text-[36px] text-darkBlue font-bold">Latest news & article</h3>
-			</div>
-			<div class="mt-5">
-				<Common.Button path="#" text="View more" className="py-3 px-8 text-white text-[16px] bg-green rounded-full baseline hover:bg-darkBlue" />
-			</div>
-		</Common.Container>
-		<Common.Container>
-			<div class="mt-10 flex justify-between items-center gap-5">
+			<!-- Cards -->
+			<div class="w-full flex flex-wrap gap-6 mt-24">
 				{
-					Data.articles.map(item => (
-						<div class="w-[290px] h-[500px]">
-							<a href="#">
-							<Image src={item.thumbnail} alt={"thumbnail image"} class={"w-full h-[200px] mb-5 rounded-xl"} />
-							</a>
-							<a href="#" class="text-[18px] text-darkBlue font-bold hover:text-green">{item.title}</a>
-							<p class="text-green text-[13px] pt-1">{item.date}</p>
-							<p class="mt-3 text-[15px]">{item.description}</p>
+					Data.projects.map(item => (
+					<div class="overflow-hidden w-[380px] h-[500px] bg-cover bg-no-repeat bg-center rounded-xl" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)), url(${item.img})`}}>
+						<div class="cursor-pointer flex-col px-8 mt-72 transition ease-in-out delay-150 duration-300 hover:-translate-y-24">
+							<div class={`w-[max-content] backdrop-opacity-10 backdrop-invert bg-white/30 p-5 rounded-full`}>
+								<item.icon size={'30px'} color="#fff" />
+							</div>
+							<h6 class="text-white font-bold text-[18px] pt-5">{item.title}</h6>
+							<p class="text-[#abb8c3] font-semibold pt-3">{item.description}</p>
+							<div class="mt-14">
+								<Common.Button path="#" text="Learn More" className="py-2 px-4 text-[16px] mt-6 text-white bg-green rounded-full baseline hover:bg-darkBlue" />
+							</div>
 						</div>
+					</div>
 					))
 				}
 			</div>
 		</Common.Container>
+	</section>
+
+	<!-- Get a Quote Section -->
+	<section class="w-full min-h-screen mt-40 bg-gray-100 py-36">
+			<Common.Container>
+				<!-- Form -->
+				<div class="flex gap-10">
+					<div class="w-[55%]">
+						<div class="w-[90%] shadow-2xl rounded-2xl bg-white">
+							<!-- Card Header -->
+							<div class="w-full bg-darkBlue rounded-tr-2xl rounded-tl-2xl py-5 text-center">
+								<h6 class="text-white font-bold text-[32px]">Book an Appointment</h6>
+							</div>
+							<div class="py-10 px-5">
+								<Common.Form />
+							</div>
+						</div>
+					</div>
+					
+					<!-- Benefits -->
+					<div class="w-[45%] pt-7">
+						<h2 class="text-[40px] text-darkBlue font-bold mt-3 leading-[50px] pb-10">Let's experience the power of the sun</h2>
+						<hr />
+						<p class="text-base text-darkBlue mt-5">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+						</p>
+						<div class="mt-10 flex-col justify-center items-center">
+							{
+								Data.benefits.map(item => (
+									<div class="flex">
+										<div class="w-[20px] h-[20px] bg-green flex justify-center items-center rounded-full">
+											<IoMdCheckmark color="#fff" size={"18px"} />
+										</div>
+										<p class="text-darkBlue pb-2 pl-3">{item.benefit}</p>
+									</div>
+								))
+							}
+						</div>
+					</div>
+				</div>
+			</Common.Container>
+	</section>
+
+	<!-- Live Green Section -->
+	<section class="pt-40 w-full min-h-[75vh] bg-cover bg-no-repeat bg-center" style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(./images/green_three.jpg)'}}>
+		<div class="w-[40%] mx-auto flex-col justify-center items-center text-white text-center">
+			<h2 class="text-[60px] font-bold leading-[55px]">Live Green, Love Green, Think Green.</h2>
+			<p class="mt-4 text-[17px]">Est porta erat phasellus id penatibus. Iaculis commodo per quam potenti habitasse pretium conubia ultrices luctus praesent et.</p>
+			<div class="mt-10">
+				<Common.Button path="#" text="Discover more" className="py-3 px-8 text-white text-[16px] bg-green rounded-full baseline hover:bg-darkBlue" />
+			</div>
+		</div>
 	</section>
 </Layout>

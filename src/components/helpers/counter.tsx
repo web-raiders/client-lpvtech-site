@@ -5,8 +5,9 @@ interface ICounter {
     from: number;
     to: number;
     animatedOptions?: KeyframeOptions;
+    fontSize?: string
 }
-const Counter = ({ from, to, animatedOptions}: ICounter) => {
+const Counter = ({ from, to, animatedOptions, fontSize }: ICounter) => {
     const ref = useRef<HTMLSpanElement>(null);
     // Run only when it is in view
     const inView = useInView(ref, { once: true })
@@ -29,7 +30,7 @@ const Counter = ({ from, to, animatedOptions}: ICounter) => {
         return () => controls.stop()
     }, [ref, from, to, inView])
 
-  return <span ref={ref} className="text-[46px] font-semibold font-mono" />
+  return <span ref={ref} className={`text-${fontSize || '[46px]'} font-semibold font-mono`} />
 }
 
 export default Counter

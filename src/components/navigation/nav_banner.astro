@@ -1,8 +1,7 @@
 ---
-import { TiSocialFacebook, TiSocialTwitter } from "react-icons/ti";
-import { PiInstagramLogo } from "react-icons/pi";
 import { IoMdMail } from "react-icons/io";
-import { MdLocalPhone } from "react-icons/md";
+import { FaRegCalendarAlt } from "react-icons/fa";
+import { SocialIcons } from "../common";
 ---
 
 <nav class="w-full bg-cyan-900">
@@ -10,7 +9,7 @@ import { MdLocalPhone } from "react-icons/md";
         <div class="flex w-50">
             <div class="inline-flex">
                 <span class="pt-.5 pr-1">
-                    <MdLocalPhone color={"#0FCC7C"} />
+                    <FaRegCalendarAlt color={"#0FCC7C"} />
                 </span>
                 <span class="xs:text-xs text-white text-sm">+(234)-8180907820</span>
             </div>
@@ -22,15 +21,7 @@ import { MdLocalPhone } from "react-icons/md";
             </div>
         </div>
         <div class="flex w-50">
-            <span>
-                <TiSocialFacebook size={'16px'} color="#fff" />
-            </span>
-            <span class="pl-3">
-                <TiSocialTwitter size={'16px'} color="#fff" />
-            </span>
-            <span class="pl-3">
-                <PiInstagramLogo size={'16px'} color="#fff" />
-            </span>
+            <SocialIcons />
         </div>
     </div>
 </nav>

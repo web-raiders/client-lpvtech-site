@@ -1,0 +1,37 @@
+---
+import { TiSocialFacebook, TiSocialTwitter } from "react-icons/ti";
+import { PiInstagramLogo } from "react-icons/pi";
+import { FaLinkedinIn } from "react-icons/fa";
+const iconList = [
+    {
+        icon: TiSocialFacebook
+    },
+    {
+        icon: TiSocialTwitter
+    },
+    {
+        icon: PiInstagramLogo
+    },
+    {
+        icon: FaLinkedinIn
+    }
+]
+const { size = "16px" } = Astro.props
+interface Props {
+    size?: string
+}
+---
+
+
+
+<!-- Social Media Icons -->
+<div class="flex gap-1">
+    {
+        iconList.map(item => (
+            
+            <div class="w-[max-content] bg-[#0FCC7C] p-2 rounded-full">
+                <item.icon color="#fff" size={size} />
+            </div>
+        ))
+    }
+</div>

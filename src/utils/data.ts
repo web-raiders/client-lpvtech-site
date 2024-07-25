@@ -1,4 +1,40 @@
-import { ArticleFour, ArticleOne, ArticleThree, ArticleTwo, CommercialImg, OffsetImg, PropertyImg } from "@assets/images"
+import { 
+    ArticleFour, 
+    ArticleOne, 
+    ArticleThree, 
+    ArticleTwo, 
+    ClientEight, 
+    ClientFive, 
+    ClientFour, 
+    ClientOne, 
+    ClientSeven, 
+    ClientSix, 
+    ClientThree, 
+    ClientTwo, 
+    CommercialImg, 
+    OffsetImg, 
+    ProjectFour, 
+    ProjectSix, 
+    ProjectThree, 
+    PropertyImg, 
+    SlideFive, 
+    SlideFour,
+    ProjectTwo
+} from "@assets/images"
+import { LiaToolsSolid } from "react-icons/lia";
+import { IoSettingsOutline } from "react-icons/io5";
+import { TiMessages } from "react-icons/ti";
+import { FaRegFileAlt } from "react-icons/fa";
+import { IoDiamondOutline } from "react-icons/io5";
+import { GoSun } from "react-icons/go";
+import { CiLocationArrow1 } from "react-icons/ci";
+import { PiCarBatteryLight } from "react-icons/pi";
+import { GiBamboo } from "react-icons/gi";
+import { MdOutlineEnergySavingsLeaf } from "react-icons/md";
+import { PiFolders } from "react-icons/pi";
+import { PiBaseballHelmet } from "react-icons/pi";
+import { SlBadge } from "react-icons/sl";
+import { SlSupport } from "react-icons/sl";
 
 export const navlist = [
     {
@@ -72,27 +108,33 @@ export const businessData = [
 export const servicesData = [
     {
         service: 'Solar Panel Installation',
-        description: 'Venenatis quisque velit purus ex enim sagittis dictum iaculis maecenas est bibendum'
+        description: 'Venenatis quisque velit purus ex enim sagittis dictum iaculis maecenas est bibendum',
+        icon: LiaToolsSolid
     },
     {
         service: 'Hybrid Back-up System',
-        description: 'Venenatis quisque velit purus ex enim sagittis dictum iaculis maecenas est bibendum'
+        description: 'Venenatis quisque velit purus ex enim sagittis dictum iaculis maecenas est bibendum',
+        icon: PiCarBatteryLight
     },
     {
         service: '30Kva Victron Solar Hybrid System',
-        description: 'Venenatis quisque velit purus ex enim sagittis dictum iaculis maecenas est bibendum'
+        description: 'Venenatis quisque velit purus ex enim sagittis dictum iaculis maecenas est bibendum',
+        icon: MdOutlineEnergySavingsLeaf
     },
     {
         service: 'Project Development',
-        description: 'Venenatis quisque velit purus ex enim sagittis dictum iaculis maecenas est bibendum'
+        description: 'Venenatis quisque velit purus ex enim sagittis dictum iaculis maecenas est bibendum',
+        icon: PiFolders
     },
     {
         service: 'Engineering, Procurement & Construction',
-        description: 'Venenatis quisque velit purus ex enim sagittis dictum iaculis maecenas est bibendum'
+        description: 'Venenatis quisque velit purus ex enim sagittis dictum iaculis maecenas est bibendum',
+        icon: PiBaseballHelmet
     },
     {
         service: 'Operation & Maintenance',
-        description: 'Venenatis quisque velit purus ex enim sagittis dictum iaculis maecenas est bibendum'
+        description: 'Venenatis quisque velit purus ex enim sagittis dictum iaculis maecenas est bibendum',
+        icon: IoSettingsOutline
     },
 ]
 
@@ -114,15 +156,23 @@ export const benefits = [
 export const qualifications = [
     {
         title: 'Green & Eco Tech',
-        description: 'Venenatis quisque velit purus ex enim sagittis dictum iaculis maecenas est bibendum'
+        description: 'Venenatis quisque velit purus ex enim sagittis dictum iaculis maecenas est bibendum',
+        icon: MdOutlineEnergySavingsLeaf
     },
     {
         title: 'Expert Team Development',
-        description: 'Venenatis quisque velit purus ex enim sagittis dictum iaculis maecenas est bibendum'
+        description: 'Venenatis quisque velit purus ex enim sagittis dictum iaculis maecenas est bibendum',
+        icon: SlBadge
+    },
+    {
+        title: 'Green & Eco Tech',
+        description: 'Venenatis quisque velit purus ex enim sagittis dictum iaculis maecenas est bibendum',
+        icon: MdOutlineEnergySavingsLeaf
     },
     {
         title: '24/7 Support',
-        description: 'Venenatis quisque velit purus ex enim sagittis dictum iaculis maecenas est bibendum'
+        description: 'Venenatis quisque velit purus ex enim sagittis dictum iaculis maecenas est bibendum',
+        icon: SlSupport
     },
 ]
 
@@ -205,23 +255,118 @@ export const footer_support = [
 
 export const footer_banner_items = [
     {
-        link: 'About Us',
-        path: '/about' 
-    },
-    {
-        link: 'Services',
-        path: '/services' 
-    },
-    {
-        link: 'Contact Us',
-        path: '/contact' 
-    },
-    {
         link: 'Terms of Service',
         path: '/terms'
     },
     {
         link: 'Privacy Policy',
         path: '/policy'
+    },
+]
+
+export const clients = [
+    {
+        img: ClientOne
+    },
+    {
+        img: ClientTwo
+    },
+    {
+        img: ClientThree
+    },
+    {
+        img: ClientFour
+    },
+    {
+        img: ClientFive
+    },
+    {
+        img: ClientSix
+    },
+    {
+        img: ClientSeven
+    },
+    {
+        img: ClientEight
+    },
+]
+
+export const services = [
+    {
+        icon: LiaToolsSolid,
+        title: 'Solar Panel Installation',
+        description: 'Per class in quis ac lorem primis nostra dui lobortis facilisi semper.'
+    },
+    {
+        icon: IoSettingsOutline,
+        title: 'Solar Panel Maintenance',
+        description: 'Per class in quis ac lorem primis nostra dui lobortis facilisi semper.'
+    },
+    {
+        icon: TiMessages,
+        title: 'Consultations',
+        description: 'Per class in quis ac lorem primis nostra dui lobortis facilisi semper.'
+    },
+    {
+        icon: FaRegFileAlt,
+        title: 'Solar Panel Installation',
+        description: 'Per class in quis ac lorem primis nostra dui lobortis facilisi semper.'
+    },
+]
+
+export const solutions = [
+    {
+        icon: IoDiamondOutline,
+        title: 'Quality and Reliability',
+        description: 'Integer augue fames eget sollicitudin ullamcorper ultricies curae.'
+    },
+    {
+        icon: IoSettingsOutline,
+        title: 'Customized Solutions',
+        description: 'Integer augue fames eget sollicitudin ullamcorper ultricies curae.'
+    },
+    {
+        icon: GiBamboo,
+        title: 'Environmental Impact',
+        description: 'Integer augue fames eget sollicitudin ullamcorper ultricies curae.'
+    },
+]
+
+export const projects = [
+    {
+        img: SlideFour,
+        title: 'Jakarta Solar Farms',
+        description: 'Justo dictumst id semper taciti lacus tortor per si habitasse platea vestibulum.',
+        icon: GoSun
+    },
+    {
+        img: ProjectTwo,
+        title: 'Jakarta Solar Farms',
+        description: 'Justo dictumst id semper taciti lacus tortor per si habitasse platea vestibulum.',
+        icon: CiLocationArrow1
+    },
+    {
+        img: ProjectThree,
+        title: 'Jakarta Solar Farms',
+        description: 'Justo dictumst id semper taciti lacus tortor per si habitasse platea vestibulum.',
+        icon: GoSun
+    },
+    {
+        img: ProjectFour,
+        title: 'Jakarta Solar Farms',
+        description: 'Justo dictumst id semper taciti lacus tortor per si habitasse platea vestibulum.',
+        icon: GoSun
+    },
+    {
+        img: SlideFive,
+        title: 'Jakarta Solar Farms',
+        description: 'Justo dictumst id semper taciti lacus tortor per si habitasse platea vestibulum.',
+        icon: GoSun
+    },
+    {
+        img: ProjectSix,
+        title: 'Jakarta Solar Farms',
+        description: 'Justo dictumst id semper taciti lacus tortor per si habitasse platea vestibulum.',
+        icon: PiCarBatteryLight
     },
 ]
