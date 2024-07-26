@@ -28,6 +28,14 @@ import ProjectThree from "./project_three.jpg?url"
 import ProjectFour from "./project_four.jpg?url"
 import ProjectSix from "./project_six.jpg?url"
 import ProjectTwo from "./project_two.jpg?url"
+import MemberOne from "./member_one.jpg?url"
+import MemberTwo from "./member_two.jpg?url"
+import MemberThree from "./member_three.jpg?url"
+import MemberFour from "./member_four.jpg?url"
+import MemberFive from "./member_five.jpg?url"
+import MemberSix from "./member_six.jpg?url"
+import MemberSeven from "./member_seven.jpg?url"
+import MemberEight from "./member_eight.jpg?url"
 
 export {
     SlideOne,
@@ -58,5 +66,13 @@ export {
     ProjectThree,
     ProjectFour,
     ProjectSix,
-    ProjectTwo
+    ProjectTwo,
+    MemberOne,
+    MemberTwo,
+    MemberThree,
+    MemberFour,
+    MemberFive,
+    MemberSix,
+    MemberSeven,
+    MemberEight
 }
