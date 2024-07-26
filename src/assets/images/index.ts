@@ -9,6 +9,7 @@ import Logo from "./logo.png?url"
 import EnergyImg from "./energy.jpg";
 import PropertyImg from "./property.jpg";
 import CommercialImg from "./commercial.jpg";
+import CommercialTwoImg from "./commercial_two.jpg";
 import OffsetImg from "./offset.jpg";
 import ProjectImg from "./project.jpg";
 import ArticleOne from "./article_1.jpg"
@@ -47,6 +48,7 @@ export {
     EnergyImg,
     PropertyImg,
     CommercialImg,
+    CommercialTwoImg,
     OffsetImg,
     ProjectImg,
     ArticleOne,
