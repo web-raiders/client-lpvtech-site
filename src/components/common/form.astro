@@ -1,8 +1,9 @@
 ---
 import Button from "./button"
-const { padding = false} = Astro.props;
+const { padding = false, contact = false} = Astro.props;
 interface Props {
     padding?: boolean;
+    contact?: boolean
 }
 ---
 
@@ -56,7 +57,7 @@ interface Props {
     
                 <!-- Button -->
                 <div class="col-span-full my-5">
-                    <Button path="#" text="Book Now" className="block w-full py-3 text-[18px] text-center text-white text-[14px] bg-green rounded-full baseline hover:bg-darkBlue" />
+                    <Button path="#" text={contact ? "Send Message" : "Book Now"} className=`block ${contact ? 'w-[max-content]' : 'w-full'} ${contact && 'px-3'} ${contact ? 'py-2' : 'py-3'} ${contact ? 'text-base' : 'text-[18px]'} text-center text-white text-[14px] bg-green rounded-full baseline hover:bg-darkBlue` />
                 </div>
             </form>
         </div>
