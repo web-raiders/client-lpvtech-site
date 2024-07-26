@@ -43,6 +43,9 @@ import { PiFolders } from "react-icons/pi";
 import { PiBaseballHelmet } from "react-icons/pi";
 import { SlBadge } from "react-icons/sl";
 import { SlSupport } from "react-icons/sl";
+import { MdOutlineEmail } from "react-icons/md";
+import { FiPhone } from "react-icons/fi";
+import { SlLocationPin } from "react-icons/sl";
 
 export const navlist = [
     {
@@ -441,4 +444,41 @@ export const teams_value = [
         venenatis rhoncus himenaeos mattis magna 
         nostra adipiscing nam elementum.`
     },
+]
+
+export const aboutList = [
+    {
+        title: 'Solar Panel Solutions',
+        description: 'Torquent ante molestie donec scelerisque efficitur cursus quisque.'
+    },
+    {
+        title: 'Renewable Energy Consulting',
+        description: 'Torquent ante molestie donec scelerisque efficitur cursus quisque.'
+    },
+    {
+        title: 'Energy Efficiency Solutions',
+        description: 'Torquent ante molestie donec scelerisque efficitur cursus quisque.'
+    },
+]
+
+export const contactList = [
+    {
+        icon: SlLocationPin,
+        title: 'Head Office',
+        headingOne: 'Jalan Cempaka Wangi No 22',
+        headingTwo: 'Jakarta - Indonesia',
+    },
+    {
+        icon: MdOutlineEmail,
+        title: 'Email Support',
+        headingOne: 'support@yourdomain.tld',
+        headingTwo: 'hello@yourdomain.tld',
+    },
+    {
+        icon: FiPhone,
+        title: `Let's Talk`,
+        headingOne: 'Phone : +6221.2002.2012',
+        headingTwo: 'Fax : +6221.2002.2013',
+    },
+    
 ]
