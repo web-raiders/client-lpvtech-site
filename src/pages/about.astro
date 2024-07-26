@@ -1,13 +1,198 @@
 ---
-import Layout from '@components/layout.astro';
+import { Layout, Helpers, Common } from "@components/index"
+import { Image } from "astro:assets";
+import { EnergyImg, CommercialTwoImg} from "@assets/images"
+import { BsLightning } from "react-icons/bs";
+import { IoCheckmarkCircle } from "react-icons/io5";
+import { Data } from "@utils/index";
 ---
 
 <Layout title='Ipvtech Website - About Us'>
     <!-- Hero Section -->
-    <section class="absolute pt-40 w-full min-h-[100vh] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url(/images/project.jpg)`}}>
-        <div class="text-center pt-40">
-            <h1 class="text-[48px] text-white">About Us</h1>
+    <section class="absolute pt-40 w-full min-h-[50vh] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `url(/images/energy_bg.jpg)`}}>
+        <div class="text-center pt-10">
+            <h1 class="text-4xl text-white font-bold md:text-6xl">About Us</h1>
+            <h4 class="text-lg text-white pt-6 font-bold md:text-2xl">Reneawable Energy for a Sustainable World</h4>
         </div>
     </section>
-    <section class="w-full min-h-screen"></section>
+
+    
+    <!-- About Section -->
+    <section class="w-full pt-[550px] pb-[40px]">
+		<Common.Container>
+			<!-- Left Content -->
+			<div class="w-2/4 flex-col flex-wrap">
+				<h6 class="text-base font-bold text-green uppercase">Who we are</h6>
+				<h2 class="text-[40px] leading-[45px] mt-5 text-deepBlue font-bold">Renewable Energy For a Sustainable World</h2>
+				<p class="text-base text-deepBlue mt-5 pr-20">
+					Proin sem malesuada urna purus euismod lobortis magnis pretium nunc ad. 
+					Eleifend est auctor mus nisi senectus justo. Senectus penatibus pellentesque dui praesent eu interdum.
+				</p>
+				<p class="text-base text-deepBlue mt-5 pr-20">
+					Proin sem malesuada urna purus euismod lobortis magnis pretium nunc ad. 
+					Eleifend est auctor mus nisi senectus justo. Senectus penatibus pellentesque dui praesent eu interdum.
+				</p>
+				<div class="mt-10">
+					<Common.Button path="#" className="py-3 px-10 font-semibold text-white bg-green rounded-full baseline hover:bg-darkBlue" text="Discover more" />
+				</div>
+			</div>
+			<!-- Right Image -->
+			<div class="w-2/4 h-full">
+				<div class="relative">
+					<Image src={EnergyImg} alt={"energy image"} class={"w-full h-full rounded-xl"} />
+				</div>
+				{/* Card */}
+				<div class="flex flex-col items-center absolute w-[300px] h-[auto] py-10 px-7 bg-green rounded-xl -mt-[220px] -ml-[50px] text-white">
+					<h6 class="text-white text-[18px] text-center">Since 2010, our customers have avoided</h6>
+                    <div class="w-[60px] h-[60px] mt-2 mb-2 rounded-xl bg-[#e1f5ec] flex justify-center items-center">
+                        <BsLightning color="#0FCC7C" size={'32px'}/>
+                    </div>
+                    <Helpers.Counter client:load from={0} to={1000000} fontSize="37" />
+                    <h4 class="text-[15px] text-center font-semibold mt-1">Pounds of CO2</h4>
+				</div>
+			</div>
+		</Common.Container>
+	</section>
+
+
+
+	<!-- Our clients section -->
+	<section class="w-full mt-40">
+		<Common.Container>
+			<!-- Background card -->
+			<div class="w-full h-auto py-7 bg-[#F5F7F8] rounded-xl mb-28">
+				<div class="w-[90%] mx-auto flex-col justify-center items-center">
+					<h3 class="text-center text-[28px] font-bold">LPV Tech is trusted by 6+ million users in <br /> 175+ countries.</h3>
+					<!-- Grid container -->
+					<div class="grid grid-cols-4 gap-4 my-10">
+						{
+							Data.clients.map(item => (
+								<div class="w-[250px] h-[100px] bg-white rounded-[10px] flex justify-center items-center cursor-pointer">
+									<Image src={item.img} alt="client" width={100} height={100} class={'grayscale hover:grayscale-0'} />
+								</div>
+							))
+						}
+					</div>
+				</div>
+			</div>
+		</Common.Container>
+		<hr />
+		<Common.Container>
+			<!-- Flex -->
+			<div class="flex justify-between items-center gap-5 mt-20">
+				{
+					Data.services.map(item => (
+						<div class="max-h-[250px] rounded-xl py-10 px-5 border border-solid border-gray-200 text-center cursor-pointer hover:shadow-xl">
+							{/* Top Icon */}
+							<div class={`w-[max-content] p-3 mx-auto bg-green rounded-xl`}>
+								<item.icon size={'35px'} color="#fff" />
+							</div>
+							<h6 class="text-deepBlue text-[18px] font-bold pt-5">{item.title}</h6>
+							<p class="pt-5">{item.description}</p>
+						</div>
+					))
+				}
+			</div>
+		</Common.Container>
+	</section>
+
+    <!-- Live Green Section -->
+	<section class="mt-20 pt-40 w-full min-h-[100vh] mb-20 bg-cover bg-no-repeat bg-center" style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(./images/green.jpg)'}}>
+        <div class="w-[40%] mx-auto flex-col justify-center items-center text-white text-center">
+            <h2 class="text-[60px] leading-[60px] font-bold">Live Green, Love Green, Think Green.</h2>
+            <p class="mt-4 text-[17px]">Est porta erat phasellus id penatibus. Iaculis commodo per quam potenti habitasse pretium conubia ultrices luctus praesent et.</p>
+            <div class="mt-10">
+                <Common.Button path="#" text="Discover more" className="py-3 px-8 text-white text-[16px] bg-green rounded-full baseline hover:bg-darkBlue" />
+            </div>
+        </div>
+		<!-- Bottom Banner -->
+		<div class="w-full h-[150px] bg-cyan-900 mt-[180px] flex justify-center items-center">
+			<div class="w-4/5 h-[100px] flex justify-center items-center">
+				<div class="flex-col border-r-2 border-r-gray-300 pr-10">
+					<span class="text-green text-[46px] font-bold"><Helpers.Counter client:load from={0} to={73} />K+</span>
+					<p class="text-white text-center text-[18px] font-semibold">Happy Client</p>
+				</div>
+				<div class="flex-col border-r-2 border-r-gray-300 px-10">
+					<span class="text-green text-center text-[46px] font-bold"><Helpers.Counter client:load from={0} to={5} />K+</span>
+					<p class="text-white text-center text-[18px] font-semibold">Pro Technician</p>
+				</div>
+				<div class="flex-col border-r-2 border-r-gray-300 px-10">
+					<span class="text-green text-[46px] font-bold"><Helpers.Counter client:load from={0} to={4} />M+</span>
+					<p class="text-white text-center text-[18px] font-semibold">Wind Farms</p>
+				</div>
+				<div class="flex-col px-10">
+					<span class="text-green text-[46px] font-bold"><Helpers.Counter client:load from={0} to={11} />M+</span>
+					<p class="text-white text-center text-[18px] font-semibold">Solar Farms</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <!-- Decision Section -->
+    <section class="w-full pt-[50px] pb-[40px]">
+        <Common.Container>
+            <!-- Left Image -->
+            <div class="w-2/4 h-full">
+                <div class="relative">
+                    <Image src={CommercialTwoImg} alt={"energy image"} class={"object-contain w-25 h-30 rounded-xl"} />
+                </div>
+                {/* Card */}
+                <div class="flex flex-col items-center absolute w-[180px] h-[auto] bg-green rounded-xl -mt-[220px] ml-[20px] text-white">
+                    <h6 class="text-white text-[70px] text-center font-bold">15+</h6>
+                    <div class="w-full h-[60px] mt-2 bg-[#e1f5ec] flex justify-center items-center rounded-b-lg">
+                        <h4 class="text-[15px] text-center font-semibold text-black">Years Of Experience</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Content -->
+            <div class="w-2/4 flex-col flex-wrap ml-10">
+                <h2 class="text-[40px] leading-[45px] mt-5 text-deepBlue font-bold">Make the smart choice by using 100% clean energy.</h2>
+                <hr class="w-5/6 h-0 bg-deepBlue  mt-5" />
+                <p class="text-base text-deepBlue mt-5 pr-20">
+                    Ultrices urna arcu vitae sit integer tempus. Laoreet nisi pulvinar nascetur ullamcorper ac. Ullamcorper suspendisse sociosqu nascetur nunc facilisi maecenas.
+                </p>
+                <Common.Container>
+                    <div class="w-1/4 h-full">
+                        <div class="reltive m-0">
+                            <IoCheckmarkCircle color="#0FCC7C" size={'60px'}} />
+                        </div>
+                    </div>
+                    <div class="w-3/4 flex-col flex-wrap ml-0">
+                        <h3 class="text-[25px] font-semibold text-deepBlue">Solar Panel Solutions</h4>
+                        <p class="text-base text-deepBlue mt-5 pr-20">
+                            Torquent ante molestie donec scelerisque efficitur cursus quisque.
+                        </p>
+                    </div>
+                </Common.Container>
+                <Common.Container>
+                    <div class="w-1/4 h-full">
+                        <div class="reltive m-0">
+                            <IoCheckmarkCircle color="#0FCC7C" size={'60px'}} />
+                        </div>
+                    </div>
+                    <div class="w-3/4 flex-col flex-wrap ml-0">
+                        <h3 class="text-[25px] font-semibold text-deepBlue">Renewable Energy Consulting</h4>
+                        <p class="text-base text-deepBlue mt-5 pr-20">
+                            Torquent ante molestie donec scelerisque efficitur cursus quisque.
+                        </p>
+                    </div>
+                </Common.Container>
+                <Common.Container>
+                    <div class="w-1/4 h-full">
+                        <div class="reltive m-0">
+                            <IoCheckmarkCircle color="#0FCC7C" size={'60px'}} />
+                        </div>
+                    </div>
+                    <div class="w-3/4 flex-col flex-wrap ml-0">
+                        <h3 class="text-[25px] font-semibold text-deepBlue">Energy Efficiency Solutions</h4>
+                        <p class="text-base text-deepBlue mt-5 pr-20">
+                            Torquent ante molestie donec scelerisque efficitur cursus quisque.
+                        </p>
+                    </div>
+                </Common.Container>
+            </div>
+        </Common.Container>
+    </section>
+
+
 </Layout>
