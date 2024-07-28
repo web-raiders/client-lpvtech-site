@@ -27,7 +27,9 @@ import {
     MemberFive,
     MemberSix,
     MemberSeven,
-    MemberEight
+    MemberEight,
+    BlogTwo,
+    BlogFour
 } from "@assets/images"
 import { LiaToolsSolid } from "react-icons/lia";
 import { IoSettingsOutline } from "react-icons/io5";
@@ -480,5 +482,73 @@ export const contactList = [
         headingOne: 'Phone : +6221.2002.2012',
         headingTwo: 'Fax : +6221.2002.2013',
     },
-    
+]
+
+export const blogs = [
+    {
+        img: ProjectSix,
+        tag: 'Vehicle',
+        title: '5 Common Myths About Electric Vehicles',
+        content: `
+        Lorem ipsum dolor sit amet, 
+        consectetuer adipiscing elit. 
+        Aenean commodo ligula eget dolor. 
+        Aenean massa. Cum sociis natoque penatibus 
+        et magnis dis parturient montes, nascetur`,
+    },
+    {
+        img: BlogTwo,
+        tag: 'Green Living',
+        title: 'Planning Your Energy Usage',
+        content: `
+        Lorem ipsum dolor sit amet, 
+        consectetuer adipiscing elit. 
+        Aenean commodo ligula eget dolor. 
+        Aenean massa. Cum sociis natoque penatibus 
+        et magnis dis parturient montes, nascetur`,
+    },
+    {
+        img: SlideFour,
+        tag: 'Blog',
+        title: '5 Sustainable Activities for the Whole Family',
+        content: `
+        Lorem ipsum dolor sit amet, 
+        consectetuer adipiscing elit. 
+        Aenean commodo ligula eget dolor. 
+        Aenean massa. Cum sociis natoque penatibus 
+        et magnis dis parturient montes, nascetur`,
+    },
+    {
+        img: BlogFour,
+        tag: 'Insight',
+        title: 'Get Closer to Carbon Neutral with Carbon Offsets',
+        content: `
+        Lorem ipsum dolor sit amet, 
+        consectetuer adipiscing elit. 
+        Aenean commodo ligula eget dolor. 
+        Aenean massa. Cum sociis natoque penatibus 
+        et magnis dis parturient montes, nascetur`,
+    },
+    {
+        img: ProjectFour,
+        tag: 'Insight',
+        title: 'Why Choose a Renewable Energy Plan?',
+        content: `
+        Lorem ipsum dolor sit amet, 
+        consectetuer adipiscing elit. 
+        Aenean commodo ligula eget dolor. 
+        Aenean massa. Cum sociis natoque penatibus 
+        et magnis dis parturient montes, nascetur`,
+    },
+    {
+        img: SlideFive,
+        tag: 'News',
+        title: '24 Years of Renewable Energy, 24 Hours of Sustainability',
+        content: `
+        Lorem ipsum dolor sit amet, 
+        consectetuer adipiscing elit. 
+        Aenean commodo ligula eget dolor. 
+        Aenean massa. Cum sociis natoque penatibus 
+        et magnis dis parturient montes, nascetur`,
+    },
 ]

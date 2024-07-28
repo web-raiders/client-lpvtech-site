@@ -1,0 +1,18 @@
+---
+const { tags, justify = 'justify-start' } = Astro.props;
+
+interface Props {
+    tags: string[];
+    justify?: string;
+
+}
+---
+
+<div class=`flex flex-wrap gap-2 ${justify}`>
+    {tags.map((tag: string, index: number) => (
+        <span 
+            class={index % 2 === 0 ? "w-[max-content] py-1 px-2 bg-[#0fcc7c] text-white rounded-[20px] uppercase text-[12px]" : "w-[max-content] max-h-[25px] py-1 px-5 bg-indigo-500 text-white rounded-[20px] uppercase text-[12px]"}>
+            <a href={`/blog/tag/${tag}`}>{tag}</a>
+        </span>
+    ))}
+</div>

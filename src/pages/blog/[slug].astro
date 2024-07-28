@@ -1,0 +1,159 @@
+---
+import { sanityClient } from "sanity:client";
+import { Queries, Tools } from "@utils/index";
+import Layout from '@components/layout.astro';
+import { Common } from "@components/index";
+import { FaRegCalendarAlt } from "react-icons/fa";
+import { MdOutlineMessage } from "react-icons/md";
+import { PortableText } from "astro-portabletext";
+import { FaRegUser } from "react-icons/fa";
+
+export const prerender = true;
+
+export async function getStaticPaths(){
+    const slugs = await sanityClient.fetch(Queries.slugs)
+    return slugs
+}
+
+const { slug } = Astro.params;
+if(slug === undefined){
+    throw new Error('Slug is required')
+}
+
+const post = await sanityClient.fetch(Queries.postDetails, { slug });
+const otherArticles = await sanityClient.fetch(Queries.otherArticles, { slug })
+---
+
+
+<Layout title="Article">
+    <!-- Hero Section -->
+    <section class="pt-40 w-full min-h-[100vh] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `linear-gradient(rgba(0, 23, 23, 0.5), rgba(0, 23, 23, 0.5)), url(${post.image})`}}>
+        <div class="w-2/4 mx-auto text-center mt-28">
+            <Common.Tags tags={post.tags} justify="justify-center" />
+            <h4 class="text-[48px] mt-10 text-white font-semibold leading-[48px] border-b border-b-gray-700 pb-10">
+                {post.name}
+            </h4>
+            <div class="flex gap-5 justify-center mt-5 cursor-pointer">
+                <div class="flex gap-2">
+                    <span class="mt-1">
+                        <FaRegCalendarAlt color={"#0FCC7C"} />
+                    </span>
+                    <span class="text-white">{Tools.formatDate(post.date)}</span>
+                </div>
+                <div class="flex gap-2">
+                    <span class="mt-1">
+                        <MdOutlineMessage color={"#0FCC7C"} />
+                    </span>
+                    <span class="text-white">No comments</span>
+                </div>
+                <div class="flex gap-2">
+                    <span class="mt-.5">
+                        <a href=`/blog/author/${Tools.formatName(post.author)}` class="inline-flex">
+                            <FaRegUser color={"#0FCC7C"} />
+                            <span class="text-white hover:text-[#0fcc7c] -mt-1 pl-2">{post.author}</span>
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="w-full min-h-screen py-20">
+        <Common.Container>
+            <div class="flex gap-12">
+                <!-- Article Content -->
+                <div class="w-[65%]">
+                    <article>
+                        <PortableText value={post.content} />
+                    </article>
+                    <div class="mt-10 flex gap-x-3">
+                        <h4 class="text-[22px] pt-1 font-semibold text-darkBlue">Share this:</h4>
+                        <div class="h-[24px]">
+                            <Common.SocialIcons size="24px" hover={true} /> 
+                        </div>
+                    </div>
+                    <div class="mt-10">
+                        <h4 class="text-[36px] text-darkBlue font-bold">Leave a Reply</h4>
+                        <p class="text-gray-500 text-[17px] pt-3">Your email address will not be published</p>
+                        <form class='mt-3'>
+                            <!-- First Input Grid -->
+                            <div class="col-span-full mt-5">
+                                <label for="comment" class="block text-sm font-medium leading-6 text-gray-900">Comment *</label>
+                                <div class="mt-2">
+                                    <textarea id="comment" name="comment" rows="5" class="block w-full rounded-md border-0 py-1.5 bg-[#F5F7F8] px-5 placeholder:text-gray-400 focus:outline-none focus:ring focus:bg-transparent sm:text-sm sm:leading-6"></textarea>
+                                </div>
+                            </div>
+                            <!-- Second Input grid -->
+                            <div class="col-span-full mt-2">
+                                <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Name *</label>
+                                <div class="mt-2">
+                                    <input type="text" name="name" id="name" class="block w-full rounded-md border-0 py-1.5 bg-[#F5F7F8] px-5 placeholder:text-gray-400 focus:outline-none focus:ring focus:bg-transparent sm:text-sm sm:leading-6">
+                                </div>
+                            </div>
+                            
+                            <!-- Third Input Grid -->
+                            <div class="col-span-full mt-2">
+                                <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email *</label>
+                                <div class="mt-2">
+                                    <input type="email" name="email" id="email" class="block w-full rounded-md border-0 py-1.5 bg-[#F5F7F8] px-5 placeholder:text-gray-400 focus:outline-none focus:ring focus:bg-transparent sm:text-sm sm:leading-6">
+                                </div>
+                            </div>
+                            
+                            <!-- Button -->
+                            <div class="col-span-full my-5">
+                                <Common.Button path="#" text="Post a comment" className=`block w-[max-content] py-1.5 px-3 text-base text-center text-white text-[14px] bg-[#0fcc7c] rounded-full baseline hover:bg-darkBlue` />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Other Articles -->
+                <div class="w-[35%]">
+                    <!-- Newsletter -->
+                    <div class="w-[90%] p-10 rounded-xl" style={{ backgroundImage: 'linear-gradient(135deg, #00384F 0%, #0FCC7C 100%)'}}>
+                        <h5 class="text-white text-[18px] font-semibold">Signup our newsletter to get update information, news, insight or promotions.</h5>
+                        <form class="mt-5 w-full">
+                            <div class="sm:col-span-4">
+                                <div class="mt-2">
+                                    <input type="text" name="name" id="name" placeholder="Name" class="block w-full rounded-[30px] border-0 py-1.5 bg-[#F5F7F8] px-5 placeholder:text-gray-400 focus:outline-none focus:ring focus:ring-[#0fcc7c] sm:text-sm sm:leading-6">
+                                </div>
+                                <div class="mt-3">
+                                    <input type="email" name="email" id="email" placeholder="Email" class="block w-full rounded-[30px] border-0 py-1.5 bg-[#F5F7F8] px-5 placeholder:text-gray-400 focus:outline-none focus:ring focus:ring-[#0fcc7c] sm:text-sm sm:leading-6">
+                                </div>
+                                <div class="mt-3">
+                                    <Common.Button path="#" text="Sign up" className="w-full block text-center text-[16px] py-2 text-white bg-[#0fcc7c] rounded-full baseline hover:bg-darkBlue" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Featured Posts -->
+                    <div class="w-[90%] bg-gray-100 px-5 py-10 mt-5 rounded-xl">
+                        <h4 class="font-semibold text-[28px] text-darkBlue">Latest Post</h4>
+                        <div class="mt-5 flex-col">
+                            {
+                                otherArticles.slice(0, 10).map((item: any) => (
+                                    <div class="flex gap-x-3 mt-3">
+                                        <div class="h-[70px] w-[100px]">
+                                            <a href={`/blog/${item.slug}`}>
+                                                <img src={item.image} alt={item.alt} class={'w-full h-full rounded-xl'} />
+                                            </a>
+                                        </div>
+                                        <div class="flex-col gap-y-1">
+                                            <div>
+                                                <a href={`/blog/${item.slug}`} class="hover:text-[#0fcc7c]">{item.name}</a>
+                                            </div>
+                                            <span class="text-[14px] text-gray-400">{Tools.formatDate(item.date)}</span>
+                                        </div>
+                                    </div>
+                                ))
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </Common.Container>
+    </section>
+</Layout>

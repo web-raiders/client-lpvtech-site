@@ -1,14 +1,40 @@
 ---
+import { Common } from '@components/index';
 import Layout from '@components/layout.astro';
+import { sanityClient } from 'sanity:client'
+import { Queries, Constants } from '@utils/index';
+import type { CollectionEntry } from 'astro:content';
+
+const articles: CollectionEntry<'blog'>[] = await sanityClient.fetch(Queries.articles)
+const currentPage: number | null = +Astro.url.searchParams.get('page')! || 1;
+const totalPages: number = Math.ceil(articles.length / Constants.ARTICLES_PER_PAGE);
+const articlesInPage: CollectionEntry<'blog'>[] = articles.slice((currentPage - 1) * Constants.ARTICLES_PER_PAGE, currentPage * Constants.ARTICLES_PER_PAGE)
 ---
 
 <Layout title='Ipvtech Website - Blog'>
     <!-- Hero Section -->
-    <section class="pt-40 w-full min-h-[100vh] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url(/images/project.jpg)`}}>
-        <div class="text-center pt-40">
-            <h1 class="text-[48px] text-white">Blog</h1>
+    <section class="pt-52 w-full min-h-[60vh] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `linear-gradient(rgba(0, 23, 23, 0.3), rgba(0, 23, 23, 0.3)), url(/images/blog_bg.jpg)`}}>
+        <div class="w-2/5 mx-auto text-center">
+            <h1 class="text-[48px] text-white font-bold">Article & News</h1>
+            <h4 class="text-[26px] mt-3 text-white font-semibold leading-[30px]">
+                Archives
+            </h4>
         </div>
     </section>
 
-    <section class="w-full min-h-screen"></section>
+    <!-- Blog Posts -->
+    <section class="w-full min-h-screen pt-20 pb-32">
+        <Common.Container flex='flex-col'>
+            <div class="grid grid-cols-3 gap-10">
+                {
+                    articlesInPage.map((article: any) => (
+                        <Common.Article article={article} />
+                    ))
+                }
+            </div>
+            <div class="mt-5">
+                <Common.Pagination currentPage={currentPage} totalPages={totalPages} disablePrevious={currentPage === 1} disableNext={currentPage === totalPages} />
+            </div>
+        </Common.Container>
+    </section>
 </Layout>

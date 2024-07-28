@@ -36,6 +36,8 @@ import MemberFive from "./member_five.jpg?url"
 import MemberSix from "./member_six.jpg?url"
 import MemberSeven from "./member_seven.jpg?url"
 import MemberEight from "./member_eight.jpg?url"
+import BlogTwo from "./blog_two.jpg?url"
+import BlogFour from "./blog_four.jpg?url"
 
 export {
     SlideOne,
@@ -74,5 +76,7 @@ export {
     MemberFive,
     MemberSix,
     MemberSeven,
-    MemberEight
+    MemberEight,
+    BlogTwo,
+    BlogFour
 }

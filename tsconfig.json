@@ -15,6 +15,9 @@
       "@styles/*": [
         "src/styles/*"
       ],
+      "@interfaces/*": [
+        "src/interfaces/*"
+      ],
 
     },
     "jsx": "react-jsx",
