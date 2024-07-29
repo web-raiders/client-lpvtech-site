@@ -1,0 +1,133 @@
+---
+import { Common, Helpers } from '@components/index';
+import Layout from '@components/layout.astro';
+import { SlideFour, SlideFive } from '@assets/images';
+import { Data } from '@utils/index';
+import { FiPhone } from "react-icons/fi";
+import { MdOutlineEmail } from "react-icons/md";
+import { TiMessages } from "react-icons/ti";
+---
+
+<Layout title='Ipvtech Website - Help Center'>
+    <!-- Hero Section -->
+    <section 
+    class="pt-48 w-full min-h-[70vh] bg-no-repeat bg-cover bg-center" 
+    style={{ 
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(${SlideFour})`
+    }}>
+        <Common.Container>
+            <div class="w-[40%]">
+                <h1 class="text-[48px] text-white font-bold">Jakarta Solar Farms</h1>
+                <p class="text-white pt-3">
+                    Hendrerit magnis aliquet at feugiat elementum erat. 
+                    Aliquet felis fringilla taciti turpis ligula massa dolor. 
+                    Egestas mi si pretium porttitor semper at. 
+                    Rhoncus velit consectetuer phasellus interdum sapien efficitur.
+                </p>
+                <div class="mt-7">
+                    <Common.Button path="#" text="Learn More" className="py-2 px-6 text-[16px] text-white text-center bg-[#0fcc7c] rounded-full baseline hover:bg-darkBlue" />
+                </div>
+            </div>
+        </Common.Container>
+    </section>
+
+    <!-- Project Description -->
+    <section class="w-full min-h-screen py-20 pb-32">
+        <Common.Container>
+            <div class="w-full flex gap-x-20">
+                <div class="w-[65%]">
+                    <h3 class="text-darkBlue text-[30px] font-bold">Project Descriptions</h3>
+                    <article class="mt-3">
+                        Sagittis nam duis consectetur condimentum sem per sapien. 
+                        Efficitur morbi laoreet vulputate faucibus maecenas class torquent. 
+                        Sed netus senectus blandit lobortis feugiat himenaeos porttitor posuere. 
+                        Cubilia nam nibh netus proin et hendrerit primis nullam. Congue consectetur ex gravida arcu bibendum.
+                    </article>
+                    <article class="mt-3">
+                        Morbi libero vulputate tempor inceptos aliquet volutpat vehicula. 
+                        Gravida orci neque feugiat etiam magna vulputate vivamus. 
+                        Dictumst primis tempor ipsum litora mollis nunc fames dolor morbi eleifend. 
+                        Dapibus tortor nascetur sapien torquent fusce nulla ad netus.
+                        Donec dui praesent dictum feugiat massa cursus si dis laoreet gravida orci.
+                    </article>
+                    <img src={SlideFive} alt="project thumbnail" class="w-full h-[500px] mt-10 rounded-[10px]"/>
+                </div>
+                <div class="w-[35%]">
+                    <!-- Details Card -->
+                    <div class="w-full bg-[#00384F] rounded-xl p-10 pb-5 shadow-xl">
+                        <h4 class="text-[27px] font-semibold text-[#0fcc7c]">Project Detail</h4>
+                        <p class="text-gray-200 text-[17px] text-gray-300 pt-3">Sagittis mattis lobortis a lacinia pede letius ridiculus</p>
+                        <div class="flex-col mt-5">
+                            {
+                                Data.projectDetails.map(item => (
+                                <div class="flex gap-3 py-3 border-b border-b-gray-600 last:border-0">
+                                    <div class="p-3 rounded-md backdrop-opacity-10 backdrop-invert bg-white/10">
+                                        <item.icon color={"#fff"} size={'24px'} />
+                                    </div>
+                                    <div class="flex-col">
+                                        <h6 class="uppercase text-[#0fcc7c] font-semibold text-[16px]">{item.name}</h6>
+                                        <p class="text-white font-bold text-[16px]">{item.value}</p>
+                                    </div>
+                                </div>
+                                ))
+                            }
+                        </div>
+                    </div>
+
+                    <div class="w-full mt-5 shadow-xl rounded-2xl">
+                        <!-- Card Header -->
+                        <div class="w-full py-5 bg-[#00384F] text-white text-center rounded-tl-2xl rounded-tr-2xl">
+                            <h4 class="text-[27px] font-semibold text-[#0fcc7c]">Need more help?</h4>
+                        </div>
+                        <div class="p-5 flex flex-col gap-y-5">
+                            <div class="flex gap-3">
+                                <div class="bg-[#0fcc7c] p-4 rounded-full">
+                                    <FiPhone color='#fff' size={'30px'} />
+                                </div>
+                                <div class="flex-col">
+                                    <p class="text-darkBlue">Customer Service</p>
+                                    <h4 class="text-[#0fcc7c] text-[22px] font-semibold leading-[28px]">(888) 4000-2424</h4>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-3">
+                                <div class="bg-[#0fcc7c] p-4 rounded-full">
+                                    <MdOutlineEmail color='#fff' size={'30px'} />
+                                </div>
+                                <div class="flex-col">
+                                    <p class="text-darkBlue">Email Support</p>
+                                    <h4 class="text-[#0fcc7c] text-[22px] font-semibold leading-[28px]">(888) 4000-2424</h4>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-3">
+                                <div class="bg-[#0fcc7c] p-4 rounded-full">
+                                    <TiMessages color='#fff' size={'30px'} />
+                                </div>
+                                <div class="flex-col">
+                                    <p class="text-darkBlue">Chat Support</p>
+                                    <h4 class="text-[#0fcc7c] text-[22px] font-semibold leading-[28px]">(888) 4000-2424</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Common.Container>
+    </section>
+
+    <!-- Green section -->
+    <Common.GreenTwo />
+
+    <!-- Project Images Section -->
+    <section class="w-full min-h-[60vh] flex justify-center items-center p-5 bg-gray-200">
+        <!-- <Common.Container> -->
+            <Helpers.Sliders client:load />
+        <!-- </Common.Container> -->
+    </section>
+
+    <!-- FAQs -->
+    <section class="w-full min-h-[100vh] py-10">
+
+    </section>
+</Layout>

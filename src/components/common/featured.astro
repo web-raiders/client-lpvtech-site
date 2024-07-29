@@ -1,0 +1,37 @@
+---
+import Button from "./button";
+const { projects, page = 'landing' } = Astro.props;
+
+interface Props {
+    projects: any;
+    page?: string;
+}
+---
+
+
+{
+    page === 'landing' && (
+    <div class="w-3/5 flex-col justify-center items-center mx-auto text-center">
+        <h6 class="text-base uppercase text-green font-bold">Featured Projects</h6>
+        <h2 class="text-[48px] text-darkBlue font-bold mt-3 leading-[52px]">Keep your environment clean make the earth green</h2>
+    </div>
+    )
+}
+<div class="w-full flex flex-wrap gap-6 mt-24">
+    {
+        projects.map((item: any) => (
+        <div class="overflow-hidden w-[380px] h-[500px] bg-cover bg-no-repeat bg-center rounded-xl" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)), url(${item.img})`}}>
+            <div class="cursor-pointer flex-col px-8 mt-72 transition ease-in-out delay-150 duration-300 hover:-translate-y-24">
+                <div class={`w-[max-content] backdrop-opacity-10 backdrop-invert bg-white/30 p-5 rounded-full`}>
+                    <item.icon size={'30px'} color="#fff" />
+                </div>
+                <h6 class="text-white font-bold text-[18px] pt-5">{item.title}</h6>
+                <p class="text-[#abb8c3] font-semibold pt-3">{item.description}</p>
+                <div class="mt-14">
+                    <Button path="#" text="Learn More" className="py-2 px-4 text-[16px] mt-6 text-white bg-green rounded-full baseline hover:bg-darkBlue" />
+                </div>
+            </div>
+        </div>
+        ))
+    }
+</div>

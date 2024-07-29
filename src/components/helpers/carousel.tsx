@@ -2,11 +2,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import SwiperCore from 'swiper';
 import { EffectFade, Autoplay, Navigation, Pagination } from "swiper/modules";
-import { SlideOne, SlideTwo, SlideThree, SlideFour, SlideFive, SlideSix } from '@assets/images';
 import { Button } from '../common';
+import { Data } from '@utils/index'
 import "@styles/styles.css";
 
-const sliders = [SlideOne, SlideTwo, SlideThree, SlideFour, SlideFive, SlideSix ]
+// const sliders = [SlideOne, SlideTwo, SlideThree, SlideFour, SlideFive, SlideSix ]
 SwiperCore.use([EffectFade, Autoplay, Navigation, Pagination ]);
 const carousel = () => {
   return (
@@ -19,7 +19,7 @@ const carousel = () => {
       }}
       className="mySwiper"
     >
-      {sliders.map((item, i) => (
+      {Data.sliders.map((item, i) => (
         <SwiperSlide key={i}>
             <section className='w-full pt-36 min-h-[110vh] bg-no-repeat bg-cover bg-center' style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url(${item})`}}>
                 <div className='container w-full mx-auto flex-col flex-wrap items-center justify-center text-center text-white md:w-3/4 md:mt-20 lg:w-2/4 lg:mt-15'>

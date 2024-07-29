@@ -1,0 +1,16 @@
+---
+const { backgroundImage, header, caption } = Astro.props;
+
+interface Props {
+    backgroundImage: string;
+    header: string;
+    caption: string
+}
+---
+
+<section class="pt-40 w-full min-h-[60vh] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `linear-gradient(rgba(0, 23, 23, 0.4), rgba(0, 23, 23, 0.4)), url(${backgroundImage})`}}>
+    <div class="text-center pt-10">
+        <h1 class="text-4xl text-white font-bold md:text-6xl">{header}</h1>
+        <h4 class="text-lg text-white pt-6 font-bold md:text-2xl">{caption}</h4>
+    </div>
+</section>
