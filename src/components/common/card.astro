@@ -1,0 +1,40 @@
+---
+import { Tools } from "@utils/index" 
+import type { CollectionEntry } from "astro:content"
+import Tags from "./tags.astro"
+import Button from "./button.tsx"
+import { PortableText } from "astro-portabletext"
+import { LuDot } from "react-icons/lu";
+const { article } = Astro.props
+
+interface Props {
+    article: CollectionEntry<'blog'>
+}
+---
+
+<div class="w-[400px] h-[auto] shadow-lg rounded-2xl hover:shadow-2xl cursor-pointer">
+    <a href={`/blog/${article.slug}`}>
+        <div class="w-full h-[250px] bg-cover bg-no-repeat bg-center flex justify-end pt-5 pr-3 rounded-tr-2xl rounded-tl-2xl" style={{ backgroundImage: `url(${article.image})`}} />
+    </a>
+    <div class="w-full pt-5">
+        <div class="px-5 pb-5 border-b border-gray-200">
+            <a href={`/blog/${article.slug}`} class="text-[25px] text-[#48586A] font-semibold leading-[30px] hover:text-[#0fcc7c]">{article.name}</a>
+            <div class="pt-5">
+                <Tags tags={article.tags} />
+            </div>
+            <article class="mt-5 line-clamp-4 text-gray-500 text-[14px]">
+                <PortableText value={article.content} />
+            </article>
+            <div class="mt-5">
+                <Button path={`/blog/${article.slug}`} className="py-2 px-5 text-white bg-[#0fcc7c] text-[14px] rounded-full baseline hover:bg-darkBlue" text="Read more" />
+            </div>
+        </div>
+        <div class="py-3 px-5  flex text-[#adadad]">
+            <p class="text-[13px]">{Tools.formatDate(article.date)}</p>
+            <LuDot size={'20px'} />
+            <p class="text-[13px]">No Comments</p>
+            <LuDot size={'20px'} />
+            <a href=`/blog/author/${Tools.formatName(article.author)}` class="text-[13px] hover:text-[#0fcc7c]">{article.author}</a>
+        </div>
+    </div>
+</div>

@@ -16,9 +16,10 @@ const iconList = [
         icon: FaLinkedinIn
     }
 ]
-const { size = "16px" } = Astro.props
+const { size = "16px", hover = false } = Astro.props
 interface Props {
-    size?: string
+    size?: string;
+    hover?: boolean;
 }
 ---
 
@@ -29,7 +30,7 @@ interface Props {
     {
         iconList.map(item => (
             
-            <div class="w-[max-content] bg-[#0FCC7C] p-2 rounded-full">
+            <div class={`w-[max-content] bg-[#0FCC7C] p-2 rounded-full ${hover && 'hover:bg-darkBlue cursor-pointer'}`}>
                 <item.icon color="#fff" size={size} />
             </div>
         ))
