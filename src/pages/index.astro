@@ -1,10 +1,15 @@
 ---
 import { Layout, Helpers, Common } from "@components/index"
 import { Image } from "astro:assets";
-import { Data } from "@utils/index";
+import { Data, Queries } from "@utils/index";
 import "@styles/styles.css";
 import { IoMdCheckmark } from "react-icons/io";
+import type { CollectionEntry } from "astro:content";
 
+const projects: CollectionEntry<'projects'>[] = await sanityClient.fetch(Queries.projects)
+// const currentPage: number | null = +Astro.url.searchParams.get('page')! || 1;
+// const totalPages: number = Math.ceil(articles.length / Constants.ARTICLES_PER_PAGE);
+// const articlesInPage: CollectionEntry<'blog'>[] = articles.slice((currentPage - 1) * Constants.ARTICLES_PER_PAGE, currentPage * Constants.ARTICLES_PER_PAGE)
 ---
 
 <Layout>
@@ -208,7 +213,17 @@ import { IoMdCheckmark } from "react-icons/io";
 	<!-- Featured Projects -->
 	<section class="w-full min-h-[100vh] pt-32">
 		<Common.Container flex="flex-col">
-			<Common.Featured projects={Data.projects}  />
+			<div class="w-3/5 flex-col justify-center items-center mx-auto text-center">
+				<h6 class="text-base uppercase text-green font-bold">Featured Projects</h6>
+				<h2 class="text-[48px] text-darkBlue font-bold mt-3 leading-[52px]">Keep your environment clean make the earth green</h2>
+			</div>
+			<div class="w-full flex flex-wrap gap-6 mt-24">
+				{
+					projects.map(item => (
+						<Common.Featured project={item}  />
+					))
+				}
+			</div>
 		</Common.Container>
 	</section>
 

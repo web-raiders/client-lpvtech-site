@@ -586,3 +586,114 @@ export const projectDetails = [
         value: 'Green Energy'
     },
 ]
+
+export const faqs = [
+    {
+        header: 'Imperdiet primis ex inceptos dui curabitur finibus?',
+        content: `
+            Metus ante aliquet aliquam parturient habitant penatibus pede praesent 
+            finibus vulputate lectus. Curae netus elit semper pharetra hac nulla pretium parturient 
+            adipiscing at lacus. Scelerisque euismod potenti mauris aenean ipsum class maximus viverra 
+            commodo si.
+        `
+    },
+    {
+        header: 'Imperdiet primis ex inceptos dui curabitur finibus?',
+        content: `
+            Metus ante aliquet aliquam parturient habitant penatibus pede praesent 
+            finibus vulputate lectus. Curae netus elit semper pharetra hac nulla pretium parturient 
+            adipiscing at lacus. Scelerisque euismod potenti mauris aenean ipsum class maximus viverra 
+            commodo si.
+        `
+    },
+    {
+        header: 'In neque rutrum molestie platea?',
+        content: `
+            Metus ante aliquet aliquam parturient habitant penatibus pede praesent 
+            finibus vulputate lectus. Curae netus elit semper pharetra hac nulla pretium parturient 
+            adipiscing at lacus. Scelerisque euismod potenti mauris aenean ipsum class maximus viverra 
+            commodo si.
+        `
+    },
+    {
+        header: 'In neque rutrum molestie platea?',
+        content: `
+            Metus ante aliquet aliquam parturient habitant penatibus pede praesent 
+            finibus vulputate lectus. Curae netus elit semper pharetra hac nulla pretium parturient 
+            adipiscing at lacus. Scelerisque euismod potenti mauris aenean ipsum class maximus viverra 
+            commodo si.
+        `
+    },
+    {
+        header: 'Elit quisque mollis facilisis viverra maecenas?',
+        content: `
+            Metus ante aliquet aliquam parturient habitant penatibus pede praesent 
+            finibus vulputate lectus. Curae netus elit semper pharetra hac nulla pretium parturient 
+            adipiscing at lacus. Scelerisque euismod potenti mauris aenean ipsum class maximus viverra 
+            commodo si.
+        `
+    },
+    {
+        header: 'Elit quisque mollis facilisis viverra maecenas?',
+        content: `
+            Metus ante aliquet aliquam parturient habitant penatibus pede praesent 
+            finibus vulputate lectus. Curae netus elit semper pharetra hac nulla pretium parturient 
+            adipiscing at lacus. Scelerisque euismod potenti mauris aenean ipsum class maximus viverra 
+            commodo si.
+        `
+    },
+    {
+        header: 'Inceptos cursus rhoncus pulvinar cras lacinia?',
+        content: `
+            Metus ante aliquet aliquam parturient habitant penatibus pede praesent 
+            finibus vulputate lectus. Curae netus elit semper pharetra hac nulla pretium parturient 
+            adipiscing at lacus. Scelerisque euismod potenti mauris aenean ipsum class maximus viverra 
+            commodo si.
+        `
+    },
+    {
+        header: 'Inceptos cursus rhoncus pulvinar cras lacinia?',
+        content: `
+            Metus ante aliquet aliquam parturient habitant penatibus pede praesent 
+            finibus vulputate lectus. Curae netus elit semper pharetra hac nulla pretium parturient 
+            adipiscing at lacus. Scelerisque euismod potenti mauris aenean ipsum class maximus viverra 
+            commodo si.
+        `
+    },
+    {
+        header: 'Odio nascetur pede in scelerisque phasellus?',
+        content: `
+            Metus ante aliquet aliquam parturient habitant penatibus pede praesent 
+            finibus vulputate lectus. Curae netus elit semper pharetra hac nulla pretium parturient 
+            adipiscing at lacus. Scelerisque euismod potenti mauris aenean ipsum class maximus viverra 
+            commodo si.
+        `
+    },
+    {
+        header: 'Odio nascetur pede in scelerisque phasellus?',
+        content: `
+            Metus ante aliquet aliquam parturient habitant penatibus pede praesent 
+            finibus vulputate lectus. Curae netus elit semper pharetra hac nulla pretium parturient 
+            adipiscing at lacus. Scelerisque euismod potenti mauris aenean ipsum class maximus viverra 
+            commodo si.
+        `
+    },
+    {
+        header: 'Orci sociosqu aliquet dictum ex quam neque efficitur?',
+        content: `
+            Metus ante aliquet aliquam parturient habitant penatibus pede praesent 
+            finibus vulputate lectus. Curae netus elit semper pharetra hac nulla pretium parturient 
+            adipiscing at lacus. Scelerisque euismod potenti mauris aenean ipsum class maximus viverra 
+            commodo si.
+        `
+    },
+    {
+        header: 'Orci sociosqu aliquet dictum ex quam neque efficitur?',
+        content: `
+            Metus ante aliquet aliquam parturient habitant penatibus pede praesent 
+            finibus vulputate lectus. Curae netus elit semper pharetra hac nulla pretium parturient 
+            adipiscing at lacus. Scelerisque euismod potenti mauris aenean ipsum class maximus viverra 
+            commodo si.
+        `
+    },
+]

@@ -10,6 +10,7 @@ import Project from "./project.astro";
 import Green from "./green.astro";
 import Hero from "./hero.astro";
 import GreenTwo from "./green_two.astro";
+import Faqs from "./faqs";
 
 export {
     Button,
@@ -23,5 +24,6 @@ export {
     Project,
     Green,
     Hero,
-    GreenTwo
+    GreenTwo,
+    Faqs
 }
