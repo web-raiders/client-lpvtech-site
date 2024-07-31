@@ -14,12 +14,10 @@ import {
     CommercialImg, 
     OffsetImg, 
     ProjectFour, 
-    ProjectSix, 
-    ProjectThree, 
+    ProjectSix,  
     PropertyImg, 
     SlideFive, 
     SlideFour,
-    ProjectTwo,
     MemberOne,
     MemberTwo,
     MemberThree,
@@ -27,7 +25,6 @@ import {
     MemberFive,
     MemberSix,
     MemberSeven,
-    MemberEight,
     BlogTwo,
     BlogFour
 } from "@assets/images"
@@ -54,10 +51,6 @@ import { CiGlobe } from "react-icons/ci";
 
 export const navlist = [
     {
-        name: 'Home',
-        path: '/'
-    },
-    {
         name: 'About Us',
         path: '/about'
     },
@@ -71,11 +64,7 @@ export const navlist = [
     },
     {
         name: 'Projects',
-        path: '/projects',
-        subMenu: [{
-            name: 'Single Project',
-            path: '/project'
-        }]
+        path: '/projects'
     },
     {
         name: 'Contact Us',
@@ -390,44 +379,44 @@ export const projects = [
 export const members = [
     {
         img: MemberOne,
-        name: 'Oscar Andrews',
-        title: 'Founder'
+        name: 'Jojo Ogbe',
+        // title: 'Founder'
     },
     {
         img: MemberTwo,
-        name: 'Jamie Williams',
-        title: 'Co-Founder'
+        name: 'Adebisi Adeniyi',
+        // title: 'Co-Founder'
     },
     {
         img: MemberThree,
-        name: 'Zoe Mitchell',
-        title: 'Marketing Manager'
+        name: 'Yinka Adelodun',
+        // title: 'Marketing Manager'
     },
     {
         img: MemberFour,
-        name: 'Bethany Brooks',
-        title: 'Operational Manager'
+        name: 'Mohammed Idachaba',
+        // title: 'Operational Manager'
     },
     {
         img: MemberFive,
-        name: 'Oscar Andrews',
-        title: 'Founder'
+        name: 'Juwon Solarin',
+        // title: 'Founder'
     },
     {
         img: MemberSix,
-        name: 'Oscar Andrews',
-        title: 'Founder'
+        name: 'Aniefiok Usoro',
+        // title: 'Founder'
     },
     {
         img: MemberSeven,
-        name: 'Oscar Andrews',
-        title: 'Founder'
+        name: 'Success Bassey',
+        // title: 'Founder'
     },
-    {
-        img: MemberEight,
-        name: 'Oscar Andrews',
-        title: 'Founder'
-    },
+    // {
+    //     img: MemberEight,
+    //     name: 'Oscar Andrews',
+    //     title: 'Founder'
+    // },
 ]
 
 export const teams_value = [
@@ -487,213 +476,10 @@ export const contactList = [
     },
 ]
 
-export const blogs = [
-    {
-        img: ProjectSix,
-        tag: 'Vehicle',
-        title: '5 Common Myths About Electric Vehicles',
-        content: `
-        Lorem ipsum dolor sit amet, 
-        consectetuer adipiscing elit. 
-        Aenean commodo ligula eget dolor. 
-        Aenean massa. Cum sociis natoque penatibus 
-        et magnis dis parturient montes, nascetur`,
-    },
-    {
-        img: BlogTwo,
-        tag: 'Green Living',
-        title: 'Planning Your Energy Usage',
-        content: `
-        Lorem ipsum dolor sit amet, 
-        consectetuer adipiscing elit. 
-        Aenean commodo ligula eget dolor. 
-        Aenean massa. Cum sociis natoque penatibus 
-        et magnis dis parturient montes, nascetur`,
-    },
-    {
-        img: SlideFour,
-        tag: 'Blog',
-        title: '5 Sustainable Activities for the Whole Family',
-        content: `
-        Lorem ipsum dolor sit amet, 
-        consectetuer adipiscing elit. 
-        Aenean commodo ligula eget dolor. 
-        Aenean massa. Cum sociis natoque penatibus 
-        et magnis dis parturient montes, nascetur`,
-    },
-    {
-        img: BlogFour,
-        tag: 'Insight',
-        title: 'Get Closer to Carbon Neutral with Carbon Offsets',
-        content: `
-        Lorem ipsum dolor sit amet, 
-        consectetuer adipiscing elit. 
-        Aenean commodo ligula eget dolor. 
-        Aenean massa. Cum sociis natoque penatibus 
-        et magnis dis parturient montes, nascetur`,
-    },
-    {
-        img: ProjectFour,
-        tag: 'Insight',
-        title: 'Why Choose a Renewable Energy Plan?',
-        content: `
-        Lorem ipsum dolor sit amet, 
-        consectetuer adipiscing elit. 
-        Aenean commodo ligula eget dolor. 
-        Aenean massa. Cum sociis natoque penatibus 
-        et magnis dis parturient montes, nascetur`,
-    },
-    {
-        img: SlideFive,
-        tag: 'News',
-        title: '24 Years of Renewable Energy, 24 Hours of Sustainability',
-        content: `
-        Lorem ipsum dolor sit amet, 
-        consectetuer adipiscing elit. 
-        Aenean commodo ligula eget dolor. 
-        Aenean massa. Cum sociis natoque penatibus 
-        et magnis dis parturient montes, nascetur`,
-    },
-]
-
 export const sliders = [
     'https://res.cloudinary.com/du52ca1q1/image/upload/v1721825555/vecteezy_solar-panel-park-in-a-field-solar-energy-concept-generated_34040344_zygt5v.jpg',
     'https://res.cloudinary.com/du52ca1q1/image/upload/v1721828965/vecteezy_ai-generated-construction-worker-wearing-hardhat-planning_36209196_sccxkz.jpg',
     'https://res.cloudinary.com/du52ca1q1/image/upload/v1721828968/medium-shot-engineers-discussing-about-solar-pannels_ot4q55.jpg',
     'https://res.cloudinary.com/du52ca1q1/image/upload/v1721831829/vecteezy_solar-energy-solar-photovoltaic-panels-for-renewable_33880873_rzovni.jpg',
     'https://res.cloudinary.com/du52ca1q1/image/upload/v1721831288/vecteezy_ai-generated-creating-sustainable-energy-using-solar-panels_37056492_zpttl5.jpg'
-]
-
-export const projectDetails = [
-    {
-        icon: FaRegUser,
-        name: 'Client',
-        value: 'Loka Energi Nusantara Co.LTD'
-    },
-    {
-        icon: FaRegCalendarAlt,
-        name: 'Date',
-        value: '8 October 2021'
-    },
-    {
-        icon: IoWalletOutline,
-        name: 'Estimate Budget',
-        value: 'N250,000'
-    },
-    {
-        icon: CiGlobe,
-        name: 'Industries',
-        value: 'Green Energy'
-    },
-]
-
-export const faqs = [
-    {
-        header: 'Imperdiet primis ex inceptos dui curabitur finibus?',
-        content: `
-            Metus ante aliquet aliquam parturient habitant penatibus pede praesent 
-            finibus vulputate lectus. Curae netus elit semper pharetra hac nulla pretium parturient 
-            adipiscing at lacus. Scelerisque euismod potenti mauris aenean ipsum class maximus viverra 
-            commodo si.
-        `
-    },
-    {
-        header: 'Imperdiet primis ex inceptos dui curabitur finibus?',
-        content: `
-            Metus ante aliquet aliquam parturient habitant penatibus pede praesent 
-            finibus vulputate lectus. Curae netus elit semper pharetra hac nulla pretium parturient 
-            adipiscing at lacus. Scelerisque euismod potenti mauris aenean ipsum class maximus viverra 
-            commodo si.
-        `
-    },
-    {
-        header: 'In neque rutrum molestie platea?',
-        content: `
-            Metus ante aliquet aliquam parturient habitant penatibus pede praesent 
-            finibus vulputate lectus. Curae netus elit semper pharetra hac nulla pretium parturient 
-            adipiscing at lacus. Scelerisque euismod potenti mauris aenean ipsum class maximus viverra 
-            commodo si.
-        `
-    },
-    {
-        header: 'In neque rutrum molestie platea?',
-        content: `
-            Metus ante aliquet aliquam parturient habitant penatibus pede praesent 
-            finibus vulputate lectus. Curae netus elit semper pharetra hac nulla pretium parturient 
-            adipiscing at lacus. Scelerisque euismod potenti mauris aenean ipsum class maximus viverra 
-            commodo si.
-        `
-    },
-    {
-        header: 'Elit quisque mollis facilisis viverra maecenas?',
-        content: `
-            Metus ante aliquet aliquam parturient habitant penatibus pede praesent 
-            finibus vulputate lectus. Curae netus elit semper pharetra hac nulla pretium parturient 
-            adipiscing at lacus. Scelerisque euismod potenti mauris aenean ipsum class maximus viverra 
-            commodo si.
-        `
-    },
-    {
-        header: 'Elit quisque mollis facilisis viverra maecenas?',
-        content: `
-            Metus ante aliquet aliquam parturient habitant penatibus pede praesent 
-            finibus vulputate lectus. Curae netus elit semper pharetra hac nulla pretium parturient 
-            adipiscing at lacus. Scelerisque euismod potenti mauris aenean ipsum class maximus viverra 
-            commodo si.
-        `
-    },
-    {
-        header: 'Inceptos cursus rhoncus pulvinar cras lacinia?',
-        content: `
-            Metus ante aliquet aliquam parturient habitant penatibus pede praesent 
-            finibus vulputate lectus. Curae netus elit semper pharetra hac nulla pretium parturient 
-            adipiscing at lacus. Scelerisque euismod potenti mauris aenean ipsum class maximus viverra 
-            commodo si.
-        `
-    },
-    {
-        header: 'Inceptos cursus rhoncus pulvinar cras lacinia?',
-        content: `
-            Metus ante aliquet aliquam parturient habitant penatibus pede praesent 
-            finibus vulputate lectus. Curae netus elit semper pharetra hac nulla pretium parturient 
-            adipiscing at lacus. Scelerisque euismod potenti mauris aenean ipsum class maximus viverra 
-            commodo si.
-        `
-    },
-    {
-        header: 'Odio nascetur pede in scelerisque phasellus?',
-        content: `
-            Metus ante aliquet aliquam parturient habitant penatibus pede praesent 
-            finibus vulputate lectus. Curae netus elit semper pharetra hac nulla pretium parturient 
-            adipiscing at lacus. Scelerisque euismod potenti mauris aenean ipsum class maximus viverra 
-            commodo si.
-        `
-    },
-    {
-        header: 'Odio nascetur pede in scelerisque phasellus?',
-        content: `
-            Metus ante aliquet aliquam parturient habitant penatibus pede praesent 
-            finibus vulputate lectus. Curae netus elit semper pharetra hac nulla pretium parturient 
-            adipiscing at lacus. Scelerisque euismod potenti mauris aenean ipsum class maximus viverra 
-            commodo si.
-        `
-    },
-    {
-        header: 'Orci sociosqu aliquet dictum ex quam neque efficitur?',
-        content: `
-            Metus ante aliquet aliquam parturient habitant penatibus pede praesent 
-            finibus vulputate lectus. Curae netus elit semper pharetra hac nulla pretium parturient 
-            adipiscing at lacus. Scelerisque euismod potenti mauris aenean ipsum class maximus viverra 
-            commodo si.
-        `
-    },
-    {
-        header: 'Orci sociosqu aliquet dictum ex quam neque efficitur?',
-        content: `
-            Metus ante aliquet aliquam parturient habitant penatibus pede praesent 
-            finibus vulputate lectus. Curae netus elit semper pharetra hac nulla pretium parturient 
-            adipiscing at lacus. Scelerisque euismod potenti mauris aenean ipsum class maximus viverra 
-            commodo si.
-        `
-    },
 ]

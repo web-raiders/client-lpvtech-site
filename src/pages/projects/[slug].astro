@@ -1,7 +1,7 @@
 ---
 import { Common, Helpers } from '@components/index';
 import Layout from '@components/layout.astro';
-import { Queries, Tools } from '@utils/index';
+import { Constants, Queries, Tools } from '@utils/index';
 import { FiPhone } from "react-icons/fi";
 import { MdOutlineEmail } from "react-icons/md";
 import { TiMessages } from "react-icons/ti";
@@ -10,6 +10,7 @@ import { PortableText } from "astro-portabletext";
 import { FaRegCalendarAlt, FaRegUser } from 'react-icons/fa';
 import { IoWalletOutline } from 'react-icons/io5';
 import { CiGlobe } from 'react-icons/ci';
+import type { CollectionEntry } from 'astro:content';
 
 export const prerender = true;
 
@@ -24,6 +25,10 @@ if(slug === undefined){
 }
 
 const project = await sanityClient.fetch(Queries.projectDetails, { slug });
+const faqs = await sanityClient.fetch(Queries.faqs);
+const currentPage: number | null = +Astro.url.searchParams.get('page')! || 1;
+const totalPages: number = Math.ceil(faqs.length / Constants.FAQS_PER_PAGE);
+const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Constants.FAQS_PER_PAGE, currentPage * Constants.FAQS_PER_PAGE)
 ---
 
 <Layout title='Ipvtech Website - Help Center'>
@@ -167,7 +172,10 @@ const project = await sanityClient.fetch(Queries.projectDetails, { slug });
                 <h2 class="text-[38px] text-darkBlue font-bold mt-4 leading-[45px]">Most Popular Questions</h2>
             </div>
             <!-- FAQs -->
-            <Common.Faqs client:load />
+            <Common.Faqs faqs={faqsInPage} client:load />
+            <div class="mt-5">
+                <Common.Pagination currentPage={currentPage} totalPages={totalPages} disablePrevious={currentPage === 1} disableNext={currentPage === totalPages} />
+            </div>
         </Common.Container>
     </section>
 </Layout>

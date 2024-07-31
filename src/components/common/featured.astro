@@ -1,7 +1,7 @@
 ---
 import { PortableText } from "astro-portabletext";
 import Button from "./button";
-import { VscTools } from "react-icons/vsc";
+import { SlBadge } from "react-icons/sl";
 const { project } = Astro.props;
 
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
 <div class="overflow-hidden w-[380px] h-[500px] bg-cover bg-no-repeat bg-center rounded-xl" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)), url(${project?.image})`}}>
     <div class="cursor-pointer flex-col px-8 mt-72 transition ease-in-out delay-150 duration-300 hover:-translate-y-24">
         <div class={`w-[max-content] backdrop-opacity-10 backdrop-invert bg-white/30 p-5 rounded-full`}>
-            <VscTools size={'30px'} color="#fff" />
+            <SlBadge size={'30px'} color="#fff" />
         </div>
         <h6 class="text-white font-bold text-[18px] pt-5">{project?.name}</h6>
         <article class="text-white font-semibold pt-3 line-clamp-3">

@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { IoIosArrowUp } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
-import { Data } from "@utils/index";
+import { PortableText } from '@portabletext/react';
 
 
-const Faqs = () => {
-    const [isActive, setIsActive] = useState<any>(Data.faqs.map((_, index) => index < 2));
+const Faqs = ({ faqs }: any) => {
+    const [isActive, setIsActive] = useState<any>(faqs.map((_: any, index: number) => index < 2));
 
     function handleToggle(idx: number){
         setIsActive((prev: any) => {
@@ -18,7 +18,7 @@ const Faqs = () => {
     return (
     <div className="grid grid-cols-2 gap-y-3 gap-x-5 mt-10">
         {
-            Data.faqs.map((item, i) => (
+            faqs.map((item: any, i: number) => (
             <div className="w-[100%] cursor-pointer" key={i}> 
                 {/* Card Header     */}
                 <div 
@@ -26,7 +26,7 @@ const Faqs = () => {
                 onClick={() => handleToggle(i)}
                 >
                     <span className={isActive[i] ? "text-white font-bold" : "text-[#00384F] font-bold"}>
-                        {item.header}
+                        {item.question}
                     </span>
                     <span>
                         {
@@ -45,9 +45,9 @@ const Faqs = () => {
                 {
                     isActive[i] && (
                         <div className="transition-all duration-1000 p-5 bg-[#e1f5ec]">
-                            <p className="text-[16px] text-gray-600">
-                                {item.content}
-                            </p>
+                            <article className="text-[16px] text-gray-600">
+                                <PortableText value={item?.answer} />
+                            </article>
                         </div>
                     )
                 }
