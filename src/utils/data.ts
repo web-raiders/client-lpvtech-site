@@ -454,20 +454,20 @@ export const contactList = [
     {
         icon: SlLocationPin,
         title: 'Head Office',
-        headingOne: 'Jalan Cempaka Wangi No 22',
-        headingTwo: 'Jakarta - Indonesia',
+        headingOne: '19b Ilabere Ave, Ikoyi',
+        headingTwo: 'Lagos Nigeria',
     },
     {
         icon: MdOutlineEmail,
         title: 'Email Support',
-        headingOne: 'support@yourdomain.tld',
-        headingTwo: 'hello@yourdomain.tld',
+        headingOne: 'info@lpvtech.com',
+        headingTwo: 'support@lpvtech.com',
     },
     {
         icon: FiPhone,
         title: `Let's Talk`,
-        headingOne: 'Phone : +6221.2002.2012',
-        headingTwo: 'Fax : +6221.2002.2013',
+        headingOne: 'Phone : +2348495833349',
+        headingTwo: 'Alt : +2348394855581',
     },
 ]
 
