@@ -417,21 +417,15 @@ export const members = [
 export const teams_value = [
     {
         title: 'Collective Expertise',
-        description: `Porttitor interdum augue 
-        venenatis rhoncus himenaeos mattis magna 
-        nostra adipiscing nam elementum.`
+        description: 'We have a team of experts who are dedicated to providing the best services to our clients. Our team has years of experience in the renewable energy industry and is committed to helping our clients achieve their goals.'
     },
     {
         title: 'Efficient Resource Utilization',
-        description: `Porttitor interdum augue 
-        venenatis rhoncus himenaeos mattis magna 
-        nostra adipiscing nam elementum.`
+        description: 'We ensure that our resources are used efficiently to provide the best services to our clients. Our team is dedicated to providing the best services to our clients and is committed to helping them achieve their goals.'
     },
     {
         title: 'Collaborative Synergy',
-        description: `Porttitor interdum augue 
-        venenatis rhoncus himenaeos mattis magna 
-        nostra adipiscing nam elementum.`
+        description: 'We believe in the power of collaboration and work together to achieve our goals. Our team is committed to providing the best services to our clients and is dedicated to helping them achieve their goals.'
     },
 ]
 
