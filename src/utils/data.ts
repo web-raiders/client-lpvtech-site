@@ -12,21 +12,15 @@ import {
     ClientThree, 
     ClientTwo, 
     CommercialImg, 
-    OffsetImg, 
-    ProjectFour, 
-    ProjectSix,  
+    OffsetImg,  
     PropertyImg, 
-    SlideFive, 
-    SlideFour,
     MemberOne,
     MemberTwo,
     MemberThree,
     MemberFour,
     MemberFive,
     MemberSix,
-    MemberSeven,
-    BlogTwo,
-    BlogFour
+    MemberSeven
 } from "@assets/images"
 import { LiaToolsSolid } from "react-icons/lia";
 import { IoSettingsOutline } from "react-icons/io5";
@@ -45,9 +39,6 @@ import { SlSupport } from "react-icons/sl";
 import { MdOutlineEmail } from "react-icons/md";
 import { FiPhone } from "react-icons/fi";
 import { SlLocationPin } from "react-icons/sl";
-import { FaRegCalendarAlt, FaRegUser } from 'react-icons/fa';
-import { IoWalletOutline } from "react-icons/io5";
-import { CiGlobe } from "react-icons/ci";
 
 export const navlist = [
     {

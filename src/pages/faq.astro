@@ -4,6 +4,7 @@ import { IoSearch } from "react-icons/io5";
 import { FiPhone } from "react-icons/fi";
 import { Constants, Queries } from '@utils/index';
 import type { CollectionEntry } from 'astro:content';
+import { sanityClient } from "sanity:client";
 
 const faqs = await sanityClient.fetch(Queries.faqs);
 const currentPage: number | null = +Astro.url.searchParams.get('page')! || 1;
