@@ -42,6 +42,10 @@ import { SlLocationPin } from "react-icons/sl";
 
 export const navlist = [
     {
+        name: 'Homepage',
+        path: '/'
+    },
+    {
         name: 'About Us',
         path: '/about'
     },
@@ -152,22 +156,22 @@ export const benefits = [
 export const qualifications = [
     {
         title: 'Green & Eco Tech',
-        description: 'Venenatis quisque velit purus ex enim sagittis dictum iaculis maecenas est bibendum',
+        description: 'We Ensure that our services are eco-friendly and sustainable for the environment.',
         icon: MdOutlineEnergySavingsLeaf
     },
     {
         title: 'Expert Team Development',
-        description: 'Venenatis quisque velit purus ex enim sagittis dictum iaculis maecenas est bibendum',
+        description: 'We have a team of experts who are dedicated to providing the best services to our clients.',
         icon: SlBadge
     },
     {
-        title: 'Green & Eco Tech',
-        description: 'Venenatis quisque velit purus ex enim sagittis dictum iaculis maecenas est bibendum',
+        title: 'Quality Assurance',
+        description: 'We ensure that our services are of the highest quality and meet the needs of our clients.',
         icon: MdOutlineEnergySavingsLeaf
     },
     {
         title: '24/7 Support',
-        description: 'Venenatis quisque velit purus ex enim sagittis dictum iaculis maecenas est bibendum',
+        description: 'We provide 24/7 support to our clients to ensure that they have the best experience with our services.',
         icon: SlSupport
     },
 ]
@@ -291,22 +295,22 @@ export const services = [
     {
         icon: LiaToolsSolid,
         title: 'Solar Panel Installation',
-        description: 'Per class in quis ac lorem primis nostra dui lobortis facilisi semper.'
+        description: 'We assist with the installation of solar panels for residential and commercial buildings.'
     },
     {
         icon: IoSettingsOutline,
         title: 'Solar Panel Maintenance',
-        description: 'Per class in quis ac lorem primis nostra dui lobortis facilisi semper.'
+        description: 'We provide maintenance services for solar panels to ensure they are in good condition.'
     },
     {
         icon: TiMessages,
         title: 'Consultations',
-        description: 'Per class in quis ac lorem primis nostra dui lobortis facilisi semper.'
+        description: 'We offer consultations to help you make informed decisions about solar panel installation.'
     },
     {
         icon: FaRegFileAlt,
         title: 'Solar Panel Installation',
-        description: 'Per class in quis ac lorem primis nostra dui lobortis facilisi semper.'
+        description: 'We assist with the installation of solar panels for residential and commercial buildings.'
     },
 ]
 
@@ -314,17 +318,17 @@ export const solutions = [
     {
         icon: IoDiamondOutline,
         title: 'Quality and Reliability',
-        description: 'Integer augue fames eget sollicitudin ullamcorper ultricies curae.'
+        description: 'Our services are of the highest quality and are reliable for our clients.'
     },
     {
         icon: IoSettingsOutline,
         title: 'Customized Solutions',
-        description: 'Integer augue fames eget sollicitudin ullamcorper ultricies curae.'
+        description: 'We provide customized solutions to meet the unique needs of our clients.'
     },
     {
         icon: GiBamboo,
         title: 'Environmental Impact',
-        description: 'Integer augue fames eget sollicitudin ullamcorper ultricies curae.'
+        description: 'We ensure that our services have a positive impact on the environment.'
     },
 ]
 
@@ -434,15 +438,15 @@ export const teams_value = [
 export const aboutList = [
     {
         title: 'Solar Panel Solutions',
-        description: 'Torquent ante molestie donec scelerisque efficitur cursus quisque.'
+        description: 'Our solar panel solutions are designed to meet the unique needs of our clients.'
     },
     {
         title: 'Renewable Energy Consulting',
-        description: 'Torquent ante molestie donec scelerisque efficitur cursus quisque.'
+        description: 'We provide consulting services to help you make informed decisions about renewable energy.'
     },
     {
         title: 'Energy Efficiency Solutions',
-        description: 'Torquent ante molestie donec scelerisque efficitur cursus quisque.'
+        description: 'Our energy efficiency solutions are designed to help you save money on your energy bills.'
     },
 ]
 
