@@ -4,18 +4,12 @@ import Layout from '@components/layout.astro';
 import { Data } from '@utils/index';
 import { TiSocialFacebook, TiSocialTwitter } from "react-icons/ti";
 import { PiInstagramLogo } from "react-icons/pi";
-import { IoPlaySharp } from "react-icons/io5";
 import { PiArrowUpRight } from "react-icons/pi";
 ---
 
 <Layout title='Ipvtech Website - Team'>
     <!-- Hero Section -->
-    <section class="pt-40 w-full min-h-[60vh] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `linear-gradient(rgba(0, 23, 23, 0.4), rgba(0, 23, 23, 0.4)), url(/images/team_bg.jpg)`}}>
-        <div class="w-2/5 mx-auto text-center">
-            <h1 class="text-[48px] text-white font-semibold">Team</h1>
-            <h4 class="text-[26px] text-white font-semibold">Alone we can do so little, together we can do so much.</h4>
-        </div>
-    </section>
+    <Common.Hero backgroundImage={'https://res.cloudinary.com/du52ca1q1/image/upload/v1721842907/african-american-technician-checks-maintenance-solar-panels-group-three-black-engineers-meeting-solar-station_1_zzyx5i.jpg'} header='Team' caption='Alone we can do so little, together we can do so much.' />
 
     <!-- Team Section -->
     <section class="w-full min-h-[100vh] pt-40">
@@ -44,7 +38,7 @@ import { PiArrowUpRight } from "react-icons/pi";
                     <div class="overflow-hidden w-[300px] h-[300px] flex bg-cover bg-no-repeat bg-center rounded-xl" style={{ backgroundImage: `url(${item.img})`}}>
                         <div class="w-full h-full cursor-pointer flex-col justify-center items-center mt-20 pt-40 pb-10 text-center ease-in-out delay-150 duration-300 hover:-translate-y-20" style={{ backgroundImage: 'linear-gradient(180deg, #00384F00 0%, #00384F 100%)'}}>
                             <h6 class="text-white text-[20px] mb-6 font-bold">{item.name}</h6>
-                            <p class="text-[#0fcc7c] uppercase font-bold text-center">{item.title}</p>
+                            {/* <p class="text-[#0fcc7c] uppercase font-bold text-center">{item.title}</p> */}
                             <div class="flex justify-center items-center mt-3 gap-2">
                                 <div class="w-[max-content] bg-[#0FCC7C] p-2 rounded-full transition duration-150 ease-in-out hover:scale-125 hover:bg-white"> 
                                     <TiSocialFacebook size={'20px'} className='text-white hover:text-[#0FCC7C]' />
@@ -71,9 +65,9 @@ import { PiArrowUpRight } from "react-icons/pi";
                 <!-- Video Card -->
                 <div class="w-full h-[350px] -mt-[100px] flex rounded-2xl bg-cover bg-no-repeat bg-center" style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/teams_video.jpg)'}}>
                     <div class="w-[40%] mx-auto text-center flex flex-col justify-center items-center">
-                        <div class="cursor-pointer w-[80px] h-[80px] bg-white rounded-full flex justify-center items-center hover:shadow-2xl hover:bg-[#0fcc7c]">
+                        <!-- <div class="cursor-pointer w-[80px] h-[80px] bg-white rounded-full flex justify-center items-center hover:shadow-2xl hover:bg-[#0fcc7c]">
                             <IoPlaySharp className='text-[#0fcc7c] hover:text-white' size={'40px'} />
-                        </div>
+                        </div> -->
                         <h4 class="text-white font-bold mt-3 text-[36px]">We're a team of passionate individuals.</h4>
                     </div>
                 </div>

@@ -1,55 +1,5 @@
 import type { Rule } from "sanity";
 
-// const categories = [
-//     {
-//         title: 'tech',
-//         value: 'tech'
-//     },
-//     {
-//         title: 'hardware',
-//         value: 'hardware'
-//     },
-//     {
-//         title: 'photography',
-//         value: 'photography'
-//     },
-//     {
-//         title: 'canon',
-//         value: 'canon'
-//     },
-//     {
-//         title: 'tablets',
-//         value: 'tablets'
-//     },
-//     {
-//         title: 'gadgets',
-//         value: 'gadgets'
-//     },
-//     {
-//         title: 'samsung',
-//         value: 'samsung'
-//     },
-//     {
-//         title: 'smartphones',
-//         value: 'smartphones'
-//     },
-//     {
-//         title: 'code',
-//         value: 'code'
-//     },
-//     {
-//         title: 'security',
-//         value: 'security'
-//     },
-//     {
-//         title: 'drones',
-//         value: 'drones'
-//     },
-//     {
-//         title: 'vr',
-//         value: 'vr'
-//     },
-// ]
 export const articles = {
     name: 'article',
     title: 'Article',
@@ -74,15 +24,6 @@ export const articles = {
             type: 'string',
             validation: (Rule: Rule) => Rule.required()
         },
-        // {
-        //     name: 'category',
-        //     title: 'Category',
-        //     type: 'string',
-        //     options: {
-        //         list: categories
-        //     },
-        //     initialValue: 'daily digest'
-        // },
         {
             name: 'tags',
             title: 'Tags',

@@ -1,14 +1,70 @@
 ---
-import Layout from '@components/layout.astro';
+import { Common, Layout } from '@components/index';
+import { IoSearch } from "react-icons/io5";
+import { FiPhone } from "react-icons/fi";
+import { Constants, Queries } from '@utils/index';
+import type { CollectionEntry } from 'astro:content';
+import { sanityClient } from "sanity:client";
+
+const faqs = await sanityClient.fetch(Queries.faqs);
+const currentPage: number | null = +Astro.url.searchParams.get('page')! || 1;
+const totalPages: number = Math.ceil(faqs.length / Constants.FAQS_PER_PAGE);
+const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Constants.FAQS_PER_PAGE, currentPage * Constants.FAQS_PER_PAGE)
 ---
 
 <Layout title='Ipvtech Website - FAQs'>
     <!-- Hero Section -->
-    <section class="pt-40 w-full min-h-[100vh] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url(/images/project.jpg)`}}>
-        <div class="text-center pt-40">
-            <h1 class="text-[48px] text-white">FAQ</h1>
-        </div>
+    <Common.Hero backgroundImage={'/images/faqs_bg.jpg'} header='FAQ' caption='Start the conversation to established good relationship and business.' />
+
+    <!-- Find your solutions -->
+    <section class="w-full min-h-screen py-28">
+        <Common.Container>
+            <div class="flex gap-x-28">
+                <div class="w-2/4 pt-20">
+                    <h6 class="text-base uppercase text-[#0FCC7C] font-bold">Find your solutions</h6>
+                    <h2 class="text-[40px] text-darkBlue font-bold mt-3 leading-[50px]">Find information on relevant tanago.</h2>
+                    <p class="text-gray-500 mt-5 text-[17px]">
+                        Tempus mollis accumsan pede interdum semper fames potenti finibus aenean. 
+                        Mattis finibus pretium fermentum ad congue ultricies scelerisque volutpat.
+                    </p>
+    
+                    <!-- Search Bar -->
+                    <div class="col-span-full flex mt-5">
+                        <input type="text" width="90%" name="search" id="search" placeholder="Search..." class="block w-full rounded-l-[50px] border-0 py-3 bg-[#F5F7F8] px-5 placeholder:text-gray-400 focus:outline-none focus:ring focus:bg-transparent sm:text-sm sm:leading-6">
+                        <span class="w-[10%] bg-[#0FCC7C] flex justify-center items-center rounded-r-[50px] cursor-pointer hover:bg-darkBlue">
+                            <IoSearch color='#fff' size={'24px'} />
+                        </span>
+                    </div>
+                </div>
+                <div class="w-2/4 h-[450px] bg-no-repeat bg-cover bg-center rounded-2xl flex flex-col justify-end pb-5 pl-5" style={{ backgroundImage: 'url(/images/team_bg.jpg)'}}>
+                    <!-- Card -->
+                    <div class="w-[max-content] bg-white rounded-2xl p-6 pr-10 flex gap-x-3">
+                        <div class="bg-[#0FCC7C] p-6 w-[max-content] flex justify-center items-center rounded-full">
+                            <FiPhone color='#fff' size={'30px'} />
+                        </div>
+                        <div class="flex-col pt-2">
+                            <p class="text-darkBlue uppercase font-semibold">Customer Services</p>
+                            <h4 class="text-[#0FCC7C] text-[26px] leading-[30px] font-semibold">(888) 4000-2424</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Common.Container>
     </section>
 
-    <section class="w-full min-h-screen"></section>
+    <!-- FAQs Section -->
+    <section class="w-full min-h-[100vh] bg-gray-50 py-20">
+        <Common.Container flex='flex-col'>
+            <div class="flex-col flex-wrap text-center">
+                <h6 class="uppercase text-[#0FCC7C] font-bold font-[12px]">Common Questions</h6>
+                <h2 class="text-[38px] text-darkBlue font-bold mt-4 leading-[45px]">Most Popular Questions</h2>
+            </div>
+            <!-- FAQs -->
+            <Common.Faqs faqs={faqsInPage} client:load />
+            <div class="mt-5">
+                <Common.Pagination currentPage={currentPage} totalPages={totalPages} disablePrevious={currentPage === 1} disableNext={currentPage === totalPages} />
+            </div>
+        </Common.Container>
+    </section>
+    
 </Layout>

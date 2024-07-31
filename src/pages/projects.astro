@@ -1,14 +1,38 @@
 ---
 import Layout from '@components/layout.astro';
+import { ProjectThree } from '@assets/images';
+import { Common } from '@components/index';
+import { Data, Queries } from "@utils/index";
+import type { CollectionEntry } from 'astro:content';
+import { sanityClient } from "sanity:client";
+
+const projects: CollectionEntry<'projects'>[] = await sanityClient.fetch(Queries.projects)
 ---
 
 <Layout title='Ipvtech Website - Projects'>
     <!-- Hero Section -->
-    <section class="pt-40 w-full min-h-[100vh] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url(/images/project.jpg)`}}>
-        <div class="text-center pt-40">
-            <h1 class="text-[48px] text-white">Projects</h1>
-        </div>
+    <Common.Hero backgroundImage={ProjectThree} header='Project' caption='Keep your Earth Clean and Green.' />
+
+    <!-- Projects Section -->
+    <section class="w-full min-h-screen pt-32">
+        <Common.Container>
+            <Common.Project qualifications={Data.qualifications} page='projects' />
+        </Common.Container>
     </section>
 
-    <section class="w-full min-h-screen"></section>
+     <!-- Featured Section -->
+     <section class="w-full min-h-screen py-10 pb-32">
+        <Common.Container>
+            <div class="w-full flex flex-wrap gap-6 mt-24">
+                {
+                    projects.map(item => (
+                        <Common.Featured project={item} />
+                    ))
+                }
+            </div>
+        </Common.Container>
+    </section>
+
+    <!-- Live Green Section -->
+	<Common.Green />
 </Layout>

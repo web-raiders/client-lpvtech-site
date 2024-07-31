@@ -1,11 +1,16 @@
 ---
 import { Layout, Helpers, Common } from "@components/index"
 import { Image } from "astro:assets";
-import { EnergyImg } from "@assets/images"
-import { Data } from "@utils/index";
+import { Data, Queries } from "@utils/index";
 import "@styles/styles.css";
 import { IoMdCheckmark } from "react-icons/io";
+import type { CollectionEntry } from "astro:content";
+import { sanityClient } from "sanity:client";
 
+const projects: CollectionEntry<'projects'>[] = await sanityClient.fetch(Queries.projects)
+// const currentPage: number | null = +Astro.url.searchParams.get('page')! || 1;
+// const totalPages: number = Math.ceil(articles.length / Constants.ARTICLES_PER_PAGE);
+// const articlesInPage: CollectionEntry<'blog'>[] = articles.slice((currentPage - 1) * Constants.ARTICLES_PER_PAGE, currentPage * Constants.ARTICLES_PER_PAGE)
 ---
 
 <Layout>
@@ -55,7 +60,7 @@ import { IoMdCheckmark } from "react-icons/io";
 			<!-- Right Image -->
 			<div class="w-2/4 h-full">
 				<div class="relative">
-					<Image src={EnergyImg} alt={"energy image"} class={"w-full h-full rounded-xl"} />
+					<img src='https://res.cloudinary.com/du52ca1q1/image/upload/v1721828966/african-american-technician-checks-maintenance-solar-panels-group-three-black-engineers-meeting-solar-station_uwsd6x.jpg' alt={"energy image"} class={"w-full h-full rounded-xl"} />
 				</div>
 				{/* Card */}
 				<div class="absolute w-[300px] h-[auto] py-10 px-7 bg-cyan-900 rounded-xl -mt-[220px] -ml-[30px]">
@@ -110,7 +115,7 @@ import { IoMdCheckmark } from "react-icons/io";
 	</section>
 
 	<!-- Live Green Section -->
-	<section class="mt-20 pt-40 w-full min-h-[100vh] mb-20 bg-cover bg-no-repeat bg-center" style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(./images/green.jpg)'}}>
+	<section class="mt-20 pt-40 w-full min-h-[100vh] mb-20 bg-cover bg-no-repeat bg-center" style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(https://res.cloudinary.com/du52ca1q1/image/upload/v1721828971/vecteezy_solar-panel-on-blue-sky-background_1235999_1_nioxd2.jpg)'}}>
 		<div class="w-[40%] mx-auto flex-col justify-center items-center text-white text-center">
 			<h2 class="text-[60px] leading-[60px] font-bold">Live Green, Love Green, Think Green.</h2>
 			<p class="mt-4 text-[17px]">Est porta erat phasellus id penatibus. Iaculis commodo per quam potenti habitasse pretium conubia ultrices luctus praesent et.</p>
@@ -144,34 +149,7 @@ import { IoMdCheckmark } from "react-icons/io";
 	<!-- Our projects section -->
 	<section class="w-full min-h-screen pt-20">
 		<Common.Container>
-			<div class="w-[45%] h-screen mr-20 bg-cover bg-no-repeat bg-center rounded-xl" style={{ backgroundImage: 'url(./images/project.jpg)'}}>
-				<div class="w-[200px] h-[200px] bg-white flex-col justify-center items-center rounded-full shadow-xl px-2 pt-8 text-center -mt-10 -ml-6">
-					<span class="text-green text-[60px] font-bold">25+</span>
-					<p class="text-[18px] text-darkBlue -mt-2">Years of Experience</p>
-				</div>
-			</div>
-			<div class="w-[55%]">
-				<h2 class="text-[40px] text-darkBlue font-bold mt-2 leading-10">The better source of energy for the better tomorrow</h2>
-				<p class="text-base text-gray-700 mt-6 mb-10">
-					Lorem ipsum dolor sit amet, 
-					consectetur adipiscing elit. 
-					Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-				</p>
-				<hr />
-				<div class="grid grid-cols-2 gap-5 mt-10">
-					{
-						Data.qualifications.map(item => (
-							<div class="w-[300px] h-auto items-center">
-									<div class="w-[60px] h-[60px] rounded-xl bg-[#e1f5ec] flex justify-center items-center">
-										<item.icon color="#0FCC7C" size={'32px'}/>
-									</div>
-									<h3 class="text-[18px] font-bold mt-5 text-deepBlue mb-3">{item.title}</h3>
-									<p class="text-base">{item.description}</p>
-							</div>
-						))
-					}
-				</div>
-			</div>
+				<Common.Project qualifications={Data.qualifications} />
 		</Common.Container>
 	</section>
 
@@ -204,16 +182,8 @@ import { IoMdCheckmark } from "react-icons/io";
 		</Common.Container>
 	</section>
 
-	<!-- Keep yuor environment green section -->
-	<section class="w-full min-h-[100vh] flex justify-center items-center bg-cover bg-no-repeat bg-center" style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./images/green_two.jpg)'}}>
-		<div class="w-2/5 border rounded-xl p-5 flex-col justify-center items-center text-center">
-			<h4 class="text-white text-center text-[60px] leading-[60px] font-bold">Keep your environment clean make the earth green.</h4>
-			<p class="text-white text-center mt-10">Est porta erat phasellus id penatibus. Iaculis commodo per quam potenti habitasse pretium conubia ultrices luctus praesent et.</p>
-			<div class="my-7">
-				<Common.Button path="#" text="Discover more" className="py-3 px-8 text-white text-[16px] bg-green rounded-full baseline hover:bg-darkBlue" />
-			</div>
-		</div>
-	</section>
+	<!-- Keep your environment green section -->
+	<Common.GreenTwo />
 
 	<!-- Why choose us -->
 	<section class="w-full min-h-[4/5] bg-gray-100 pb-20">
@@ -248,22 +218,10 @@ import { IoMdCheckmark } from "react-icons/io";
 				<h6 class="text-base uppercase text-green font-bold">Featured Projects</h6>
 				<h2 class="text-[48px] text-darkBlue font-bold mt-3 leading-[52px]">Keep your environment clean make the earth green</h2>
 			</div>
-			<!-- Cards -->
 			<div class="w-full flex flex-wrap gap-6 mt-24">
 				{
-					Data.projects.map(item => (
-					<div class="overflow-hidden w-[380px] h-[500px] bg-cover bg-no-repeat bg-center rounded-xl" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)), url(${item.img})`}}>
-						<div class="cursor-pointer flex-col px-8 mt-72 transition ease-in-out delay-150 duration-300 hover:-translate-y-24">
-							<div class={`w-[max-content] backdrop-opacity-10 backdrop-invert bg-white/30 p-5 rounded-full`}>
-								<item.icon size={'30px'} color="#fff" />
-							</div>
-							<h6 class="text-white font-bold text-[18px] pt-5">{item.title}</h6>
-							<p class="text-[#abb8c3] font-semibold pt-3">{item.description}</p>
-							<div class="mt-14">
-								<Common.Button path="#" text="Learn More" className="py-2 px-4 text-[16px] mt-6 text-white bg-green rounded-full baseline hover:bg-darkBlue" />
-							</div>
-						</div>
-					</div>
+					projects.map(item => (
+						<Common.Featured project={item}  />
 					))
 				}
 			</div>
@@ -312,13 +270,6 @@ import { IoMdCheckmark } from "react-icons/io";
 	</section>
 
 	<!-- Live Green Section -->
-	<section class="pt-40 w-full min-h-[75vh] bg-cover bg-no-repeat bg-center" style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(./images/green_three.jpg)'}}>
-		<div class="w-[40%] mx-auto flex-col justify-center items-center text-white text-center">
-			<h2 class="text-[60px] font-bold leading-[55px]">Live Green, Love Green, Think Green.</h2>
-			<p class="mt-4 text-[17px]">Est porta erat phasellus id penatibus. Iaculis commodo per quam potenti habitasse pretium conubia ultrices luctus praesent et.</p>
-			<div class="mt-10">
-				<Common.Button path="#" text="Discover more" className="py-3 px-8 text-white text-[16px] bg-green rounded-full baseline hover:bg-darkBlue" />
-			</div>
-		</div>
-	</section>
+	<Common.Green />
+	
 </Layout>

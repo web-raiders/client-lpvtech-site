@@ -1,0 +1,182 @@
+---
+import { Common, Helpers } from '@components/index';
+import Layout from '@components/layout.astro';
+import { Constants, Queries, Tools } from '@utils/index';
+import { FiPhone } from "react-icons/fi";
+import { MdOutlineEmail } from "react-icons/md";
+import { TiMessages } from "react-icons/ti";
+import { sanityClient } from "sanity:client";
+import { PortableText } from "astro-portabletext";
+import { FaRegCalendarAlt, FaRegUser } from 'react-icons/fa';
+import { IoWalletOutline } from 'react-icons/io5';
+import { CiGlobe } from 'react-icons/ci';
+import type { CollectionEntry } from 'astro:content';
+
+export const prerender = true;
+
+export async function getStaticPaths(){
+    const slugs = await sanityClient.fetch(Queries.projectSlugs)
+    return slugs
+}
+
+const { slug } = Astro.params;
+if(slug === undefined){
+    throw new Error('Slug is required')
+}
+
+const project = await sanityClient.fetch(Queries.projectDetails, { slug });
+const faqs = await sanityClient.fetch(Queries.faqs);
+const currentPage: number | null = +Astro.url.searchParams.get('page')! || 1;
+const totalPages: number = Math.ceil(faqs.length / Constants.FAQS_PER_PAGE);
+const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Constants.FAQS_PER_PAGE, currentPage * Constants.FAQS_PER_PAGE)
+---
+
+<Layout title='Ipvtech Website - Help Center'>
+    <!-- Hero Section -->
+    <section 
+    class="pt-48 w-full min-h-[70vh] bg-no-repeat bg-cover bg-center" 
+    style={{ 
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(${project.image})`
+    }}>
+        <Common.Container>
+            <div class="w-[50%] pt-5">
+                <h1 class="text-[48px] text-white font-bold leading-[45px]">{project.name}</h1>
+                <article class="text-white pt-5 line-clamp-3">
+                    <PortableText value={project.description} />
+                </article>
+                <div class="mt-7">
+                    <Common.Button path="#" text="Learn More" className="py-2 px-6 text-[16px] text-white text-center bg-[#0fcc7c] rounded-full baseline hover:bg-darkBlue" />
+                </div>
+            </div>
+        </Common.Container>
+    </section>
+
+    <!-- Project Description -->
+    <section class="w-full min-h-screen py-20 pb-32">
+        <Common.Container>
+            <div class="w-full flex gap-x-20">
+                <div class="w-[65%]">
+                    <h3 class="text-darkBlue text-[30px] font-bold">Project Descriptions</h3>
+                    <article class="mt-3">
+                        <PortableText value={project.description} />
+                    </article>
+                    <img src={project.image} alt="project thumbnail" class="w-full max-h-[600px] mt-10 rounded-[10px] scale-100"/>
+                </div>
+                <div class="w-[35%]">
+                    <!-- Details Card -->
+                    <div class="w-full bg-[#00384F] rounded-xl p-10 pb-5 shadow-xl">
+                        <h4 class="text-[27px] font-semibold text-[#0fcc7c]">Project Detail</h4>
+                        <article class="text-gray-200 text-[14px] text-gray-300 pt-3 line-clamp-2">
+                            <PortableText value={project.description} />
+                        </article>
+                        <div class="flex-col mt-5">
+                            <div class="flex gap-3 py-3 border-b border-b-gray-600 last:border-0">
+                                <div class="p-3 rounded-md backdrop-opacity-10 backdrop-invert bg-white/10">
+                                    <FaRegUser color={"#fff"} size={'24px'} />
+                                </div>
+                                <div class="flex-col">
+                                    <h6 class="uppercase text-[#0fcc7c] font-semibold text-[16px]">Client</h6>
+                                    <p class="text-white font-bold text-[16px]">{project.client}</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-3 py-3 border-b border-b-gray-600 last:border-0">
+                                <div class="p-3 rounded-md backdrop-opacity-10 backdrop-invert bg-white/10">
+                                    <FaRegCalendarAlt color={"#fff"} size={'24px'} />
+                                </div>
+                                <div class="flex-col">
+                                    <h6 class="uppercase text-[#0fcc7c] font-semibold text-[16px]">Date</h6>
+                                    <p class="text-white font-bold text-[16px]">{Tools.formatDate(project.date)}</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-3 py-3 border-b border-b-gray-600 last:border-0">
+                                <div class="p-3 rounded-md backdrop-opacity-10 backdrop-invert bg-white/10">
+                                    <IoWalletOutline color={"#fff"} size={'24px'} />
+                                </div>
+                                <div class="flex-col">
+                                    <h6 class="uppercase text-[#0fcc7c] font-semibold text-[16px]">Estimate Budget</h6>
+                                    <p class="text-white font-bold text-[16px]">{project.budget}</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-3 py-3 border-b border-b-gray-600 last:border-0">
+                                <div class="p-3 rounded-md backdrop-opacity-10 backdrop-invert bg-white/10">
+                                    <CiGlobe color={"#fff"} size={'24px'} />
+                                </div>
+                                <div class="flex-col">
+                                    <h6 class="uppercase text-[#0fcc7c] font-semibold text-[16px]">Industries</h6>
+                                    <p class="text-white font-bold text-[16px]">{project.industry}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-full mt-5 shadow-xl rounded-2xl">
+                        <!-- Card Header -->
+                        <div class="w-full py-5 bg-[#00384F] text-white text-center rounded-tl-2xl rounded-tr-2xl">
+                            <h4 class="text-[27px] font-semibold text-[#0fcc7c]">Need more help?</h4>
+                        </div>
+                        <div class="p-5 flex flex-col gap-y-5">
+                            <div class="flex gap-3">
+                                <div class="bg-[#0fcc7c] p-4 rounded-full">
+                                    <FiPhone color='#fff' size={'30px'} />
+                                </div>
+                                <div class="flex-col">
+                                    <p class="text-darkBlue">Customer Service</p>
+                                    <h4 class="text-[#0fcc7c] text-[22px] font-semibold leading-[28px]">(888) 4000-2424</h4>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-3">
+                                <div class="bg-[#0fcc7c] p-4 rounded-full">
+                                    <MdOutlineEmail color='#fff' size={'30px'} />
+                                </div>
+                                <div class="flex-col">
+                                    <p class="text-darkBlue">Email Support</p>
+                                    <h4 class="text-[#0fcc7c] text-[22px] font-semibold leading-[28px]">(888) 4000-2424</h4>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-3">
+                                <div class="bg-[#0fcc7c] p-4 rounded-full">
+                                    <TiMessages color='#fff' size={'30px'} />
+                                </div>
+                                <div class="flex-col">
+                                    <p class="text-darkBlue">Chat Support</p>
+                                    <h4 class="text-[#0fcc7c] text-[22px] font-semibold leading-[28px]">(888) 4000-2424</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Common.Container>
+    </section>
+
+    <!-- Green section -->
+    <Common.GreenTwo />
+
+    <!-- Project Images Section -->
+    <section class="w-full min-h-[60vh] flex justify-center items-center p-5 bg-gray-200">
+        <!-- <Common.Container> -->
+            <Helpers.Sliders sliders={project.thumbnails} client:load />
+        <!-- </Common.Container> -->
+    </section>
+
+    <!-- FAQs -->
+    <section class="w-full min-h-[100vh] py-40">
+        <Common.Container flex='flex-col'>
+            <div class="flex-col flex-wrap text-center">
+                <h6 class="uppercase text-green font-bold">Common Questions</h6>
+                <h2 class="text-[38px] text-darkBlue font-bold mt-4 leading-[45px]">Most Popular Questions</h2>
+            </div>
+            <!-- FAQs -->
+            <Common.Faqs faqs={faqsInPage} client:load />
+            <div class="mt-5">
+                <Common.Pagination currentPage={currentPage} totalPages={totalPages} disablePrevious={currentPage === 1} disableNext={currentPage === totalPages} />
+            </div>
+        </Common.Container>
+    </section>
+</Layout>
+

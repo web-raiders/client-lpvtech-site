@@ -12,24 +12,15 @@ import {
     ClientThree, 
     ClientTwo, 
     CommercialImg, 
-    OffsetImg, 
-    ProjectFour, 
-    ProjectSix, 
-    ProjectThree, 
+    OffsetImg,  
     PropertyImg, 
-    SlideFive, 
-    SlideFour,
-    ProjectTwo,
     MemberOne,
     MemberTwo,
     MemberThree,
     MemberFour,
     MemberFive,
     MemberSix,
-    MemberSeven,
-    MemberEight,
-    BlogTwo,
-    BlogFour
+    MemberSeven
 } from "@assets/images"
 import { LiaToolsSolid } from "react-icons/lia";
 import { IoSettingsOutline } from "react-icons/io5";
@@ -51,10 +42,6 @@ import { SlLocationPin } from "react-icons/sl";
 
 export const navlist = [
     {
-        name: 'Home',
-        path: '/'
-    },
-    {
         name: 'About Us',
         path: '/about'
     },
@@ -68,11 +55,7 @@ export const navlist = [
     },
     {
         name: 'Projects',
-        path: '/projects',
-        subMenu: [{
-            name: 'Single Project',
-            path: '#'
-        }]
+        path: '/projects'
     },
     {
         name: 'Contact Us',
@@ -347,38 +330,38 @@ export const solutions = [
 
 export const projects = [
     {
-        img: SlideFour,
+        img: 'https://res.cloudinary.com/du52ca1q1/image/upload/v1721837799/vecteezy_texture-of-photovoltaic-panels-solar-panel-with-city-night_4877867_1_vq2ctp.jpg',
         title: 'Jakarta Solar Farms',
         description: 'Justo dictumst id semper taciti lacus tortor per si habitasse platea vestibulum.',
         icon: GoSun
     },
     {
-        img: ProjectTwo,
-        title: 'Jakarta Solar Farms',
+        img: 'https://res.cloudinary.com/du52ca1q1/image/upload/v1721831838/vecteezy_ai-generated-solar-photovoltaic-power-plant_41861321_bsvlxi.jpg',
+        title: 'Tangerang Wind Farms',
         description: 'Justo dictumst id semper taciti lacus tortor per si habitasse platea vestibulum.',
         icon: CiLocationArrow1
     },
     {
-        img: ProjectThree,
-        title: 'Jakarta Solar Farms',
+        img: 'https://res.cloudinary.com/du52ca1q1/image/upload/v1721831831/vecteezy_solar-panels-under-the-background-of-blue-sky-and-white_31691595_se3pzu.jpg',
+        title: 'Dylan Family',
         description: 'Justo dictumst id semper taciti lacus tortor per si habitasse platea vestibulum.',
         icon: GoSun
     },
     {
-        img: ProjectFour,
-        title: 'Jakarta Solar Farms',
+        img: 'https://res.cloudinary.com/du52ca1q1/image/upload/v1721831284/vecteezy_ai-generated-engineer-at-work-wind-turbine-and-solar-panel_37056502_johhif.jpg',
+        title: 'Bandung Solar Farm',
         description: 'Justo dictumst id semper taciti lacus tortor per si habitasse platea vestibulum.',
         icon: GoSun
     },
     {
-        img: SlideFive,
-        title: 'Jakarta Solar Farms',
+        img: 'https://res.cloudinary.com/du52ca1q1/image/upload/v1721838656/vecteezy_engineer-in-charge-of-solar-panel-installation-the_16748295_1_bkp0bz.jpg',
+        title: 'Lokamart Company',
         description: 'Justo dictumst id semper taciti lacus tortor per si habitasse platea vestibulum.',
         icon: GoSun
     },
     {
-        img: ProjectSix,
-        title: 'Jakarta Solar Farms',
+        img: 'https://res.cloudinary.com/du52ca1q1/image/upload/v1721842474/close-up-pv-cell-produced-manufacturing-warehouse-3d-illustration_1_hee0dm.jpg',
+        title: 'Papua EV Systems',
         description: 'Justo dictumst id semper taciti lacus tortor per si habitasse platea vestibulum.',
         icon: PiCarBatteryLight
     },
@@ -387,44 +370,44 @@ export const projects = [
 export const members = [
     {
         img: MemberOne,
-        name: 'Oscar Andrews',
-        title: 'Founder'
+        name: 'Jojo Ogbe',
+        // title: 'Founder'
     },
     {
         img: MemberTwo,
-        name: 'Jamie Williams',
-        title: 'Co-Founder'
+        name: 'Adebisi Adeniyi',
+        // title: 'Co-Founder'
     },
     {
         img: MemberThree,
-        name: 'Zoe Mitchell',
-        title: 'Marketing Manager'
+        name: 'Yinka Adelodun',
+        // title: 'Marketing Manager'
     },
     {
         img: MemberFour,
-        name: 'Bethany Brooks',
-        title: 'Operational Manager'
+        name: 'Mohammed Idachaba',
+        // title: 'Operational Manager'
     },
     {
         img: MemberFive,
-        name: 'Oscar Andrews',
-        title: 'Founder'
+        name: 'Juwon Solarin',
+        // title: 'Founder'
     },
     {
         img: MemberSix,
-        name: 'Oscar Andrews',
-        title: 'Founder'
+        name: 'Aniefiok Usoro',
+        // title: 'Founder'
     },
     {
         img: MemberSeven,
-        name: 'Oscar Andrews',
-        title: 'Founder'
+        name: 'Success Bassey',
+        // title: 'Founder'
     },
-    {
-        img: MemberEight,
-        name: 'Oscar Andrews',
-        title: 'Founder'
-    },
+    // {
+    //     img: MemberEight,
+    //     name: 'Oscar Andrews',
+    //     title: 'Founder'
+    // },
 ]
 
 export const teams_value = [
@@ -484,71 +467,10 @@ export const contactList = [
     },
 ]
 
-export const blogs = [
-    {
-        img: ProjectSix,
-        tag: 'Vehicle',
-        title: '5 Common Myths About Electric Vehicles',
-        content: `
-        Lorem ipsum dolor sit amet, 
-        consectetuer adipiscing elit. 
-        Aenean commodo ligula eget dolor. 
-        Aenean massa. Cum sociis natoque penatibus 
-        et magnis dis parturient montes, nascetur`,
-    },
-    {
-        img: BlogTwo,
-        tag: 'Green Living',
-        title: 'Planning Your Energy Usage',
-        content: `
-        Lorem ipsum dolor sit amet, 
-        consectetuer adipiscing elit. 
-        Aenean commodo ligula eget dolor. 
-        Aenean massa. Cum sociis natoque penatibus 
-        et magnis dis parturient montes, nascetur`,
-    },
-    {
-        img: SlideFour,
-        tag: 'Blog',
-        title: '5 Sustainable Activities for the Whole Family',
-        content: `
-        Lorem ipsum dolor sit amet, 
-        consectetuer adipiscing elit. 
-        Aenean commodo ligula eget dolor. 
-        Aenean massa. Cum sociis natoque penatibus 
-        et magnis dis parturient montes, nascetur`,
-    },
-    {
-        img: BlogFour,
-        tag: 'Insight',
-        title: 'Get Closer to Carbon Neutral with Carbon Offsets',
-        content: `
-        Lorem ipsum dolor sit amet, 
-        consectetuer adipiscing elit. 
-        Aenean commodo ligula eget dolor. 
-        Aenean massa. Cum sociis natoque penatibus 
-        et magnis dis parturient montes, nascetur`,
-    },
-    {
-        img: ProjectFour,
-        tag: 'Insight',
-        title: 'Why Choose a Renewable Energy Plan?',
-        content: `
-        Lorem ipsum dolor sit amet, 
-        consectetuer adipiscing elit. 
-        Aenean commodo ligula eget dolor. 
-        Aenean massa. Cum sociis natoque penatibus 
-        et magnis dis parturient montes, nascetur`,
-    },
-    {
-        img: SlideFive,
-        tag: 'News',
-        title: '24 Years of Renewable Energy, 24 Hours of Sustainability',
-        content: `
-        Lorem ipsum dolor sit amet, 
-        consectetuer adipiscing elit. 
-        Aenean commodo ligula eget dolor. 
-        Aenean massa. Cum sociis natoque penatibus 
-        et magnis dis parturient montes, nascetur`,
-    },
+export const sliders = [
+    'https://res.cloudinary.com/du52ca1q1/image/upload/v1721825555/vecteezy_solar-panel-park-in-a-field-solar-energy-concept-generated_34040344_zygt5v.jpg',
+    'https://res.cloudinary.com/du52ca1q1/image/upload/v1721828965/vecteezy_ai-generated-construction-worker-wearing-hardhat-planning_36209196_sccxkz.jpg',
+    'https://res.cloudinary.com/du52ca1q1/image/upload/v1721828968/medium-shot-engineers-discussing-about-solar-pannels_ot4q55.jpg',
+    'https://res.cloudinary.com/du52ca1q1/image/upload/v1721831829/vecteezy_solar-energy-solar-photovoltaic-panels-for-renewable_33880873_rzovni.jpg',
+    'https://res.cloudinary.com/du52ca1q1/image/upload/v1721831288/vecteezy_ai-generated-creating-sustainable-energy-using-solar-panels_37056492_zpttl5.jpg'
 ]
