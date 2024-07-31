@@ -4,6 +4,7 @@ import { ProjectThree } from '@assets/images';
 import { Common } from '@components/index';
 import { Data, Queries } from "@utils/index";
 import type { CollectionEntry } from 'astro:content';
+import { sanityClient } from "sanity:client";
 
 const projects: CollectionEntry<'projects'>[] = await sanityClient.fetch(Queries.projects)
 ---
