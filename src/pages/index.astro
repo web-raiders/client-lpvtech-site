@@ -3,14 +3,10 @@ import { Layout, Helpers, Common } from "@components/index"
 import { Image } from "astro:assets";
 import { Data, Queries } from "@utils/index";
 import "@styles/styles.css";
-import { IoMdCheckmark } from "react-icons/io";
 import type { CollectionEntry } from "astro:content";
 import { sanityClient } from "sanity:client";
 
 const projects: CollectionEntry<'projects'>[] = await sanityClient.fetch(Queries.projects)
-// const currentPage: number | null = +Astro.url.searchParams.get('page')! || 1;
-// const totalPages: number = Math.ceil(articles.length / Constants.ARTICLES_PER_PAGE);
-// const articlesInPage: CollectionEntry<'blog'>[] = articles.slice((currentPage - 1) * Constants.ARTICLES_PER_PAGE, currentPage * Constants.ARTICLES_PER_PAGE)
 ---
 
 <Layout>
@@ -98,14 +94,7 @@ const projects: CollectionEntry<'projects'>[] = await sanityClient.fetch(Queries
 			<div class="flex justify-between items-center gap-5 mt-20">
 				{
 					Data.services.map(item => (
-						<div class="max-h-[250px] rounded-xl py-10 px-5 border border-solid border-gray-200 text-center cursor-pointer hover:shadow-xl">
-							{/* Top Icon */}
-							<div class={`w-[max-content] p-3 mx-auto bg-green rounded-xl`}>
-								<item.icon size={'35px'} color="#fff" />
-							</div>
-							<h6 class="text-deepBlue text-[18px] font-bold pt-5">{item.title}</h6>
-							<p class="pt-5">{item.description}</p>
-						</div>
+						<Common.ServiceList item={item} />
 					))
 				}
 			</div>
@@ -113,36 +102,8 @@ const projects: CollectionEntry<'projects'>[] = await sanityClient.fetch(Queries
 	</section>
 
 	<!-- Live Green Section -->
-	<section class="mt-20 pt-40 w-full min-h-[100vh] mb-20 bg-cover bg-no-repeat bg-center" style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(https://res.cloudinary.com/du52ca1q1/image/upload/v1721828971/vecteezy_solar-panel-on-blue-sky-background_1235999_1_nioxd2.jpg)'}}>
-		<div class="w-[40%] mx-auto flex-col justify-center items-center text-white text-center">
-			<h2 class="text-[60px] leading-[60px] font-bold">Live Green, Love Green, Think Green.</h2>
-			<p class="mt-4 text-[17px]">We provide cost-effective solar energy solutions, making clean energy accessible to a wider range of customers, thereby reducing energy costs over time.</p>
-			<div class="mt-10">
-				<Common.Button path="#" text="Discover more" className="py-3 px-8 text-white text-[16px] bg-green rounded-full baseline hover:bg-darkBlue" />
-			</div>
-		</div>
-		<!-- Bottom Banner -->
-		 <div class="w-full h-[150px] bg-cyan-900 mt-[180px] flex justify-center items-center">
-			<div class="w-4/5 h-[100px] flex justify-center items-center">
-				<div class="flex-col border-r-2 border-r-gray-300 pr-10">
-					<span class="text-green text-[46px] font-bold"><Helpers.Counter client:load from={0} to={73} />K+</span>
-					<p class="text-white text-center text-[18px] font-semibold">Happy Client</p>
-				</div>
-				<div class="flex-col border-r-2 border-r-gray-300 px-10">
-					<span class="text-green text-center text-[46px] font-bold"><Helpers.Counter client:load from={0} to={5} />K+</span>
-					<p class="text-white text-center text-[18px] font-semibold">Pro Technician</p>
-				</div>
-				<div class="flex-col border-r-2 border-r-gray-300 px-10">
-					<span class="text-green text-[46px] font-bold"><Helpers.Counter client:load from={0} to={4} />M+</span>
-					<p class="text-white text-center text-[18px] font-semibold">Wind Farms</p>
-				</div>
-				<div class="flex-col px-10">
-					<span class="text-green text-[46px] font-bold"><Helpers.Counter client:load from={0} to={11} />M+</span>
-					<p class="text-white text-center text-[18px] font-semibold">Solar Farms</p>
-				</div>
-			</div>
-		 </div>
-	</section>
+	<Common.GreenCounter />
+	
 
 	<!-- Our projects section -->
 	<section class="w-full min-h-screen pt-20">
@@ -152,62 +113,13 @@ const projects: CollectionEntry<'projects'>[] = await sanityClient.fetch(Queries
 	</section>
 
 	<!-- What we offer section -->
-	<section class="w-full bg-gray-100 min-h-screen pt-32 pb-40 mt-40">
-		<Common.Container flex="flex-col">
-			<div class="w-3/5 flex-col justify-center items-center mx-auto text-center">
-				<h6 class="text-base uppercase text-green font-bold">What we offer</h6>
-				<h2 class="text-[48px] text-darkBlue font-bold mt-3 leading-[50px]">Keep your environment clean make the earth green</h2>
-			</div>
-			<!-- Services Cards -->
-			<div class="grid grid-cols-3 gap-10 mt-20">
-				{
-					Data.servicesData.map(item => (
-						<div class="bg-white cursor-pointer w-[390px] h-auto py-10 shadow-xl rounded-3xl hover:shadow-2xl">
-							<Common.Container flex="flex-col">
-								<div class="w-[60px] h-[60px] rounded-xl bg-[#e1f5ec] flex justify-center items-center">
-									<item.icon color="#0FCC7C" size={'32px'}/>
-								</div>
-								<h3 class="text-[18px] font-bold mt-5 text-deepBlue mb-3">{item.service}</h3>
-								<p class="text-base">{item.description}</p>
-								<div class="mt-10">
-									<Common.Button path="#" text="Learn More" className="_button py-2 px-4 text-white text-[14px] bg-green rounded-full baseline hover:bg-darkBlue" />
-								</div>
-							</Common.Container>
-						</div>
-					))
-				}
-			</div>
-		</Common.Container>
-	</section>
+	<Common.Offer />
 
 	<!-- Keep your environment green section -->
 	<Common.GreenTwo />
 
 	<!-- Why choose us -->
-	<section class="w-full min-h-[4/5] bg-gray-100 pb-20">
-		<Common.Container>
-			<div class="w-full flex mt-20 gap-x-10">
-				<div class="w-[35%] flex-col flex-wrap pt-10">
-					<h6 class="uppercase text-green font-bold">Why choose us</h6>
-					<h2 class="text-[38px] text-darkBlue font-bold mt-4 leading-[45px]">Empowering Your World with Reliable Solutions.</h2>
-				</div>
-				<div class="w-[65%] flex gap-x-4">
-					{
-						Data.solutions.map(item => (
-						<div class="_solutions_card bg-white rounded-xl py-10 px-5 border border-solid border-gray-200 text-center cursor-pointer shadow-xl">
-							{/* Top Icon */}
-							<div class={`_top_icon w-[max-content] p-3 mx-auto bg-[#e1f5ec] rounded-xl`}>
-								<item.icon size={'35px'} color="#0FCC7C" />
-							</div>
-							<h6 class="text-darkBlue text-[18px] font-semibold pt-5">{item.title}</h6>
-							<p class="pt-5 text-gray-600">{item.description}</p>
-						</div>
-						))
-					}
-				</div>
-			</div>
-		</Common.Container>
-	</section>
+	<Common.Solutions />
 
 	<!-- Featured Projects -->
 	<section class="w-full min-h-[100vh] pt-32">
@@ -227,46 +139,8 @@ const projects: CollectionEntry<'projects'>[] = await sanityClient.fetch(Queries
 	</section>
 
 	<!-- Get a Quote Section -->
-	<section class="w-full min-h-screen mt-40 bg-gray-100 py-36">
-			<Common.Container>
-				<!-- Form -->
-				<div class="flex gap-10">
-					<div class="w-[55%]">
-						<div class="w-[90%] shadow-2xl rounded-2xl bg-white">
-							<!-- Card Header -->
-							<div class="w-full bg-darkBlue rounded-tr-2xl rounded-tl-2xl py-5 text-center">
-								<h6 class="text-white font-bold text-[32px]">Book an Appointment</h6>
-							</div>
-							<div class="py-10 px-5">
-								<Common.Form />
-							</div>
-						</div>
-					</div>
-					
-					<!-- Benefits -->
-					<div class="w-[45%] pt-7">
-						<h2 class="text-[40px] text-darkBlue font-bold mt-3 leading-[50px] pb-10">Let's experience the power of the sun</h2>
-						<hr />
-						<p class="text-base text-darkBlue mt-5">
-							At LPV Technologies, our goal is to deliver products that not only meet but exceed industry standards, ensuring precision and efficiency at every step of the production process. 
-						</p>
-						<div class="mt-10 flex-col justify-center items-center">
-							{
-								Data.benefits.map(item => (
-									<div class="flex">
-										<div class="w-[20px] h-[20px] bg-green flex justify-center items-center rounded-full">
-											<IoMdCheckmark color="#fff" size={"18px"} />
-										</div>
-										<p class="text-darkBlue pb-2 pl-3">{item.benefit}</p>
-									</div>
-								))
-							}
-						</div>
-					</div>
-				</div>
-			</Common.Container>
-	</section>
-
+	<Common.Appointment />
+	
 	<!-- Live Green Section -->
 	<Common.Green />
 	

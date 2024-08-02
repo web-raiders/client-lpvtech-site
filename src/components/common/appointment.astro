@@ -1,0 +1,51 @@
+---
+import { Data } from "@utils/index";
+import Container from "./container.astro";
+import Form from "./form.astro";
+import { IoMdCheckmark } from "react-icons/io";
+
+const { page = 'landing'} = Astro.props;
+interface Props {
+    page?: string
+}
+---
+
+<section class=`w-full min-h-screen ${page === 'services' ? 'mt-0 bg-white' : 'mt-40 bg-gray-100'} py-32`>
+    <Container>
+        <!-- Form -->
+        <div class="flex gap-10">
+            <div class="w-[55%]">
+                <div class="w-[90%] shadow-2xl rounded-2xl bg-white">
+                    <!-- Card Header -->
+                    <div class="w-full bg-darkBlue rounded-tr-2xl rounded-tl-2xl py-5 text-center">
+                        <h6 class="text-white font-bold text-[32px]">Book an Appointment</h6>
+                    </div>
+                    <div class="py-10 px-5">
+                        <Form />
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Benefits -->
+            <div class="w-[45%] pt-7">
+                <h2 class="text-[40px] text-darkBlue font-bold mt-3 leading-[50px] pb-10">Let's experience the power of the sun</h2>
+                <hr />
+                <p class="text-base text-darkBlue mt-5">
+                    At LPV Technologies, our goal is to deliver products that not only meet but exceed industry standards, ensuring precision and efficiency at every step of the production process. 
+                </p>
+                <div class="mt-10 flex-col justify-center items-center">
+                    {
+                        Data.benefits.map(item => (
+                            <div class="flex">
+                                <div class="w-[20px] h-[20px] bg-green flex justify-center items-center rounded-full">
+                                    <IoMdCheckmark color="#fff" size={"18px"} />
+                                </div>
+                                <p class="text-darkBlue pb-2 pl-3">{item.benefit}</p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </Container>
+</section>

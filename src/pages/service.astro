@@ -1,0 +1,121 @@
+---
+import { Common, Layout } from "@components/index";
+import { SlideFour, SlideFive } from "../assets/images"
+import { GoSun } from "react-icons/go";
+import { Constants, Data, Queries } from "@utils/index";
+import { IoCheckmarkCircle } from "react-icons/io5";
+import type { CollectionEntry } from "astro:content";
+import { sanityClient } from "sanity:client";
+const faqs = await sanityClient.fetch(Queries.faqs);
+const currentPage: number | null = +Astro.url.searchParams.get('page')! || 1;
+const totalPages: number = Math.ceil(faqs.length / Constants.FAQS_PER_PAGE);
+const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Constants.FAQS_PER_PAGE, currentPage * Constants.FAQS_PER_PAGE)
+---
+
+<Layout>
+    <!-- Hero Section -->
+    <section class="h-[90vh] pt-40 w-full bg-no-repeat bg-cover bg-center flex justify-center items-center" style={{ backgroundImage: `linear-gradient(rgba(0, 23, 23, 0.6), rgba(0, 23, 23, 0.6)), url(${SlideFour})`}}>
+        <div class="w-[600px] text-center flex flex-col justify-center items-center">
+            <!-- Top Icon -->
+            <div class="w-[max-content] p-5 rounded-full" style={{ backgroundImage: 'radial-gradient(at top left, #DDEDC1 0%, #0FCC7C 100%)'}}>
+                <GoSun color="#fff" size={'36px'} />
+            </div>
+            <div>
+                <h1 class="text-[48px] pt-5 text-white font-bold leading-[55px]">Solar Panel Services</h1>
+                <p class="text-white text-[17px] pt-5 font-semibold">
+                    Nostra mi hac curae quis dis. 
+                    Aptent ultrices vel leo hendrerit magna neque suscipit. 
+                    Augue natoque tempor proin aenean lacus consectetur tristique dapibus orci.
+                </p>
+                <div class="mt-10">
+                    <Common.Button path='#' className="py-2 px-7 text-white bg-[#0fcc7c] font-semibold rounded-full baseline hover:bg-darkBlue" text="Get Started" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service List -->
+    <section class="w-full border-b border-b-gray-300 pb-20">
+        <Common.Container>
+            <!-- Flex -->
+			<div class="flex justify-between items-center gap-5 mt-20">
+				{
+					Data.services.map(item => (
+						<Common.ServiceList item={item} />
+					))
+				}
+			</div>
+        </Common.Container>
+    </section>
+
+    <!-- Description -->
+    <section class="w-full min-h-[100vh] py-20">
+        <Common.Container>
+            <div class="flex w-full gap-x-20">
+                <div class="w-[60%]">
+                    <img src={SlideFive} alt="slide_five" class={'w-full h-[500px] rounded-xl'} />
+                    <div class="mt-5">
+                        <h3 class="text-darkBlue font-bold text-[36px]">Descriptions</h3>
+                        <article class="pt-3">
+                            Elit molestie nullam lacus urna imperdiet sociosqu. 
+                            Lacinia suscipit a eleifend sapien vivamus primis orci ridiculus fermentum pede potenti. 
+                            Sed scelerisque tellus dolor lectus at himenaeos aenean nisi velit porttitor. 
+                            Vestibulum ex fames donec at neque semper.
+                        </article>
+                        <article class="pt-3">
+                            Dis nullam leo praesent facilisis tellus. 
+                            Velit facilisis mus vulputate eu cras vestibulum maecenas nisl. 
+                            Hac nam euismod senectus a ut mi. Porttitor lorem elementum accumsan nostra in ex urna.
+                        </article>
+                    </div>
+                    <div class="mt-10">
+                        <h3 class="text-darkBlue font-semibold text-[26px] mb-5">Keys of Features</h3>
+                        <div class="grid grid-cols-2 border-y border-y-gray-300 py-5 gap-x-10 gap-y-2">
+                            {
+                                Data.serviceFeatures.map(item => (
+                                        <div class="flex gap-x-2">
+                                            <span><IoCheckmarkCircle color="#0FCC7C" size={'24px'} /></span>
+                                            <span class="text-gray-500">{item.feature}</span>
+
+                                        </div>
+                                    ))
+                                }
+                        </div>
+                    </div>
+                </div>
+                <div class="w-[40%]">
+                    <div class="shadow-2xl rounded-2xl bg-white">
+                        <!-- Card Header -->
+                        <div class="w-full bg-[#00384f] rounded-tr-2xl rounded-tl-2xl py-3 text-center">
+                            <h6 class="text-white font-bold text-[32px]">Book an Appointment</h6>
+                        </div>
+                        <div class="p-5">
+                            <Common.Form />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Common.Container>
+    </section>
+
+    <!-- Live Green Section -->
+	<Common.GreenCounter page="services" />
+
+    <!-- Why choose us -->
+	<Common.Solutions />
+
+    <!-- FAQs -->
+    <section class="w-full min-h-[100vh] py-40">
+        <Common.Container flex='flex-col'>
+            <div class="flex-col flex-wrap text-center">
+                <h6 class="uppercase text-green font-bold">Common Questions</h6>
+                <h2 class="text-[38px] text-darkBlue font-bold mt-4 leading-[45px]">Most Popular Questions</h2>
+            </div>
+            <!-- FAQs -->
+            <Common.Faqs faqs={faqsInPage} client:load />
+            <div class="mt-5">
+                <Common.Pagination currentPage={currentPage} totalPages={totalPages} disablePrevious={currentPage === 1} disableNext={currentPage === totalPages} />
+            </div>
+        </Common.Container>
+    </section>
+</Layout>

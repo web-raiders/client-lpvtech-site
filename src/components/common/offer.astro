@@ -1,0 +1,35 @@
+---
+import { Data } from "@utils/index";
+import Container from "./container.astro";
+import Button from "./button";
+
+
+---
+
+<section class="w-full bg-gray-100 min-h-screen pt-32 pb-40 mt-40">
+    <Container flex="flex-col">
+        <div class="w-3/5 flex-col justify-center items-center mx-auto text-center">
+            <h6 class="text-base uppercase text-green font-bold">What we offer</h6>
+            <h2 class="text-[48px] text-darkBlue font-bold mt-3 leading-[50px]">Keep your environment clean make the earth green</h2>
+        </div>
+        <!-- Services Cards -->
+        <div class="grid grid-cols-3 gap-10 mt-20">
+            {
+                Data.servicesData.map(item => (
+                    <div class="bg-white cursor-pointer w-[390px] h-auto py-10 shadow-xl rounded-3xl hover:shadow-2xl">
+                        <Container flex="flex-col">
+                            <div class="w-[60px] h-[60px] rounded-xl bg-[#e1f5ec] flex justify-center items-center">
+                                <item.icon color="#0FCC7C" size={'32px'}/>
+                            </div>
+                            <h3 class="text-[18px] font-bold mt-5 text-deepBlue mb-3">{item.service}</h3>
+                            <p class="text-base">{item.description}</p>
+                            <div class="mt-10">
+                                <Button path="#" text="Learn More" className="_button py-2 px-4 text-white text-[14px] bg-green rounded-full baseline hover:bg-darkBlue" />
+                            </div>
+                        </Common.Container>
+                    </div>
+                ))
+            }
+        </div>
+    </Common.Container>
+</section>

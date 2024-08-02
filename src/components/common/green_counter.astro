@@ -1,0 +1,41 @@
+---
+import Button from "./button";
+import { Counter } from "../helpers"
+
+const { page = 'landing' } = Astro.props;
+interface Props {
+    page?: string
+}
+---
+
+
+<section class={`${page === 'services' ? 'my-0' : 'my-20'} pt-40 w-full min-h-[100vh] bg-cover bg-no-repeat bg-center`} style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(https://res.cloudinary.com/du52ca1q1/image/upload/v1721828971/vecteezy_solar-panel-on-blue-sky-background_1235999_1_nioxd2.jpg)'}}>
+    <div class="w-[40%] mx-auto flex-col justify-center items-center text-white text-center">
+        <h2 class="text-[60px] leading-[60px] font-bold">Live Green, Love Green, Think Green.</h2>
+        <p class="mt-4 text-[17px]">We provide cost-effective solar energy solutions, making clean energy accessible to a wider range of customers, thereby reducing energy costs over time.</p>
+        <div class="mt-10">
+            <Button path="#" text="Discover more" className="py-3 px-8 text-white text-[16px] bg-green rounded-full baseline hover:bg-darkBlue" />
+        </div>
+    </div>
+    <!-- Bottom Banner -->
+     <div class="w-full h-[150px] bg-cyan-900 mt-[180px] flex justify-center items-center">
+        <div class="w-4/5 h-[100px] flex justify-center items-center">
+            <div class="flex-col border-r-2 border-r-gray-300 pr-10">
+                <span class="text-green text-[46px] font-bold"><Counter client:load from={0} to={73} />K+</span>
+                <p class="text-white text-center text-[18px] font-semibold">Happy Client</p>
+            </div>
+            <div class="flex-col border-r-2 border-r-gray-300 px-10">
+                <span class="text-green text-center text-[46px] font-bold"><Counter client:load from={0} to={5} />K+</span>
+                <p class="text-white text-center text-[18px] font-semibold">Pro Technician</p>
+            </div>
+            <div class="flex-col border-r-2 border-r-gray-300 px-10">
+                <span class="text-green text-[46px] font-bold"><Counter client:load from={0} to={4} />M+</span>
+                <p class="text-white text-center text-[18px] font-semibold">Wind Farms</p>
+            </div>
+            <div class="flex-col px-10">
+                <span class="text-green text-[46px] font-bold"><Counter client:load from={0} to={11} />M+</span>
+                <p class="text-white text-center text-[18px] font-semibold">Solar Farms</p>
+            </div>
+        </div>
+     </div>
+</section>
