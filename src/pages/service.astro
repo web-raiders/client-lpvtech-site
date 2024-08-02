@@ -5,6 +5,7 @@ import { GoSun } from "react-icons/go";
 import { Constants, Data, Queries } from "@utils/index";
 import { IoCheckmarkCircle } from "react-icons/io5";
 import type { CollectionEntry } from "astro:content";
+import { sanityClient } from "sanity:client";
 const faqs = await sanityClient.fetch(Queries.faqs);
 const currentPage: number | null = +Astro.url.searchParams.get('page')! || 1;
 const totalPages: number = Math.ceil(faqs.length / Constants.FAQS_PER_PAGE);
