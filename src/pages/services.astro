@@ -18,7 +18,7 @@ import { Data } from '@utils/index';
                 <h4 class="text-white pt-5 text-[25px] font-semibold">Help protect the environment by powering your home with 100% renewable energy.</h4>
             </div>
             <!-- Cards -->
-            <div class="w-full flex gap-x-5 mt-20">
+            <div class="w-full flex gap-x-5 mt-40">
                 {
                         Data.serviceDetails.map(item => (
                             <div class="w-[400px] shadow-xl rounded-xl">
@@ -27,7 +27,7 @@ import { Data } from '@utils/index';
                                     <h4 class="text-[28px] text-gray-500 font-semibold">{item.header}</h4>
                                     <p class="mt-2 text-gray-500">{item.content}</p>
                                     <div class="mt-7 mb-3">
-                                        <Common.Button path='#' className="py-2 px-7 text-white bg-[#0fcc7c] font-semibold rounded-full baseline hover:bg-darkBlue" text="Learn more"  />
+                                        <Common.Button path='/service' className="py-2 px-7 text-white bg-[#0fcc7c] font-semibold rounded-full baseline hover:bg-darkBlue" text="Learn more"  />
                                     </div>
                                 </div>
                             </div>
