@@ -20,7 +20,10 @@ import {
     MemberFour,
     MemberFive,
     MemberSix,
-    MemberSeven
+    MemberSeven,
+    ProjectThree,
+    SlideFive,
+    ProjectFour
 } from "@assets/images"
 import { LiaToolsSolid } from "react-icons/lia";
 import { IoSettingsOutline } from "react-icons/io5";
@@ -54,7 +57,7 @@ export const navlist = [
         path: '/services',
         subMenu: [{
             name: 'Single Service',
-            path: '#'
+            path: '/service'
         }]
     },
     {
@@ -471,4 +474,49 @@ export const sliders = [
     'https://res.cloudinary.com/du52ca1q1/image/upload/v1721828968/medium-shot-engineers-discussing-about-solar-pannels_ot4q55.jpg',
     'https://res.cloudinary.com/du52ca1q1/image/upload/v1721831829/vecteezy_solar-energy-solar-photovoltaic-panels-for-renewable_33880873_rzovni.jpg',
     'https://res.cloudinary.com/du52ca1q1/image/upload/v1721831288/vecteezy_ai-generated-creating-sustainable-energy-using-solar-panels_37056492_zpttl5.jpg'
+]
+
+export const serviceDetails = [
+    {
+        header: 'Residential',
+        content: 'Hendrerit cubilia vel ultrices arcu blandit montes vehicula nec natoque',
+        img: ProjectThree
+    },
+    {
+        header: 'Residential',
+        content: 'Hendrerit cubilia vel ultrices arcu blandit montes vehicula nec natoque',
+        img: ProjectFour
+    },
+    {
+        header: 'Residential',
+        content: 'Hendrerit cubilia vel ultrices arcu blandit montes vehicula nec natoque',
+        img: SlideFive
+    }
+]
+
+export const serviceFeatures = [
+    {
+        feature: 'Integer mus per natoque'
+    },
+    {
+        feature: 'Integer mus per natoque'
+    },
+    {
+        feature: 'Duis hendrerit ipsum'
+    },
+    {
+        feature: 'Duis hendrerit ipsum'
+    },
+    {
+        feature: 'Vulputate pharetra taciti'
+    },
+    {
+        feature: 'Vulputate pharetra taciti'
+    },
+    {
+        feature: 'Auctor est eros'
+    },
+    {
+        feature: 'Auctor est eros'
+    }
 ]

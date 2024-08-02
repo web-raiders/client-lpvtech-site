@@ -1,0 +1,29 @@
+---
+import { Data } from "@utils/index";
+import Container from "./container.astro";
+---
+
+<section class="w-full min-h-[4/5] bg-gray-100 py-32">
+    <Container>
+        <div class="w-full flex gap-x-10">
+            <div class="w-[35%] flex-col flex-wrap pt-10">
+                <h6 class="uppercase text-green font-bold">Why choose us</h6>
+                <h2 class="text-[38px] text-darkBlue font-bold mt-4 leading-[45px]">Empowering Your World with Reliable Solutions.</h2>
+            </div>
+            <div class="w-[65%] flex gap-x-4">
+                {
+                    Data.solutions.map(item => (
+                    <div class="_solutions_card bg-white rounded-xl py-10 px-5 border border-solid border-gray-200 text-center cursor-pointer shadow-xl">
+                        {/* Top Icon */}
+                        <div class={`_top_icon w-[max-content] p-3 mx-auto bg-[#e1f5ec] rounded-xl`}>
+                            <item.icon size={'35px'} color="#0FCC7C" />
+                        </div>
+                        <h6 class="text-darkBlue text-[18px] font-semibold pt-5">{item.title}</h6>
+                        <p class="pt-5 text-gray-600">{item.description}</p>
+                    </div>
+                    ))
+                }
+            </div>
+        </div>
+    </Container>
+</section>

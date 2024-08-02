@@ -1,0 +1,57 @@
+---
+import { Data } from "@utils/index";
+import { IoCheckmarkCircle } from "react-icons/io5";
+import Container from "./container.astro";
+
+
+const { page = 'landing'} = Astro.props;
+interface Props {
+    page?: string;
+}
+---
+
+<section class={`w-full ${page === 'services' ? 'pt-[500px] pb-[0]' : 'pt-[50px] pb-[40px]'}`}>
+    <Container>
+        <div class={`flex justify-between ${page === 'services' && 'flex-row-reverse mb-0'} items-center gap-x-20 mb-20`}>
+            <div class="w-[45%] h-full">
+                <div class="relative">
+                    <img src='https://res.cloudinary.com/du52ca1q1/image/upload/v1721828978/vecteezy_view-of-solar-panels-in-the-solar-farm-with-green-tree-and_4951376_2_c6jsuj.jpg' alt={"energy_image"} class={"object-contain w-25 h-30 rounded-xl"} />
+                </div>
+                {/* Card */}
+                <div class="flex flex-col items-center absolute w-[180px] h-[auto] bg-green rounded-xl -mt-[220px] ml-[20px] text-white">
+                    <h6 class="text-white text-[70px] text-center font-bold">15+</h6>
+                    <div class="w-full h-[60px] mt-2 bg-[#e1f5ec] flex justify-center items-center rounded-b-lg">
+                        <h4 class="text-[15px] text-center font-semibold text-black">Years Of Experience</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Content -->
+            <div class="w-[55%] flex flex-col justify-center items-center">
+                <h2 class="text-[40px] text-darkBlue font-bold mt-3 leading-[40px] pb-10 border-b border-gray-200">Make the smart choice by using 100% clean energy.</h2>
+                <p class="text-[17px] leading-[24px] text-gray-500 mt-5">
+                    We are a team of professionals who are dedicated to providing the best energy solutions for your home or business. We offer a wide range of services, including solar panel installation, wind turbine installation, and energy efficiency consulting.
+                </p>
+                <div class="mt-10 flex-col">
+                    {
+                        Data.aboutList.map(item => (
+                            <div class={`flex gap-x-2 mb-7`}>
+                                <div class="h-full">
+                                    <div class="relative m-0">
+                                        <IoCheckmarkCircle color="#0FCC7C" size={'60px'} />
+                                    </div>
+                                </div>
+                                <div class="w-3/4 flex-col flex-wrap ml-0">
+                                    <h3 class="text-[18px] font-bold text-deepBlue">{item.title}</h4>
+                                    <p class="text-base text-gray-600 mt-1 pr-20">
+                                        {item.description}
+                                    </p>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+        <!-- Left Image -->
+    </Container>
+</section>

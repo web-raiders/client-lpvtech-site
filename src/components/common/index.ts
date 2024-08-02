@@ -11,6 +11,12 @@ import Green from "./green.astro";
 import Hero from "./hero.astro";
 import GreenTwo from "./green_two.astro";
 import Faqs from "./faqs";
+import Services from "./services.astro";
+import Offer from "./offer.astro";
+import GreenCounter from "./green_counter.astro"
+import Solutions from "./solutions.astro";
+import Appointment from "./appointment.astro";
+import ServiceList from "./service_list.astro";
 
 export {
     Button,
@@ -25,5 +31,11 @@ export {
     Green,
     Hero,
     GreenTwo,
-    Faqs
+    Faqs,
+    Services,
+    Offer,
+    GreenCounter,
+    Solutions,
+    Appointment,
+    ServiceList
 }
