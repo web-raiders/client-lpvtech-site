@@ -74,7 +74,7 @@ const projects: CollectionEntry<'projects'>[] = await sanityClient.fetch(Queries
 			<!-- Background card -->
 			<div class="w-full h-auto py-7 bg-[#F5F7F8] rounded-xl mb-28">
 				<div class="w-[90%] mx-auto flex-col justify-center items-center">
-					<h3 class="text-center text-[28px] font-bold">LPV Tech is trusted by 6+ million users in <br /> 175+ countries.</h3>
+					<h3 class="text-center text-[28px] font-bold">LPV Technologies is trusted by 6+ million users in <br /> 175+ countries.</h3>
 					<!-- Grid container -->
 					<div class="grid grid-cols-4 gap-4 my-10">
 						{
@@ -86,17 +86,6 @@ const projects: CollectionEntry<'projects'>[] = await sanityClient.fetch(Queries
 						}
 					</div>
 				</div>
-			</div>
-		</Common.Container>
-		<hr />
-		<Common.Container>
-			<!-- Flex -->
-			<div class="flex justify-between items-center gap-5 mt-20">
-				{
-					Data.services.map(item => (
-						<Common.ServiceList item={item} />
-					))
-				}
 			</div>
 		</Common.Container>
 	</section>
