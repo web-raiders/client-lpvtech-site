@@ -1,9 +1,17 @@
 ---
-import { Data } from "@utils/index";
+import { Constants, Queries } from "@utils/index";
 import Container from "./container.astro";
 import Button from "./button";
+import type { CollectionEntry } from "astro:content";
+import { sanityClient } from "sanity:client";
+import { PortableText } from "astro-portabletext"
+import { GrServices } from "react-icons/gr";
+import Pagination from "./pagination.astro";
 
-
+const services: CollectionEntry<'services'>[] = await sanityClient.fetch(Queries.services)
+const currentPage: number | null = +Astro.url.searchParams.get('page')! || 1;
+const totalPages: number = Math.ceil(services.length / Constants.SERVICES_PER_PAGE);
+const servicesInPage: CollectionEntry<'services'>[] = services.slice((currentPage - 1) * Constants.SERVICES_PER_PAGE, currentPage * Constants.SERVICES_PER_PAGE)
 ---
 
 <section class="w-full bg-gray-100 min-h-screen pt-32 pb-40 mt-40">
@@ -15,21 +23,26 @@ import Button from "./button";
         <!-- Services Cards -->
         <div class="grid grid-cols-3 gap-10 mt-20">
             {
-                Data.servicesData.map(item => (
+                servicesInPage.map(item => (
                     <div class="bg-white cursor-pointer w-[390px] h-auto py-10 shadow-xl rounded-3xl hover:shadow-2xl">
                         <Container flex="flex-col">
                             <div class="w-[60px] h-[60px] rounded-xl bg-[#e1f5ec] flex justify-center items-center">
-                                <item.icon color="#0FCC7C" size={'32px'}/>
+                                <GrServices color="#0FCC7C" size={'32px'}/>
                             </div>
-                            <h3 class="text-[18px] font-bold mt-5 text-deepBlue mb-3">{item.service}</h3>
-                            <p class="text-base">{item.description}</p>
+                            <h3 class="text-[18px] font-bold mt-5 text-deepBlue mb-3">{item.title}</h3>
+                            <article class="line-clamp-3 text-gray-500">
+                                <PortableText value={item.description} />
+                            </article>
                             <div class="mt-10">
-                                <Button path="#" text="Learn More" className="_button py-2 px-4 text-white text-[14px] bg-green rounded-full baseline hover:bg-darkBlue" />
+                                <Button path={`/services/${item.slug}`} text="Learn More" className="_button py-2 px-4 text-white text-[14px] bg-green rounded-full baseline hover:bg-darkBlue" />
                             </div>
                         </Common.Container>
                     </div>
                 ))
             }
+        </div>
+        <div class="mt-5">
+            <Pagination currentPage={currentPage} totalPages={totalPages} disablePrevious={currentPage === 1} disableNext={currentPage === totalPages} />
         </div>
     </Common.Container>
 </section>
