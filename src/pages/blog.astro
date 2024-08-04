@@ -11,7 +11,7 @@ const totalPages: number = Math.ceil(articles.length / Constants.ARTICLES_PER_PA
 const articlesInPage: CollectionEntry<'blog'>[] = articles.slice((currentPage - 1) * Constants.ARTICLES_PER_PAGE, currentPage * Constants.ARTICLES_PER_PAGE)
 ---
 
-<Layout title='Ipvtech Website - Blog'>
+<Layout title='LpvTech Website - Blog'>
     <!-- Hero Section -->
     <section class="pt-52 w-full min-h-[60vh] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `linear-gradient(rgba(0, 23, 23, 0.3), rgba(0, 23, 23, 0.3)), url(/images/blog_bg.jpg)`}}>
         <div class="w-2/5 mx-auto text-center">

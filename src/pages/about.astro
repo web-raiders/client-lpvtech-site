@@ -6,7 +6,7 @@ import { BsLightning } from "react-icons/bs";
 import { Data } from "@utils/index";
 ---
 
-<Layout title='Ipvtech Website - About Us'>
+<Layout title='LpvTech Website - About Us'>
     <!-- Hero Section -->
 	<Common.Hero backgroundImage={'https://res.cloudinary.com/du52ca1q1/image/upload/v1721844782/solar-photovoltaic-panels-station-checks-with-tablet-computer_qcctrx.jpg'} header='About Us' caption='Reneawable Energy for a Sustainable World' />
 
@@ -16,7 +16,7 @@ import { Data } from "@utils/index";
 		<Common.Container>
 			<!-- Left Content -->
 			<div class="w-2/4 flex-col flex-wrap">
-				<h6 class="text-base font-bold text-green uppercase">Who we are</h6>
+				<h6 class="text-base font-bold text-green uppercase">Our Goals</h6>
 				<h2 class="text-[40px] leading-[45px] mt-5 text-deepBlue font-bold">Renewable Energy For a Sustainable World</h2>
 				<p class="text-base text-deepBlue mt-5 pr-20">
 					LPV Technologies aims to pioneer solar solutions that transcend boundaries, empowering communities and leading the renewable energy revolution across Nigeria and beyond.
@@ -24,12 +24,16 @@ import { Data } from "@utils/index";
 				<p class="text-base text-deepBlue mt-5 pr-20">
 					LPV Technologies is at the vanguard of transforming the solar sector in Nigeria using innovative and indigenous solutions. Through relentless dedication to excellence and sustainable practices, we aim to accelerate positive change and pave the way for a cleaner, brighter energy future for all.
 				</p>
+				<p class="text-base text-deepBlue mt-5 pr-20">
+					At LPV Technologies, our goal is to deliver products that not only meet but exceed industry standards, ensuring precision and efficiency at every step of the production process. 
+With abundant sunlight and a growing need for electricity, our focus is clear: to bring affordable, reliable power to communities where it's needed most. We plan to achieve this by partnering with governments on large-scale energy projects, collaborating with private and public organizations, and working closely with property developers to provide hybrid solutions tailored to local needs. By producing high-quality solar panels in-country, LPV Technologies is not just providing energy; we are sparking positive change, helping families thrive, and shaping a brighter future for all.
+				</p>
 				<div class="mt-10">
 					<Common.Button path="#" className="py-3 px-10 font-semibold text-white bg-green rounded-full baseline hover:bg-darkBlue" text="Discover more" />
 				</div>
 			</div>
 			<!-- Right Image -->
-			<div class="w-2/4 h-full">
+			<div class="w-2/4 h-full mt-[100px]">
 				<div class="relative">
 					<img src='https://res.cloudinary.com/du52ca1q1/image/upload/v1721828966/african-american-technician-checks-maintenance-solar-panels-group-three-black-engineers-meeting-solar-station_uwsd6x.jpg' alt={"energy image"} class={"w-full h-full rounded-xl"} />
 				</div>
@@ -74,12 +78,12 @@ import { Data } from "@utils/index";
 			<div class="flex justify-between items-center gap-5 mt-20">
 				{
 					Data.services.map(item => (
-						<div class="max-h-[250px] rounded-xl py-10 px-5 border border-solid border-gray-200 text-center cursor-pointer hover:shadow-xl">
+						<div class="h-[280px] w-[330px] rounded-xl py-10 px-5 border border-solid border-gray-200 text-center cursor-pointer hover:shadow-xl">
 							{/* Top Icon */}
 							<div class={`w-[max-content] p-3 mx-auto bg-green rounded-xl`}>
-								<item.icon size={'35px'} color="#fff" />
+								<item.icon size={'25px'} color="#fff" />
 							</div>
-							<h6 class="text-deepBlue text-[18px] font-bold pt-5">{item.title}</h6>
+							<h6 class="text-deepBlue text-[15px] font-bold pt-5">{item.title}</h6>
 							<p class="pt-5">{item.description}</p>
 						</div>
 					))

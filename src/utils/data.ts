@@ -307,24 +307,24 @@ export const clients = [
 
 export const services = [
     {
-        icon: LiaToolsSolid,
-        title: 'Solar Panel Installation',
-        description: 'We assist with the installation of solar panels for residential and commercial buildings.'
+        icon: IoSettingsOutline,
+        title: '100MW Solar Assembly Plant',
+        description: 'We boast a 100MW solar panel plant, 20,000 sqm, featuring a top-rated European assembly line.'
     },
     {
         icon: IoSettingsOutline,
-        title: 'Solar Panel Maintenance',
-        description: 'We provide maintenance services for solar panels to ensure they are in good condition.'
+        title: 'Customised Solar Solutions',
+        description: 'We customize solutions for each client with flexible PPA terms, tailored leases, and personalized service packages for optimal outcomes.'
     },
     {
-        icon: TiMessages,
-        title: 'Consultations',
-        description: 'We offer consultations to help you make informed decisions about solar panel installation.'
+        icon: IoSettingsOutline,
+        title: ' Solar Centre of Excellence',
+        description: 'We train workforces in solar deployment, fostering local expertise and innovation to meet Africa’s energy challenges.'
     },
     {
-        icon: FaRegFileAlt,
-        title: 'Solar Panel Installation',
-        description: 'We assist with the installation of solar panels for residential and commercial buildings.'
+        icon: IoSettingsOutline,
+        title: 'Professional Installation',
+        description: 'Our certified technicians ensure flawless solar PV installations with a focus on safety, precision, and efficiency.'
     },
 ]
 
@@ -462,8 +462,20 @@ export const contactList = [
     {
         icon: SlLocationPin,
         title: 'Head Office',
-        headingOne: '19b Ilabere Ave, Ikoyi',
+        headingOne: '19B, Ilabere Avenue, Off Oyinkan Abayomi Street, Ikoyi',
         headingTwo: 'Lagos Nigeria',
+    },
+    {
+        icon: SlLocationPin,
+        title: 'Abuja Office',
+        headingOne: '9, Thaba Tseka Street, Off Adetokunbo Ademola, Wuse 2',
+        headingTwo: 'FCT Nigeria',
+    },
+    {
+        icon: SlLocationPin,
+        title: 'Overseas',
+        headingOne: '5, Bolton Street, Green Park, London',
+        headingTwo: 'London United Kingdom',
     },
     {
         icon: MdOutlineEmail,

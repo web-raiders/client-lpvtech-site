@@ -12,7 +12,7 @@ const totalPages: number = Math.ceil(faqs.length / Constants.FAQS_PER_PAGE);
 const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Constants.FAQS_PER_PAGE, currentPage * Constants.FAQS_PER_PAGE)
 ---
 
-<Layout title='Ipvtech Website - FAQs'>
+<Layout title='LpvTech Website - FAQs'>
     <!-- Hero Section -->
     <Common.Hero backgroundImage={'/images/faqs_bg.jpg'} header='FAQ' caption='Start the conversation to established good relationship and business.' />
 
