@@ -58,7 +58,7 @@ export const navlist = [
     {
         name: 'Services',
         path: '/services',
-        subMenu: servicesList.slice(0, 3).map(item => {
+        subMenu: servicesList.slice(0, 5).map(item => {
             return {
                 name: item.title,
                 path: `/services/${item.slug}`
@@ -68,7 +68,7 @@ export const navlist = [
     {
         name: 'Projects',
         path: '/projects',
-        subMenu: projectsList.slice(0, 3).map(item => {
+        subMenu: projectsList.slice(0, 5).map(item => {
             return {
                 name: item.name,
                 path: `/projects/${item.slug}`
@@ -169,23 +169,23 @@ export const benefits = [
 
 export const qualifications = [
     {
-        title: 'Green & Eco Tech',
-        description: 'We Ensure that our services are eco-friendly and sustainable for the environment.',
+        title: 'Reliability and Affordability',
+        description: 'Ensures uninterrupted power and cost-effective solar energy, making clean energy accessible and reducing costs.',
         icon: MdOutlineEnergySavingsLeaf
     },
     {
-        title: 'Expert Team Development',
-        description: 'We have a team of experts who are dedicated to providing the best services to our clients.',
+        title: 'Local Manufacturing',
+        description: 'Promotes job creation and economic development, ensuring faster delivery and reduced logistical costs.',
         icon: SlBadge
     },
     {
-        title: 'Quality Assurance',
-        description: 'We ensure that our services are of the highest quality and meet the needs of our clients.',
+        title: 'Partnerships for Large-scale Projects',
+        description: 'Collaborates with various entities to implement large-scale solar projects, addressing energy poverty and fostering community development.',
         icon: MdOutlineEnergySavingsLeaf
     },
     {
-        title: '24/7 Support',
-        description: 'We provide 24/7 support to our clients to ensure that they have the best experience with our services.',
+        title: 'Customization',
+        description: 'Offers tailored solar solutions for hybrid, off-grid, and grid-tied systems, ensuring optimal performance.',
         icon: SlSupport
     },
 ]
@@ -445,16 +445,20 @@ export const teams_value = [
 
 export const aboutList = [
     {
-        title: 'Solar Panel Solutions',
-        description: 'Our solar panel solutions are designed to meet the unique needs of our clients.'
+        title: 'Outright Purchase',
+        description: 'This option allows businesses/clients to capitalize on long-term savings and take advantage of immediate asset ownership.'
     },
     {
-        title: 'Renewable Energy Consulting',
-        description: 'We provide consulting services to help you make informed decisions about renewable energy.'
+        title: 'Lease-to-Own Model',
+        description: 'Excellent choice for businesses looking to spread energy cost over time while eventually taking full ownership of the system.'
     },
     {
-        title: 'Energy Efficiency Solutions',
-        description: 'Our energy efficiency solutions are designed to help you save money on your energy bills.'
+        title: 'Energy as a Service (EaaS)',
+        description: 'We provide clients with continuous power through long term contracts. A subscription fee is paid for power consumption with zero upfront cost.'
+    },
+    {
+        title: 'Solar as a Service (SaaS)',
+        description: 'This model allows clients to pay only for consumed solar energy, eliminating upfront costs and maintenance concerns. We manage solar power generation, enabling clients to focus on their core business.'
     },
 ]
 
@@ -480,7 +484,7 @@ export const contactList = [
     {
         icon: MdOutlineEmail,
         title: 'Email Support',
-        headingOne: 'info@lpvtech.com',
+        headingOne: 'info@lpvtechnolgies.com',
         headingTwo: 'support@lpvtech.com',
     },
     {

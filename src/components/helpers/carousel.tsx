@@ -23,7 +23,7 @@ const carousel = () => {
         <SwiperSlide key={i}>
             <section className='w-full pt-36 min-h-[110vh] bg-no-repeat bg-cover bg-center' style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url(${item})`}}>
                 <div className='container w-full mx-auto flex-col flex-wrap items-center justify-center text-center text-white md:w-3/4 md:mt-20 lg:w-2/4 lg:mt-15'>
-                    <h6 className="text-xs text-[#0fcc7c] font-bold uppercase md:text-xl">Welcome to LPV Technologies</h6>
+                    <h6 className="text-xs text-[#fff] font-bold uppercase md:text-xl">Welcome to LPV Technologies</h6>
                     <h1 className=" text-4xl pt-5 font-bold md:text-6xl">Cleaner Energy for a Cleaner World</h1>
                     <h4 className="text-lg pt-6 font-bold md:text-2xl">Our commitment to engineering excellence and craftsmanship drives us to create sustainable energy for a brighter future.</h4>
                     <div className="flex justify-center items-center space-x-4 mt-10">
