@@ -17,6 +17,7 @@ import GreenCounter from "./green_counter.astro"
 import Solutions from "./solutions.astro";
 import Appointment from "./appointment.astro";
 import ServiceList from "./service_list.astro";
+import Policy from "./policy";
 
 export {
     Button,
@@ -37,5 +38,6 @@ export {
     GreenCounter,
     Solutions,
     Appointment,
-    ServiceList
+    ServiceList,
+    Policy
 }

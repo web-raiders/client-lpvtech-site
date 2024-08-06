@@ -38,6 +38,8 @@ import MemberSeven from "./member_seven.jpg?url"
 import MemberEight from "./member_eight.jpg?url"
 import BlogTwo from "./blog_two.jpg?url"
 import BlogFour from "./blog_four.jpg?url"
+import PrivacyImg from "./privacy.jpg?url"
+import PolicyImage from "./policy.jpg"
 
 export {
     SlideOne,
@@ -78,5 +80,7 @@ export {
     MemberSeven,
     MemberEight,
     BlogTwo,
-    BlogFour
+    BlogFour,
+    PrivacyImg,
+    PolicyImage
 }
