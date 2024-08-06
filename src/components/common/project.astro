@@ -6,20 +6,20 @@ interface Props {
     page?: string;
 }
 ---
-<div class="w-[45%] h-screen mr-20 bg-cover bg-no-repeat bg-center rounded-xl" style={{ backgroundImage: 'url(https://res.cloudinary.com/du52ca1q1/image/upload/v1721828969/vecteezy_a-power-solar-panel-field-sits-atop-a-mountain-under-blue-skies_1226604_1_ypliay.jpg)'}}>
-    <div class="w-[200px] h-[200px] bg-white flex-col justify-center items-center rounded-full shadow-xl px-2 pt-8 text-center -mt-10 -ml-6">
-        <span class="text-green text-[60px] font-bold">25+</span>
-        <p class="text-[18px] text-darkBlue -mt-2">Years of Experience</p>
+<div class="w-[100%] h-[300px] md:w-[45%] md:h-screen md:mr-20 bg-cover bg-no-repeat bg-center rounded-xl" style={{ backgroundImage: 'url(https://res.cloudinary.com/du52ca1q1/image/upload/v1721828969/vecteezy_a-power-solar-panel-field-sits-atop-a-mountain-under-blue-skies_1226604_1_ypliay.jpg)'}}>
+    <div class="w-[150px] p-7 -ml-3 h-[150px] md:w-[200px] md:h-[200px] bg-white flex-col justify-center items-center rounded-full shadow-xl md:px-2 md:pt-8 text-center -mt-10 md:-ml-6">
+        <span class="text-green text-[32px] md:text-[60px] font-bold">25+</span>
+        <p class="text-[14px] md:text-[18px] text-darkBlue -mt-2">Years of Experience</p>
     </div>
 </div>
-<div class="w-[55%]">
+<div class="w-[100%] mt-5 md:mt-0 md:w-[55%]">
     {page === 'projects' && <h6 class="text-base uppercase font-bold text-[#0fcc7c]">What we offer</h6>}
-    <h2 class=`text-[40px] text-darkBlue font-bold ${page === 'landing' ? 'mt-2' : 'mt-5'} leading-[45px]`>The better source of energy for the better tomorrow</h2>
+    <h2 class=`text-[24px] leading-[32px] md:text-[40px] text-darkBlue font-bold ${page === 'landing' ? 'mt-2' : 'mt-5'} md:leading-[45px]`>The better source of energy for the better tomorrow</h2>
     <p class="text-base text-gray-700 mt-6 mb-10">
         We are a team of professionals who are dedicated to providing the best energy solutions for your home or business. We offer a wide range of services, including solar panel installation, wind turbine installation, and energy efficiency consulting.
     </p>
     <hr />
-<div class="grid grid-cols-2 gap-5 mt-10">
+<div class="grid grid-cols-1 gap-5 mt-10 md:grid-cols-2">
     {
         qualifications.map((item: any) => (
             <div class="w-[300px] h-auto items-center">

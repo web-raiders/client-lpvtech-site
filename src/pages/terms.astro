@@ -17,7 +17,7 @@ const terms = await sanityClient.fetch(Queries.terms);
             <div class="w-full mt-20">
                 <h6 class="text-[30px] text-darkBlue font-bold text-center">LPV Technologies Terms & Conditions</h6>
                 <!-- Policies -->
-                <Common.Policy policies={terms} client:load />
+                <Common.Faqs data={terms} client:load />
             </div>
         </Common.Container>
     </section>

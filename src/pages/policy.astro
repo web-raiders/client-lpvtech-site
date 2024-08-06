@@ -21,7 +21,7 @@ const policies = await sanityClient.fetch(Queries.policy);
             <div class="w-full mt-20">
                 <h6 class="text-[48px] text-darkBlue font-bold">Our Policy</h6>
                 <!-- Policies -->
-                <Common.Policy policies={policies} client:load />
+                <Common.Faqs data={policies} client:load />
             </div>
         </Common.Container>
     </section>

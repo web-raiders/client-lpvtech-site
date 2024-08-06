@@ -10,15 +10,15 @@ interface Props {
 }
 ---
 
-<section class=`w-full min-h-screen ${page === 'services' ? 'mt-0 bg-white' : 'mt-40 bg-gray-100'} py-32`>
+<section class=`w-full min-h-screen ${page === 'services' ? 'mt-0 bg-white' : 'mt-40 bg-gray-100'} py-5 md:py-32`>
     <Container>
         <!-- Form -->
-        <div class="flex gap-10">
-            <div class="w-[55%]">
-                <div class="w-[90%] shadow-2xl rounded-2xl bg-white">
+        <div class="flex flex-col-reverse md:flex-row gap-10">
+            <div class="w-full md:w-[55%]">
+                <div class="w-full md:w-[90%] shadow-2xl rounded-2xl bg-white">
                     <!-- Card Header -->
                     <div class="w-full bg-darkBlue rounded-tr-2xl rounded-tl-2xl py-5 text-center">
-                        <h6 class="text-white font-bold text-[32px]">Book an Appointment</h6>
+                        <h6 class="text-white font-bold text-[24px] md:text-[32px]">Book an Appointment</h6>
                     </div>
                     <div class="py-10 px-5">
                         <Form />
@@ -27,8 +27,8 @@ interface Props {
             </div>
             
             <!-- Benefits -->
-            <div class="w-[45%] pt-7">
-                <h2 class="text-[40px] text-darkBlue font-bold mt-3 leading-[50px] pb-10">Let's experience the power of the sun</h2>
+            <div class="w-full md:w-[45%] pt-7">
+                <h2 class="text-[24px] leading-[23px] md:leading-0 md:text-[40px] text-darkBlue font-bold mt-3 md:leading-[50px] pb-10">Let's experience the power of the sun</h2>
                 <hr />
                 <p class="text-base text-darkBlue mt-5">
                     At LPV Technologies, our goal is to deliver products that not only meet but exceed industry standards, ensuring precision and efficiency at every step of the production process. 

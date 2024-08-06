@@ -3,14 +3,14 @@ import { Data } from "@utils/index";
 import Container from "./container.astro";
 ---
 
-<section class="w-full min-h-[4/5] bg-gray-100 py-32">
+<section class="w-full min-h-[4/5] bg-gray-100 pt-5 pb-14 md:py-32">
     <Container>
-        <div class="w-full flex gap-x-10">
-            <div class="w-[35%] flex-col flex-wrap pt-10">
-                <h6 class="uppercase text-green font-bold">Why choose us</h6>
-                <h2 class="text-[38px] text-darkBlue font-bold mt-4 leading-[45px]">Empowering Your World with Reliable Solutions.</h2>
+        <div class="w-full flex flex-col md:flex-row gap-x-10">
+            <div class="w-[100%] md:w-[35%] flex-col flex-wrap pt-10">
+                <h6 class="uppercase text-center md:text-left text-green font-bold">Why choose us</h6>
+                <h2 class="text-[24px] leading-[28px] text-center md:text-left md:text-[38px] text-darkBlue font-bold mt-4 md:leading-[45px]">Empowering Your World with Reliable Solutions.</h2>
             </div>
-            <div class="w-[65%] flex gap-x-4">
+            <div class="w-[100%] md:w-[65%] mt-10 md:mt-0 flex flex-col md:flex-row gap-5 md:gap-x-4">
                 {
                     Data.solutions.map(item => (
                     <div class="_solutions_card bg-white rounded-xl py-10 px-5 border border-solid border-gray-200 text-center cursor-pointer shadow-xl">

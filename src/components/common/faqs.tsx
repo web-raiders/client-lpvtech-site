@@ -2,10 +2,11 @@ import { useState } from "react";
 import { IoIosArrowUp } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
 import { PortableText } from '@portabletext/react';
+import serializers from './serializers';
 
 
-const Faqs = ({ faqs }: any) => {
-    const [isActive, setIsActive] = useState<any>(faqs.map((_: any, index: number) => index < 2));
+const Faqs = ({ data }: any) => {
+    const [isActive, setIsActive] = useState<any>(data.map((_: any, index: number) => index < 2));
 
     function handleToggle(idx: number){
         setIsActive((prev: any) => {
@@ -18,7 +19,7 @@ const Faqs = ({ faqs }: any) => {
     return (
     <div className="grid grid-cols-2 gap-y-3 gap-x-5 mt-10">
         {
-            faqs.map((item: any, i: number) => (
+            data.map((item: any, i: number) => (
             <div className="w-[100%] cursor-pointer" key={i}> 
                 {/* Card Header     */}
                 <div 
@@ -26,7 +27,7 @@ const Faqs = ({ faqs }: any) => {
                 onClick={() => handleToggle(i)}
                 >
                     <span className={isActive[i] ? "text-white font-bold" : "text-[#00384F] font-bold"}>
-                        {item.question}
+                        {item.question || item.title}
                     </span>
                     <span>
                         {
@@ -46,7 +47,7 @@ const Faqs = ({ faqs }: any) => {
                     isActive[i] && (
                         <div className="transition-all duration-1000 p-5 bg-[#e1f5ec]">
                             <article className="text-[16px] text-gray-600">
-                                <PortableText value={item?.answer} />
+                                <PortableText value={item?.answer || item?.content} components={serializers} />
                             </article>
                         </div>
                     )
