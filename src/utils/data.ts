@@ -81,7 +81,7 @@ export const navlist = [
     },
     {
         name: 'Page',
-        path: '/page',
+        path: '#',
         subMenu: [
             {
                 name: 'Team',

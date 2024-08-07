@@ -4,8 +4,13 @@ export const articles = '*[_type == "article"] | order(date desc){"slug": slug.c
 export const projects = '*[_type == "projects"] | order(_createdAt desc){"slug": slug.current, "image": background_image.url, name, description}'
 // Get all articles
 export const services = '*[_type == "services"] | order(_createdAt desc){"slug": slug.current, title, description, image}'
+// Get all terms
+export const terms = '*[_type == "terms"]{ title, content, _createdAt } | order(_createdAt asc)'
 // Get all faqs
 export const faqs = '*[_type == "faqs"]{ question, answer }'
+// Get all policies
+export const policy = '*[_type == "policy"]{ title, content }'
+
 
 // Get all other articles
 export const otherArticles = '*[_type == "article" && slug.current != $slug] | order(date desc){"slug": slug.current, name, tags, date, "image": image.asset->url, content, author}'

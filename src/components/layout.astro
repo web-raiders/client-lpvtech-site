@@ -1,4 +1,5 @@
 ---
+// import { Helpers } from ''
 import { Navbar, NavBanner, Footer, FooterBanner } from './navigation'
 const { title = 'LpvTech Website' } = Astro.props
 interface Props {
@@ -6,7 +7,6 @@ interface Props {
 }
 
 ---
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,14 +15,44 @@ interface Props {
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <!-- <style>
+      #content {
+        display: none;
+      }
+    </style> -->
   </head>
-  <body>
-    <NavBanner />
-    <Navbar client:load />
-    <main class="relative mx-0 px-0">
-        <slot />
-    </main>
-    <Footer />
-    <FooterBanner />
+  <body class="overflow-x-hidden">
+    <!-- <div id="spinner">
+      <Helpers.Spinner />
+    </div> -->
+    <!-- <div id="content"> -->
+      <NavBanner />
+      <Navbar client:only="react" />
+      <main class="relative mx-0 px-0">
+          <slot />
+      </main>
+      <Footer />
+      <FooterBanner />
+    <!-- </div> -->
+    {/** 
+      This does the work of useEffect in React. 
+      Using it for spinner loader before content mounts 
+    **/}
+    <!-- <script>
+      function loadTabs(){
+        document.addEventListener('DOMContentLoaded', () => {
+          setTimeout(() => {
+            const spinner = document.getElementById('spinner')
+            const content = document.getElementById('content')
+            if (spinner && content) {
+              spinner.style.display = 'none';
+              content.style.display = 'block';
+            }
+          }, 4000);
+        });
+      }
+
+      loadTabs();
+    </script> -->
   </body>
 </html>
