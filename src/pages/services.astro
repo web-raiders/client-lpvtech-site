@@ -12,26 +12,26 @@ const services: CollectionEntry<'services'>[] = await sanityClient.fetch(Queries
 <Layout title='LpvTech Website - Our Services'>
     <!-- Hero Section -->
     <section 
-    class="pt-40 w-full h-[100vh] bg-no-repeat bg-cover bg-center" 
+    class="pt-20 md:pt-40 w-full h-[80vh] md:h-[100vh] bg-no-repeat bg-cover bg-center" 
     style={{ 
         backgroundImage: `linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(/images/blog_bg.jpg)`
     }}>
         <Common.Container flex='flex-col'>
-            <div class="w-[50%] pt-20">
+            <div class="w-full text-center md:text-left md:w-[50%] pt-20">
                 <h6 class="text-[#0fcc7c] uppercase font-semibold mb-5">Our Services</h6>
-                <h1 class="text-[48px] text-white font-bold leading-[55px]">Cleaner Energy for a Cleaner World.</h1>
-                <h4 class="text-white pt-5 text-[25px] font-semibold">Help protect the environment by powering your home with 100% renewable energy.</h4>
+                <h1 class="text-[32px] leading-[32px] md:text-[48px] text-white font-bold md:leading-[55px]">Cleaner Energy for a Cleaner World.</h1>
+                <h4 class="text-white pt-5 text-base md:text-[25px] font-semibold">Help protect the environment by powering your home with 100% renewable energy.</h4>
             </div>
         </Common.Container>
     </section>
 
-    <section class="w-full -mt-40">
+    <section class="w-full -mt-32 md:-mt-40">
         <Common.Container>
             <!-- Cards -->
-            <div class="w-full flex gap-x-5">
+            <div class="w-full flex flex-col md:flex-row gap-y-5 md:gap-x-5">
                 {
                         services.slice(0, 3).map(item => (
-                            <div class="w-[400px] shadow-xl rounded-xl">
+                            <div class="w-full md:w-[400px] shadow-xl rounded-xl">
                                 <img src={`${item.image.url}`} alt={item.image.alt} class={"w-full h-100px rounded-t-xl"} />
                                 <div class="text-center px-5 py-7">
                                     <h4 class="text-[28px] text-gray-500 font-semibold">{item.title}</h4>
