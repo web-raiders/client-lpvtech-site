@@ -24,7 +24,7 @@ const carousel = () => {
             <section className='w-full pt-40 min-h-[150vh] smm:pt-52 sm:min-h-[100vh] bg-no-repeat bg-cover bg-center md:min-h-[110vh] md:pt-36' style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url(${item})`}}>
                 <div className='container w-full mx-auto flex-col flex-wrap items-center justify-center text-center text-white md:w-3/4 md:mt-20 lg:w-2/4 lg:mt-15'>
                     <h6 className="text-xs text-[#fff] font-bold uppercase md:text-xl">Welcome to LPV Technologies</h6>
-                    <h1 className=" text-4xl pt-5 font-bold md:text-6xl">Cleaner Energy for a Cleaner World</h1>
+                    <h1 className=" text-4xl pt-5 font-bold md:text-6xl">Cleaner Energies for a Cleaner World</h1>
                     <h4 className="text-lg pt-6 font-bold md:text-2xl">Our commitment to engineering excellence and craftsmanship drives us to create sustainable energy for a brighter future.</h4>
                     <div className="flex flex-col gap-y-5 justify-center items-center space-x-4 mt-10 md:flex md:flex-row md:gap-y-0">
                         <Button path="#" className="py-3 px-24 font-bold text-white bg-green rounded-full baseline hover:bg-darkBlue" text="Get a Quote" />
