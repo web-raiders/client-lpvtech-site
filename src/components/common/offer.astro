@@ -8,13 +8,17 @@ import { PortableText } from "astro-portabletext"
 import { GrServices } from "react-icons/gr";
 import Pagination from "./pagination.astro";
 
+const { page = 'services'} = Astro.props
 const services: CollectionEntry<'services'>[] = await sanityClient.fetch(Queries.services)
 const currentPage: number | null = +Astro.url.searchParams.get('page')! || 1;
 const totalPages: number = Math.ceil(services.length / Constants.SERVICES_PER_PAGE);
-const servicesInPage: CollectionEntry<'services'>[] = services.slice((currentPage - 1) * Constants.SERVICES_PER_PAGE, currentPage * Constants.SERVICES_PER_PAGE)
+const servicesInPage: CollectionEntry<'services'>[] = page === 'landing' ? services.slice(0, Constants.LANDING_PAGE_SIZE) : services.slice((currentPage - 1) * Constants.SERVICES_PER_PAGE, currentPage * Constants.SERVICES_PER_PAGE)
+interface Props {
+    page?: string
+}
 ---
 
-<section class="w-full bg-gray-100 min-h-screen py-10 md:pt-32 md:pb-40 mt-40">
+<section class="w-full bg-gray-100 min-h-screen py-10 md:pt-28 md:pb-20 mt-40">
     <Container flex="flex-col">
         <div class="w-[100%] md:w-3/5 flex-col justify-center items-center mx-auto text-center">
             <h6 class="text-[12px] md:text-base uppercase text-green font-bold">What we offer</h6>
@@ -42,7 +46,9 @@ const servicesInPage: CollectionEntry<'services'>[] = services.slice((currentPag
             }
         </div>
         <div class="mt-5">
-            <Pagination currentPage={currentPage} totalPages={totalPages} disablePrevious={currentPage === 1} disableNext={currentPage === totalPages} />
+            {
+                page === 'landing' ? <a href="/services" class="flex justify-center items-center pt-10">View More</a> : <Pagination currentPage={currentPage} totalPages={totalPages} disablePrevious={currentPage === 1} disableNext={currentPage === totalPages} />
+            }
         </div>
     </Common.Container>
 </section>

@@ -27,15 +27,15 @@ const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Con
 
 <Layout>
     <!-- Hero Section -->
-    <section class="h-[100vh] pt-32 w-full bg-no-repeat bg-cover bg-center flex justify-center items-center" style={{ backgroundImage: `linear-gradient(rgba(0, 23, 23, 0.6), rgba(0, 23, 23, 0.6)), url(${service.image.url})`}}>
+    <section class="h-[100vh] pt-24 md:pt-32 w-full bg-no-repeat bg-cover bg-center flex justify-center items-center" style={{ backgroundImage: `linear-gradient(rgba(0, 23, 23, 0.6), rgba(0, 23, 23, 0.6)), url(${service.image.url})`}}>
         <div class="w-[600px] text-center flex flex-col justify-center items-center">
             <!-- Top Icon -->
             <div class="w-[max-content] p-5 rounded-full" style={{ backgroundImage: 'radial-gradient(at top left, #DDEDC1 0%, #0FCC7C 100%)'}}>
                 <GrServices color="#fff" size={'36px'} />
             </div>
-            <div>
-                <h1 class="text-[48px] pt-5 text-white font-bold leading-[55px]">{service.title}</h1>
-                <article class="text-white text-[17px] pt-5 font-semibold">
+            <div class="px-3 md:px-0">
+                <h1 class="text-[28px] md:text-[48px] pt-5 text-white font-bold leading-[55px]">{service.title}</h1>
+                <article class="text-white text-[14px] md:text-[17px] pt-5 font-semibold">
                     <PortableText value={service.description} />
                 </article>
                 <div class="mt-10">
@@ -46,10 +46,10 @@ const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Con
     </section>
 
     <!-- Service List -->
-    <section class="w-full border-b border-b-gray-300 pb-20">
+    <section class="w-full border-b border-b-gray-300 pb-10 md:pb-20">
         <Common.Container>
             <!-- Flex -->
-			<div class="flex justify-between items-center gap-5 mt-20">
+			<div class="flex flex-col md:flex-row justify-between items-center gap-5 mt-20">
 				{
 					service.sub_services.map((item: any) => (
 						<Common.ServiceList item={item} />
@@ -60,11 +60,11 @@ const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Con
     </section>
 
     <!-- Description -->
-    <section class="w-full min-h-[100vh] py-20">
+    <section class="w-full min-h-[100vh] py-10 md:py-20">
         <Common.Container>
-            <div class="flex w-full gap-x-20">
-                <div class="w-[60%]">
-                    <img src={service.image.url} alt="slide_five" class={'w-full h-[500px] rounded-xl'} />
+            <div class="flex flex-col md:flex-row w-full gap-y-5 md:gap-x-20">
+                <div class="w-full md:w-[60%]">
+                    <img src={service.image.url} alt="slide_five" class={'w-full h-[300px] md:h-[500px] rounded-xl'} />
                     <div class="mt-5">
                         <h3 class="text-darkBlue font-bold text-[36px]">Descriptions</h3>
                         <article class="pt-3">
@@ -73,7 +73,7 @@ const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Con
                     </div>
                     <div class="mt-10">
                         <h3 class="text-darkBlue font-semibold text-[26px] mb-5">Keys of Features</h3>
-                        <div class="grid grid-cols-2 border-y border-y-gray-300 py-5 gap-x-10 gap-y-2">
+                        <div class="grid grid-cols-1 md:grid-cols-2 border-y border-y-gray-300 py-5 gap-x-10 gap-y-2">
                             {
                                 service.features.map((item: any) => (
                                         <div class="flex gap-x-2">
@@ -86,7 +86,7 @@ const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Con
                         </div>
                     </div>
                 </div>
-                <div class="w-[40%]">
+                <div class="w-full md:w-[40%]">
                     <div class="shadow-2xl rounded-2xl bg-white">
                         <!-- Card Header -->
                         <div class="w-full bg-[#00384f] rounded-tr-2xl rounded-tl-2xl py-3 text-center">
@@ -108,11 +108,11 @@ const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Con
 	<Common.Solutions />
 
     <!-- FAQs -->
-    <section class="w-full min-h-[100vh] py-40">
+    <section class="w-full min-h-[100vh] py-10 md:py-40">
         <Common.Container flex='flex-col'>
             <div class="flex-col flex-wrap text-center">
                 <h6 class="uppercase text-green font-bold">Common Questions</h6>
-                <h2 class="text-[38px] text-darkBlue font-bold mt-4 leading-[45px]">Most Popular Questions</h2>
+                <h2 class="text-[32px] md:text-[38px] text-darkBlue font-bold mt-4 leading-[45px]">Most Popular Questions</h2>
             </div>
             <!-- FAQs -->
             <Common.Faqs data={faqsInPage} client:load />

@@ -1,12 +1,12 @@
 ---
 import { Layout, Helpers, Common } from "@components/index"
-import { Image } from "astro:assets";
-import { Data, Queries } from "@utils/index";
+import { Constants, Data, Queries } from "@utils/index";
 import "@styles/styles.css";
 import type { CollectionEntry } from "astro:content";
 import { sanityClient } from "sanity:client";
 
 const projects: CollectionEntry<'projects'>[] = await sanityClient.fetch(Queries.projects)
+const services: CollectionEntry<'services'>[] = await sanityClient.fetch(Queries.services)
 ---
 
 <Layout>
@@ -42,17 +42,14 @@ const projects: CollectionEntry<'projects'>[] = await sanityClient.fetch(Queries
 		<Common.Container>
 			<div class="w-full flex gap-y-10 flex-col gap-x-10 md:flex md:flex-row md:gap-y-0">
 				<!-- Left Content -->
-				<div class="w-full flex-col flex-wrap md:w-2/4 md:mt-40">
+				<div class="w-full flex-col flex-wrap md:w-2/4 md:mt-[100px]">
 					<h6 class="text-[12px] font-bold text-green uppercase md:text-base">Who we are</h6>
 					<h2 class="text-[24px] leading-[45px] mt-5 text-deepBlue font-bold text-[40px]">Renewable Energy For a Sustainable World</h2>
 					<p class="text-[14px] text-deepBlue mt-5 md:text-base md:pr-20">
-						We are a dedicated team of professionals committed to delivering the best energy solutions for diverse solar energy projects
+						Undoubtedly, the sun is our most precious resource. Without it, there would be no life or humankind on earth. Best of all, its power is virtually inexhaustible.
 					</p>
 					<p class="text-[14px] text-deepBlue mt-5 md:text-base md:pr-20">
-						We specialize in harnessing the unparalleled power of the sun to create innovative, high-quality solar solutions that drive sustainable progress. LPV Technologies boasts a state-of-the-art 100MW solar panel assembly plant, spanning over 20,000 sqm and equipped with a top-rated European panel assembly line. This facility assembles premium quality solar panels that meet international standards, offering flexibility to produce monocrystalline, polycrystalline, and BIPV solar panels. Our commitment to excellence is reflected in every panel we produce, combining advanced engineering, superior craftsmanship, and cutting-edge technology. 
-					</p>
-					<p class="text-[14px] text-deepBlue mt-5 md:pr-20 md:text-base">
-						Driven by innovation and a commitment to excellence, LPV Technologies aims to be at the forefront of the energy transition agenda by offering high-quality and bespoke renewable energy solutions to discerning clients in Nigeria and beyond.
+						At LPV Technologies, we are at the forefront of developing cutting-edge solar panels featuring PERC and TOPCon modules. These advanced technologies harness the immense power of the sun to deliver sustainable energy solutions
 					</p>
 					<div class="mt-10">
 						<Common.Button path="#" className="py-3 px-10 font-semibold text-white bg-green rounded-full baseline hover:bg-darkBlue" text="Discover more" />
@@ -77,33 +74,14 @@ const projects: CollectionEntry<'projects'>[] = await sanityClient.fetch(Queries
 	</section>
 
 	<!-- Our clients section -->
-	<section class="w-full mt-40">
-		<Common.Container>
-			<!-- Background card -->
-			<div class="w-full h-auto mb-0 px-5 py-7 bg-[#F5F7F8] rounded-xl md:mb-28">
-				<div class="w-[100%] mx-auto flex-col justify-center items-center md:w-[90%]">
-					<h3 class="text-center font-bold text-[20px] md:text-[28px]">LPV Technologies is trusted by 6+ million users in <br /> 175+ countries.</h3>
-					<!-- Grid container -->
-					<div class="grid grid-cols-2 gap-2 my-10 md:grid-cols-4">
-						{
-							Data.clients.map(item => (
-								<div class="w-[max-content] p-6 bg-white rounded-[10px] flex justify-center items-center cursor-pointer md:w-[250px] md:h-[100px] md:p-0">
-									<Image src={item.img} alt="client" width={100} height={100} class={'grayscale hover:grayscale-0'} />
-								</div>
-							))
-						}
-					</div>
-				</div>
-			</div>
-		</Common.Container>
-	</section>
+	<Common.Clients />
 
 	<!-- Live Green Section -->
 	<Common.GreenCounter />
 	
 
 	<!-- Our projects section -->
-	<section class="w-full min-h-screen pt-10 md:pt-20">
+	<section class="w-full min-h-screen pt-10 md:pt-20 md:pb-20">
 		<Common.Container>
 			<div class="w-full flex flex-col md:flex-row">
 				<Common.Project qualifications={Data.qualifications} />
@@ -112,7 +90,12 @@ const projects: CollectionEntry<'projects'>[] = await sanityClient.fetch(Queries
 	</section>
 
 	<!-- What we offer section -->
-	<Common.Offer />
+	{
+		services.length < 1 && (
+			<Common.Offer page="landing" />
+		)
+
+	}
 
 	<!-- Keep your environment green section -->
 	<Common.GreenTwo />
@@ -121,24 +104,29 @@ const projects: CollectionEntry<'projects'>[] = await sanityClient.fetch(Queries
 	<Common.Solutions />
 
 	<!-- Featured Projects -->
-	<section class="w-full min-h-[50vh] md:min-h-[100vh] pt-10 md:pt-32">
-		<Common.Container flex="flex-col">
-			<div class="w-[100%] md:w-3/5 flex-col justify-center items-center mx-auto text-center">
-				<h6 class="text-base uppercase text-green font-bold">Featured Projects</h6>
-				<h2 class="text-[26px] leading-[28px] md:text-[48px] text-darkBlue font-bold mt-3 md:leading-[52px]">Keep your environment clean make the earth green</h2>
-			</div>
-			<div class="w-full flex flex-wrap gap-6 mt-14 md:mt-24">
-				{
-					projects.map(item => (
-						<Common.Featured project={item}  />
-					))
-				}
-			</div>
-		</Common.Container>
-	</section>
+			{
+				projects.length > 0 && (
+				<section class="w-full min-h-[50vh] md:min-h-[100vh] py-10 md:pt-32">
+					<Common.Container flex="flex-col">
+						<div class="w-[100%] md:w-3/5 flex-col justify-center items-center mx-auto text-center">
+							<h6 class="text-base uppercase text-green font-bold">Featured Projects</h6>
+							<h2 class="text-[26px] leading-[28px] md:text-[48px] text-darkBlue font-bold mt-3 md:leading-[52px]">Keep your environment clean make the earth green</h2>
+						</div>
+						<div class="w-full flex flex-wrap gap-6 mt-14 md:mt-24">
+							{
+								projects.slice(0, Constants.LANDING_PAGE_SIZE).map(item => (
+									<Common.Featured project={item}  />
+								))
+							}
+						</div>
+						<a href="/projects" class="flex justify-center items-center pt-10">View More</a>
+					</Common.Container>
+				</section>
+				)
+			}
 
 	<!-- Get a Quote Section -->
-	<Common.Appointment />
+	<!-- <Common.Appointment /> -->
 	
 	<!-- Live Green Section -->
 	<Common.Green />

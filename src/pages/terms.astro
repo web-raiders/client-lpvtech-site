@@ -12,10 +12,10 @@ const terms = await sanityClient.fetch(Queries.terms);
     <!-- Hero Section -->
     <Common.Hero backgroundImage={PrivacyImg} header='Terms & Conditions' />
 
-    <section class="w-full min-h-screen mt-20 pb-20">
+    <section class="w-full min-h-screen py-10 md:mt-20 md:pb-20">
         <Common.Container>
-            <div class="w-full mt-20">
-                <h6 class="text-[30px] text-darkBlue font-bold text-center">LPV Technologies Terms & Conditions</h6>
+            <div class="w-full mt-5 md:mt-20">
+                <h6 class="text-[20px] md:text-[30px] text-darkBlue font-bold text-center">LPV Technologies Terms & Conditions</h6>
                 <!-- Policies -->
                 <Common.Faqs data={terms} client:load />
             </div>

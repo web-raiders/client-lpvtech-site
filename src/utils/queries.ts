@@ -9,7 +9,7 @@ export const terms = '*[_type == "terms"]{ title, content, _createdAt } | order(
 // Get all faqs
 export const faqs = '*[_type == "faqs"]{ question, answer }'
 // Get all policies
-export const policy = '*[_type == "policy"]{ title, content }'
+export const policy = '*[_type == "policy"]{ title, content, _createdAt } | order(_createdAt asc)'
 
 
 // Get all other articles

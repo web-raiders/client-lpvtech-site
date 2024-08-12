@@ -44,7 +44,120 @@ import * as Queries from './queries'
 const servicesList: CollectionEntry<'services'>[] = await sanityClient.fetch(Queries.services)
 const projectsList: CollectionEntry<'projects'>[] = await sanityClient.fetch(Queries.projects)
 
-export const navlist = [
+export const navlist = servicesList.length < 1 && projectsList.length < 1 ? [
+    {
+        name: 'Home',
+        path: '/'
+    },
+    {
+        name: 'About Us',
+        path: '/about'
+    },
+    {
+        name: 'Contact Us',
+        path: '/contact'
+    },
+    {
+        name: 'More',
+        path: '#',
+        subMenu: [
+            {
+                name: 'Team',
+                path: '/team'
+            }, 
+            {
+                name: 'FAQ',
+                path: '/faq'
+            }, 
+            {
+                name: 'Blog',
+                path: '/blog'
+            }
+        ]
+    }
+] : servicesList.length < 1 ? [
+    {
+        name: 'Home',
+        path: '/'
+    },
+    {
+        name: 'About Us',
+        path: '/about'
+    },
+    {
+        name: 'Projects',
+        path: '/projects',
+        subMenu: projectsList.slice(0, 5).map(item => {
+            return {
+                name: item.name,
+                path: `/projects/${item.slug}`
+            }
+        })
+    },
+    {
+        name: 'Contact Us',
+        path: '/contact'
+    },
+    {
+        name: 'More',
+        path: '#',
+        subMenu: [
+            {
+                name: 'Team',
+                path: '/team'
+            }, 
+            {
+                name: 'FAQ',
+                path: '/faq'
+            }, 
+            {
+                name: 'Blog',
+                path: '/blog'
+            }
+        ]
+    }
+] : projectsList.length < 1 ? [
+    {
+        name: 'Home',
+        path: '/'
+    },
+    {
+        name: 'About Us',
+        path: '/about'
+    },
+    {
+        name: 'Services',
+        path: '/services',
+        subMenu: servicesList.slice(0, 5).map(item => {
+            return {
+                name: item.title,
+                path: `/services/${item.slug}`
+            }
+        })
+    },
+    {
+        name: 'Contact Us',
+        path: '/contact'
+    },
+    {
+        name: 'More',
+        path: '#',
+        subMenu: [
+            {
+                name: 'Team',
+                path: '/team'
+            }, 
+            {
+                name: 'FAQ',
+                path: '/faq'
+            }, 
+            {
+                name: 'Blog',
+                path: '/blog'
+            }
+        ]
+    }
+] : [
     {
         name: 'Home',
         path: '/'
@@ -78,7 +191,7 @@ export const navlist = [
         path: '/contact'
     },
     {
-        name: 'Page',
+        name: 'More',
         path: '#',
         subMenu: [
             {
@@ -97,7 +210,7 @@ export const navlist = [
     }
 ]
 
-export const subNav = ['Services', 'Projects', 'Page']
+export const subNav = ['Services', 'Projects', 'More']
 
 export const businessData = [
     {
@@ -306,23 +419,23 @@ export const clients = [
 export const services = [
     {
         icon: IoSettingsOutline,
-        title: '100MW Solar Assembly Plant',
-        description: 'We boast a 100MW solar panel plant, 20,000 sqm, featuring a top-rated European assembly line.'
+        title: 'Assembly Plant',
+        description: 'LPV Technologies operates a state-of-the-art 100MW solar panel assembly plant.'
     },
     {
         icon: IoSettingsOutline,
-        title: 'Customised Solar Solutions',
-        description: 'We customize solutions for each client with flexible PPA terms, tailored leases, and personalized service packages for optimal outcomes.'
+        title: 'Flexible and Customised Solar Solutions',
+        description: 'LPV Technologies offers tailored solutions to meet the unique needs of each solar project.'
     },
     {
         icon: IoSettingsOutline,
-        title: ' Solar Centre of Excellence',
-        description: 'We train workforces in solar deployment, fostering local expertise and innovation to meet Africa’s energy challenges.'
+        title: 'Solar Centre of Excellence',
+        description: 'We provide specialized training in solar project deployments, supported by ongoing research and development to advance solar technologies.'
     },
     {
         icon: IoSettingsOutline,
         title: 'Professional Installation',
-        description: 'Our certified technicians ensure flawless solar PV installations with a focus on safety, precision, and efficiency.'
+        description: 'Our certified installation technicians are dedicated to delivering flawless execution on every project, with a focus on safety, precision, and efficiency.'
     },
 ]
 
@@ -469,15 +582,15 @@ export const contactList = [
     },
     {
         icon: SlLocationPin,
-        title: 'Abuja Office',
-        headingOne: '9, Thaba Tseka Street, Off Adetokunbo Ademola, Wuse 2',
-        headingTwo: 'FCT Nigeria',
+        title: 'Lagos Office',
+        headingOne: 'Plot 1-5 Isolo Road, Ikotun Egbe',
+        headingTwo: 'Lagos, Nigeria',
     },
     {
         icon: SlLocationPin,
-        title: 'Overseas',
-        headingOne: '5, Bolton Street, Green Park, London',
-        headingTwo: 'London United Kingdom',
+        title: 'Abuja Office',
+        headingOne: '9, Thaba Tseka Street, Off Adetokunbo Ademola, Wuse 2',
+        headingTwo: 'FCT, Nigeria',
     },
     {
         icon: MdOutlineEmail,
@@ -488,8 +601,8 @@ export const contactList = [
     {
         icon: FiPhone,
         title: `Let's Talk`,
-        headingOne: 'Phone : +2348495833349',
-        headingTwo: 'Alt : +2348394855581',
+        headingOne: 'Phone : 09062892870',
+        headingTwo: 'Alt : 09062948514',
     },
 ]
 

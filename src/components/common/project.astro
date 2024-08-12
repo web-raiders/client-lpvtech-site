@@ -7,9 +7,9 @@ interface Props {
 }
 ---
 <div class="w-[100%] h-[300px] md:w-[45%] md:h-screen md:mr-20 bg-cover bg-no-repeat bg-center rounded-xl" style={{ backgroundImage: 'url(https://res.cloudinary.com/du52ca1q1/image/upload/v1721828969/vecteezy_a-power-solar-panel-field-sits-atop-a-mountain-under-blue-skies_1226604_1_ypliay.jpg)'}}>
-    <div class="w-[150px] p-7 -ml-3 h-[150px] md:w-[200px] md:h-[200px] bg-white flex-col justify-center items-center rounded-full shadow-xl md:px-2 md:pt-8 text-center -mt-10 md:-ml-6">
+    <div class="w-[150px] py-7 px-0 md:p-7 -ml-3 h-[150px] md:w-[200px] md:h-[200px] bg-white flex-col justify-center items-center rounded-full shadow-xl md:px-2 md:pt-8 text-center -mt-10 md:-ml-6">
         <span class="text-green text-[32px] md:text-[60px] font-bold">25+</span>
-        <p class="text-[14px] md:text-[18px] text-darkBlue -mt-2">Years of Experience</p>
+        <p class="text-base md:text-[18px] text-darkBlue -mt-2">Years of Experience</p>
     </div>
 </div>
 <div class="w-[100%] mt-5 md:mt-0 md:w-[55%]">
@@ -19,17 +19,17 @@ interface Props {
         We are a team of professionals who are dedicated to providing the best energy solutions for your home or business. We offer a wide range of services, including solar panel installation, wind turbine installation, and energy efficiency consulting.
     </p>
     <hr />
-<div class="grid grid-cols-1 gap-5 mt-10 md:grid-cols-2">
-    {
-        qualifications.map((item: any) => (
-            <div class="w-[300px] h-auto items-center">
-                    <div class="w-[60px] h-[60px] rounded-xl bg-[#e1f5ec] flex justify-center items-center">
-                        <item.icon color="#0FCC7C" size={'32px'}/>
-                    </div>
-                    <h3 class="text-[18px] font-bold mt-5 text-deepBlue mb-3">{item.title}</h3>
-                    <p class="text-base">{item.description}</p>
-            </div>
-        ))
-    }
-</div>
+    <div class="grid grid-cols-1 gap-y-10 md:gap-5 mt-10 md:grid-cols-2">
+        {
+            qualifications.map((item: any) => (
+                <div class="w-full md:w-[300px] h-auto items-center">
+                        <div class="w-[60px] h-[60px] rounded-xl bg-[#e1f5ec] flex justify-center items-center">
+                            <item.icon color="#0FCC7C" size={'32px'}/>
+                        </div>
+                        <h3 class="text-[22px] md:text-[18px] font-bold mt-5 text-deepBlue mb-3">{item.title}</h3>
+                        <p class="text-base">{item.description}</p>
+                </div>
+            ))
+        }
+    </div>
 </div>

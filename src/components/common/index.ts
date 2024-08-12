@@ -18,6 +18,7 @@ import Solutions from "./solutions.astro";
 import Appointment from "./appointment.astro";
 import ServiceList from "./service_list.astro";
 import Policy from "./policy";
+import Clients from './clients.astro'
 
 export {
     Button,
@@ -39,5 +40,6 @@ export {
     Solutions,
     Appointment,
     ServiceList,
-    Policy
+    Policy,
+    Clients
 }

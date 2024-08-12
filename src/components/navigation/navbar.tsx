@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Logo } from "@assets/images";
 import { IoMdClose } from 'react-icons/io';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { MdKeyboardArrowDown } from 'react-icons/md';
@@ -21,9 +20,6 @@ const Navbar = () => {
         <nav className="_nav">
             <div className="_container">
                 <div className="_flex_box">
-                    <div className='_logo'>
-                        <a href='/'><img src={Logo} alt='logo' width={"100"} height={"100"} /></a>
-                    </div>
                     <div className="_nav_menu">
                         <ul className="_nav_list">
                             {navlist.map((item) => (
@@ -45,7 +41,7 @@ const Navbar = () => {
                                     {subNav.includes(item.name) && <span><MdKeyboardArrowDown style={{ color: '#fff', paddingTop: '2px'}} size={'20px'} /></span>}
                                 </div>
                             ))}
-                            <div className='_nav_btn'>Get a Quote</div>
+                            {/* <div className='_nav_btn'>Get a Quote</div> */}
                         </ul>
                         <span className='_icon' onClick={() => handleToggle('menu')}>
                         {

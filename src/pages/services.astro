@@ -1,52 +1,25 @@
 ---
 import { Common } from '@components/index';
 import Layout from '@components/layout.astro';
-import { Queries } from '@utils/index';
-import { PortableText } from 'astro-portabletext';
-import type { CollectionEntry } from 'astro:content';
-import { sanityClient } from "sanity:client";
-
-const services: CollectionEntry<'services'>[] = await sanityClient.fetch(Queries.services)
 ---
 
 <Layout title='LpvTech Website - Our Services'>
     <!-- Hero Section -->
     <section 
-    class="pt-40 w-full h-[100vh] bg-no-repeat bg-cover bg-center" 
+    class="pt-20 md:pt-48 w-full h-[80vh] bg-no-repeat bg-cover bg-center" 
     style={{ 
         backgroundImage: `linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(/images/blog_bg.jpg)`
     }}>
         <Common.Container flex='flex-col'>
-            <div class="w-[50%] pt-20">
+            <div class="w-full text-center md:text-left md:w-[50%] pt-20">
                 <h6 class="text-[#0fcc7c] uppercase font-semibold mb-5">Our Services</h6>
-                <h1 class="text-[48px] text-white font-bold leading-[55px]">Cleaner Energy for a Cleaner World.</h1>
-                <h4 class="text-white pt-5 text-[25px] font-semibold">Help protect the environment by powering your home with 100% renewable energy.</h4>
+                <h1 class="text-[32px] leading-[32px] md:text-[48px] text-white font-bold md:leading-[55px]">Cleaner Energies for a Cleaner World.</h1>
+                <h4 class="text-white pt-5 text-base md:text-[25px] font-semibold">Our commitment to engineering excellence drives us to create sustainable energy for a brighter future</h4>
             </div>
         </Common.Container>
     </section>
 
-    <section class="w-full -mt-40">
-        <Common.Container>
-            <!-- Cards -->
-            <div class="w-full flex gap-x-5">
-                {
-                        services.slice(0, 3).map(item => (
-                            <div class="w-[400px] shadow-xl rounded-xl">
-                                <img src={`${item.image.url}`} alt={item.image.alt} class={"w-full h-100px rounded-t-xl"} />
-                                <div class="text-center px-5 py-7">
-                                    <h4 class="text-[28px] text-gray-500 font-semibold">{item.title}</h4>
-                                    <article class="mt-2 text-gray-500 line-clamp-3">
-                                        <PortableText value={item.description} />
-                                    </article>
-                                    <div class="mt-7 mb-3">
-                                        <Common.Button path={`/services/${item.slug}`} className="py-2 px-7 text-white bg-[#0fcc7c] font-semibold rounded-full baseline hover:bg-darkBlue" text="Learn more"  />
-                                    </div>
-                                </div>
-                            </div>
-                        ))
-                    }
-            </div>
-        </Common.Container>
+    <section class="w-full py-10">
         <!-- Decision Section -->
         <Common.Services page='services' />
     </section>
@@ -61,7 +34,7 @@ const services: CollectionEntry<'services'>[] = await sanityClient.fetch(Queries
 	<Common.Solutions />
 
     <!-- Get a Quote Section -->
-	<Common.Appointment page="services" />
+	<!-- <Common.Appointment page="services" /> -->
 
     
 </Layout>
