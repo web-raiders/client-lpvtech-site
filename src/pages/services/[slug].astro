@@ -27,7 +27,7 @@ const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Con
 
 <Layout>
     <!-- Hero Section -->
-    <section class="h-[100vh] pt-24 md:pt-32 w-full bg-no-repeat bg-cover bg-center flex justify-center items-center" style={{ backgroundImage: `linear-gradient(rgba(0, 23, 23, 0.6), rgba(0, 23, 23, 0.6)), url(${service.image.url})`}}>
+    <section class="h-[100vh] md:h-[60vh] lg:h-[100vh] pt-24 md:pt-32 w-full bg-no-repeat bg-cover bg-center flex justify-center items-center" style={{ backgroundImage: `linear-gradient(rgba(0, 23, 23, 0.6), rgba(0, 23, 23, 0.6)), url(${service.image.url})`}}>
         <div class="w-[600px] text-center flex flex-col justify-center items-center">
             <!-- Top Icon -->
             <div class="w-[max-content] p-5 rounded-full" style={{ backgroundImage: 'radial-gradient(at top left, #DDEDC1 0%, #0FCC7C 100%)'}}>
@@ -46,7 +46,7 @@ const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Con
     <section class="w-full border-b border-b-gray-300 pb-10 md:pb-20">
         <Common.Container>
             <!-- Flex -->
-			<div class="flex flex-col md:flex-row justify-between items-center gap-5 mt-20">
+			<div class="flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-between items-center gap-5 mt-20">
 				{
 					service.sub_services.map((item: any) => (
 						<Common.ServiceList item={item} />
@@ -59,8 +59,8 @@ const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Con
     <!-- Description -->
     <section class="w-full min-h-[100vh] py-10 md:py-20">
         <Common.Container>
-            <div class="flex flex-col md:flex-row w-full gap-y-5 md:gap-x-20">
-                <div class="w-full md:w-[60%]">
+            <div class="flex flex-col lg:flex-row w-full gap-y-5 lg:gap-x-20">
+                <div class="w-full lg:w-[60%]">
                     <img src={service.image.url} alt="slide_five" class={'w-full h-[300px] md:h-[500px] rounded-xl'} />
                     <div class="mt-5">
                         <h3 class="text-darkBlue font-bold text-[36px]">Descriptions</h3>
@@ -83,9 +83,8 @@ const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Con
                         </div>
                     </div>
                 </div>
-                <div class="w-full md:w-[40%]">
+                <!-- <div class="w-full md:w-[40%]">
                     <div class="shadow-2xl rounded-2xl bg-white">
-                        <!-- Card Header -->
                         <div class="w-full bg-[#00384f] rounded-tr-2xl rounded-tl-2xl py-3 text-center">
                             <h6 class="text-white font-bold text-[32px]">Book an Appointment</h6>
                         </div>
@@ -93,7 +92,7 @@ const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Con
                             <Common.Form />
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </Common.Container>
     </section>

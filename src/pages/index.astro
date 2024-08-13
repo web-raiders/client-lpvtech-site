@@ -13,7 +13,7 @@ const services: CollectionEntry<'services'>[] = await sanityClient.fetch(Queries
 	<!-- Carousel -->
 	<Helpers.Carousel client:load />
 	<!-- Cards -->
-	<section class="absolute z-10 top-[600px] smm:top-[700px] mx-auto w-full pb-10 md:top-[700px]">
+	<section class="absolute z-10 top-[600px] smm:top-[700px] mx-auto w-full pb-10 md:top-[650px]">
 		<Common.Container>
 			<div class="w-full flex gap-y-5 flex-col gap-x-10 md:flex md:flex-row md:gap-y-0">
 				<!-- First Card -->
@@ -91,7 +91,7 @@ const services: CollectionEntry<'services'>[] = await sanityClient.fetch(Queries
 
 	<!-- What we offer section -->
 	{
-		services.length < 1 && (
+		services.length > 0 && (
 			<Common.Offer page="landing" />
 		)
 
@@ -108,9 +108,9 @@ const services: CollectionEntry<'services'>[] = await sanityClient.fetch(Queries
 				projects.length > 0 && (
 				<section class="w-full min-h-[50vh] md:min-h-[100vh] py-10 md:pt-32">
 					<Common.Container flex="flex-col">
-						<div class="w-[100%] md:w-3/5 flex-col justify-center items-center mx-auto text-center">
+						<div class="w-[100%] lg:w-3/5 flex-col justify-center items-center mx-auto text-center">
 							<h6 class="text-base uppercase text-green font-bold">Featured Projects</h6>
-							<h2 class="text-[26px] leading-[28px] md:text-[48px] text-darkBlue font-bold mt-3 md:leading-[52px]">Keep your environment clean make the earth green</h2>
+							<h2 class="text-[26px] leading-[28px] md:text-[34px] lg:text-[48px] text-darkBlue font-bold mt-3 lg:leading-[52px]">Keep your environment clean make the earth green</h2>
 						</div>
 						<div class="w-full flex flex-wrap gap-6 mt-14 md:mt-24">
 							{
@@ -119,7 +119,7 @@ const services: CollectionEntry<'services'>[] = await sanityClient.fetch(Queries
 								))
 							}
 						</div>
-						<a href="/projects" class="flex justify-center items-center pt-10">View More</a>
+						<a href="/projects" class="text-[28px] lg:tex-base flex justify-center items-center pt-10">View More</a>
 					</Common.Container>
 				</section>
 				)
