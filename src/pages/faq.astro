@@ -18,15 +18,15 @@ const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Con
     <!-- Find your solutions -->
     <section class="w-full min-h-[50vh] md:pt-20 pb-10">
         <Common.Container>
-            <div class="flex flex-col md:flex-row gap-x-28">
+            <div class="flex flex-col md:flex-row md:gap-x-10 lg:gap-x-28">
                 <div class="w-full md:w-2/4 pt-10 md:pt-20">
                     <h6 class="text-base uppercase text-[#0FCC7C] font-bold">Find your solutions</h6>
-                    <h2 class="text-[28px] leading-[30px] md:text-[40px] text-darkBlue font-bold mt-3 md:leading-[50px]">Find information on relevant LPVT Needs.</h2>
+                    <h2 class="text-[28px] leading-[30px] md:text-[32px] lg:text-[40px] text-darkBlue font-bold mt-3 lg:leading-[50px]">Find information on relevant LPVT Needs.</h2>
                     <p class="text-gray-500 mt-5 text-[17px]">
                         We have compiled a list of frequently asked questions to help you find the information you need. If you can't find what you're looking for, please don't hesitate to contact us.
                     </p>
                 </div>
-                <div class="w-full mt-10 md:mt-0 md:w-2/4 h-[450px] bg-no-repeat bg-cover bg-center rounded-2xl flex flex-col justify-end pb-5 pl-5" style={{ backgroundImage: 'url(/images/team_bg.jpg)'}}>
+                <div class="w-full mt-10 md:mt-0 md:w-2/4 h-[450px] bg-no-repeat bg-cover bg-center rounded-2xl flex flex-col justify-end pb-5 pl-5 md:pl-1 lg:pl-5" style={{ backgroundImage: 'url(/images/team_bg.jpg)'}}>
                     <!-- Card -->
                     <div class="w-[max-content] bg-white rounded-2xl p-6 pr-10 flex gap-x-3">
                         <div class="bg-[#0FCC7C] p-6 w-[max-content] flex justify-center items-center rounded-full">
@@ -51,7 +51,7 @@ const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Con
             </div>
             <!-- FAQs -->
             <Common.Faqs data={faqsInPage} client:load />
-            <div class="mt-5">
+            <div class="w-full mt-5">
                 <Common.Pagination currentPage={currentPage} totalPages={totalPages} disablePrevious={currentPage === 1} disableNext={currentPage === totalPages} />
             </div>
         </Common.Container>

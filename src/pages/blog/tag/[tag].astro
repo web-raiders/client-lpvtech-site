@@ -20,25 +20,25 @@ const articlesInPage: CollectionEntry<'blog'>[] = tagArticles.slice((currentPage
 <Layout>
 
     <!-- Hero Section -->
-    <section class="pt-52 w-full min-h-[60vh] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `linear-gradient(rgba(0, 23, 23, 0.7), rgba(0, 23, 23, 0.7)), url(${tagArticles[0].image})`}}>
+    <section class="pt-52 w-full min-h-[60vh] md:min-h-[40vh] lg:min-h-[60vh] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `linear-gradient(rgba(0, 23, 23, 0.7), rgba(0, 23, 23, 0.7)), url(${tagArticles[0].image})`}}>
         <div class="w-2/5 mx-auto text-center">
             <h1 class="text-[32px] md:text-[48px] text-white font-bold">{Tools.capitalizeInitial(tag)}</h1>
         </div>
     </section>
 
     <!-- Articles Section -->
-    <section class="w-full min-h-screen py-10 md:py-20">
+    <section class="w-full min-h-screen py-10 lg:py-20">
         <Common.Container flex="flex-col">
             <!-- <a href="/blog" class="inline-block bg-gray-100 p-2 mb-6 hover:bg-indigo-500 hover:text-white">Back To Articles</a> -->
             <Common.Button path="/blog" text="Back to blog" className=`block w-[max-content] py-1.5 px-3 text-base text-center text-white text-[14px] bg-[#0fcc7c] rounded-md baseline hover:bg-darkBlue` />
             <!-- Main Grid -->
-            <div class="grid grid-cols-1 gap-10 md:grid-cols-3 mt-10">
+            <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 mt-10">
                 <!-- Article Card -->
                 {articlesInPage.map((article: any) => (
                   <Common.Article article={article} />
                 ))}
             </div>
-            <div class="mt-5">
+            <div class="w-full mt-5">
                 <Common.Pagination currentPage={currentPage} totalPages={totalPages} disablePrevious={currentPage === 1} disableNext={currentPage === totalPages} />
             </div>
         </Common.Container>

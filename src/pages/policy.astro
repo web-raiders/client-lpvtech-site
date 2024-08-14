@@ -13,13 +13,10 @@ const policies = await sanityClient.fetch(Queries.policy);
     <!-- Hero Section -->
     <Common.Hero backgroundImage={PrivacyImg} header='Privacy Policy' caption='Your Privacy, Our Priority' />
 
-    <section class="w-full min-h-screen mt-20 pb-20">
-        <Common.Container flex='flex-col'>
-            <!-- <div class="flex flex-col justify-center items-center">
-                <Image src={PolicyImage} alt="policy image" class={'w-[80%] h-[500px]'}  />
-            </div> -->
-            <div class="w-full mt-20">
-                <h6 class="text-[48px] text-darkBlue font-bold">Our Policy</h6>
+    <section class="w-full min-h-screen md:min-h-[40vh] py-10 lg:pb-20">
+        <Common.Container>
+            <div class="w-full mt-5">
+                <h6 class="text-[20px] md:text-[30px] text-darkBlue font-bold text-center">Our Policy</h6>
                 <!-- Policies -->
                 <Common.Faqs data={policies} client:load />
             </div>

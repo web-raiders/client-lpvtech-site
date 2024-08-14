@@ -27,10 +27,10 @@ const otherArticles = await sanityClient.fetch(Queries.otherArticles, { slug })
 
 <Layout title="Article">
     <!-- Hero Section -->
-    <section class="pt-10 md:pt-40 w-full min-h-[70vh] md:min-h-[100vh] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `linear-gradient(rgba(0, 23, 23, 0.5), rgba(0, 23, 23, 0.5)), url(${post.image})`}}>
-        <div class="w-full md:w-2/4 mx-auto text-center mt-40 md:mt-28">
+    <section class="pt-10 md:pt-24 lg:pt-40 w-full min-h-[70vh] md:min-h-[50vh] lg:min-h-[100vh] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `linear-gradient(rgba(0, 23, 23, 0.5), rgba(0, 23, 23, 0.5)), url(${post.image})`}}>
+        <div class="w-full md:w-[80%] lg:w-2/4 mx-auto text-center mt-40 md:mt-28">
             <Common.Tags tags={post.tags} justify="justify-center" />
-            <h4 class="text-[28px] leading-[30px] md:text-[48px] mt-5 md:mt-10 text-white font-semibold md:leading-[48px] border-b border-b-gray-700 pb-10">
+            <h4 class="text-[28px] leading-[30px] md:text-[30px] lg:text-[48px] mt-5 md:mt-10 text-white font-semibold lg:leading-[48px] border-b border-b-gray-700 pb-10">
                 {post.name}
             </h4>
             <div class="flex gap-5 justify-center mt-5 cursor-pointer">
@@ -61,9 +61,9 @@ const otherArticles = await sanityClient.fetch(Queries.otherArticles, { slug })
     <!-- Content Section -->
     <section class="w-full min-h-screen py-10 md:py-20">
         <Common.Container>
-            <div class="flex flex-col md:flex-row gap-y-5 md:gap-12">
+            <div class="flex flex-col lg:flex-row gap-y-5 md:gap-12">
                 <!-- Article Content -->
-                <div class="w-full md:w-[65%]">
+                <div class="w-full lg:w-[65%]">
                     <article>
                         <PortableText value={post.content} />
                     </article>
@@ -103,7 +103,7 @@ const otherArticles = await sanityClient.fetch(Queries.otherArticles, { slug })
                     </div> -->
                 </div>
                 <!-- Other Articles -->
-                <div class="w-full md:w-[35%]">
+                <div class="w-full lg:w-[35%]">
                     <!-- Newsletter -->
                     <!-- <div class="w-[90%] p-10 rounded-xl" style={{ backgroundImage: 'linear-gradient(135deg, #00384F 0%, #0FCC7C 100%)'}}>
                         <h5 class="text-white text-[18px] font-semibold">Signup our newsletter to get update information, news, insight or promotions.</h5>
@@ -123,9 +123,9 @@ const otherArticles = await sanityClient.fetch(Queries.otherArticles, { slug })
                     </div> -->
 
                     <!-- Featured Posts -->
-                    <div class="w-full md:w-[90%] bg-gray-100 px-5 py-10 mt-5 rounded-xl">
-                        <h4 class="font-semibold text-[28px] text-darkBlue">Latest Post</h4>
-                        <div class="mt-5 flex-col">
+                    <div class="w-full lg:w-[90%] bg-gray-100 px-5 py-10 mt-5 rounded-xl">
+                        <h4 class="font-semibold text-[28px] md:px-5 lg:px-0 text-darkBlue">Latest Post</h4>
+                        <div class="mt-5 md:px-3 lg:px-0 flex-col md:grid md:grid-cols-2 md:gap-5 lg:flex lg:flex-col">
                             {
                                 otherArticles.slice(0, 10).map((item: any) => (
                                     <div class="flex gap-x-3 mt-3">
