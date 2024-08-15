@@ -1,6 +1,6 @@
 interface IButton {
    className: string;
-   path: string;
+   path?: string;
    text: string;
    icon?: any;
 }

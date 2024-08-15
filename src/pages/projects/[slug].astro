@@ -34,13 +34,13 @@ const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Con
 <Layout title='LpvTech Website - Help Center'>
     <!-- Hero Section -->
     <section 
-    class="pt-48 w-full min-h-[70vh] md:min-h-[55vh] lg:min-h-[70vh] bg-no-repeat bg-cover bg-center" 
+    class="pt-28 md:pt-40 lg:pt-48 w-full min-h-[40vh] sm:min-h-[60vh] smm:min-h-[45vh] md:min-h-[40vh] lg:min-h-[70vh] xl:min-h-[60vh] xxl:min-h-[70vh] bg-no-repeat bg-cover bg-center" 
     style={{ 
         backgroundImage: `linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(${project.image})`
     }}>
         <Common.Container>
-            <div class="w-full md:w-[50%] pt-5">
-                <h1 class="text-[32px] md:text-[32px] lg:text-[48px] text-white font-bold leading-[45px]">{project.name}</h1>
+            <div class="w-full md:w-[80%] xxl:w-[50%] md:mx-[auto] xxl:mx-0 pt-5">
+                <h1 class="text-[28px] leading-[28px]  md:text-[32px] lg:text-[48px] text-white font-bold lg:leading-[45px]">{project.name}</h1>
                 <article class="text-white pt-5 line-clamp-3">
                     <PortableText value={project.description} />
                 </article>

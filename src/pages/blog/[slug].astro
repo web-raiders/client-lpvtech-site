@@ -27,24 +27,18 @@ const otherArticles = await sanityClient.fetch(Queries.otherArticles, { slug })
 
 <Layout title="Article">
     <!-- Hero Section -->
-    <section class="pt-10 md:pt-24 lg:pt-40 w-full min-h-[70vh] md:min-h-[50vh] lg:min-h-[100vh] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `linear-gradient(rgba(0, 23, 23, 0.5), rgba(0, 23, 23, 0.5)), url(${post.image})`}}>
+    <section class="pt-10 md:pt-24 lg:pt-32 w-full min-h-[50vh] md:min-h-[50vh] lg:min-h-[55vh] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `linear-gradient(rgba(0, 23, 23, 0.5), rgba(0, 23, 23, 0.5)), url(${post.image})`}}>
         <div class="w-full md:w-[80%] lg:w-2/4 mx-auto text-center mt-40 md:mt-28">
             <Common.Tags tags={post.tags} justify="justify-center" />
             <h4 class="text-[28px] leading-[30px] md:text-[30px] lg:text-[48px] mt-5 md:mt-10 text-white font-semibold lg:leading-[48px] border-b border-b-gray-700 pb-10">
                 {post.name}
             </h4>
-            <div class="flex gap-5 justify-center mt-5 cursor-pointer">
+            <div class="flex gap-5 justify-center pb-5 md:pb-0 lg:pb-10 mt-5 cursor-pointer">
                 <div class="flex gap-2">
                     <span class="mt-1">
                         <FaRegCalendarAlt color={"#0FCC7C"} />
                     </span>
                     <span class="text-white">{Tools.formatDate(post.date)}</span>
-                </div>
-                <div class="flex gap-2">
-                    <span class="mt-1">
-                        <MdOutlineMessage color={"#0FCC7C"} />
-                    </span>
-                    <span class="text-white">No comments</span>
                 </div>
                 <div class="flex gap-2">
                     <span class="mt-.5">
