@@ -113,7 +113,7 @@ const services: CollectionEntry<'services'>[] = await sanityClient.fetch(Queries
 							<h6 class="text-base uppercase text-green font-bold">Featured Projects</h6>
 							<h2 class="text-[26px] leading-[28px] md:text-[34px] lg:text-[48px] text-darkBlue font-bold mt-3 lg:leading-[52px]">Keep your environment clean make the earth green</h2>
 						</div>
-						<div class="w-full flex flex-wrap gap-6 lg:gap-3 xl:gap-6 mt-14 md:mt-24">
+						<div class="w-full flex flex-wrap gap-6 lg:gap-3 xl:gap-6 mt-14 md:mt-24" data-aos='fade-up' data-aos-offset='50'>
 							{
 								projects.slice(0, Constants.LANDING_PAGE_SIZE).map(item => (
 									<Common.Featured project={item}  />
