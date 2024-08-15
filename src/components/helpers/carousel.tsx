@@ -21,7 +21,7 @@ const carousel = () => {
     >
       {Data.sliders.map((item, i) => (
         <SwiperSlide key={i}>
-            <section className='w-full pt-40 min-h-[150vh] smm:pt-52 sm:min-h-[100vh] bg-no-repeat bg-cover bg-center md:min-h-[110vh] md:pt-36' style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url(${item})`}}>
+            <section className='w-full pt-40 min-h-[150vh] smm:pt-52 sm:min-h-[100vh] bg-no-repeat bg-cover bg-center md:min-h-[80vh] lg:min-h-[110vh] md:pt-44' style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url(${item})`}}>
                 <div className='container w-full mx-auto flex-col flex-wrap items-center justify-center text-center text-white md:w-3/4 md:mt-20 lg:w-2/4 lg:mt-15'>
                     <h6 className="text-xs text-[#fff] font-bold uppercase md:text-xl">Welcome to LPV Technologies</h6>
                     <h1 className=" text-4xl pt-5 font-bold md:text-6xl">Cleaner Energies for a Cleaner World</h1>

@@ -13,26 +13,19 @@ const articlesInPage: CollectionEntry<'blog'>[] = articles.slice((currentPage - 
 
 <Layout title='LpvTech Website - Blog'>
     <!-- Hero Section -->
-    <section class="pt-44 md:pt-52 w-full min-h-[60vh] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `linear-gradient(rgba(0, 23, 23, 0.3), rgba(0, 23, 23, 0.3)), url(/images/blog_bg.jpg)`}}>
-        <div class="w-full md:w-2/5 mx-auto text-center">
-            <h1 class="text-[48px] text-white font-bold">Article & News</h1>
-            <h4 class="text-[26px] mt-1 md:mt-3 text-white font-semibold leading-[30px]">
-                Archives
-            </h4>
-        </div>
-    </section>
+    <Common.Hero backgroundImage={'/images/blog_bg.jpg'} header='Article & News' caption='Archives' />
 
     <!-- Blog Posts -->
-    <section class="w-full min-h-screen md:pt-20 md:pb-32">
+    <section class="w-full min-h-screen md:py-10 lg:pt-20 lg:pb-32">
         <Common.Container flex='flex-col'>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10 md:mt-0">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-5 lg:gap-10 mt-10 md:mt-0">
                 {
                     articlesInPage.map((article: any) => (
                         <Common.Article article={article} />
                     ))
                 }
             </div>
-            <div class="mb-10 md:mb-0 mt-5">
+            <div class="w-full mb-10 md:mb-0 mt-5">
                 <Common.Pagination currentPage={currentPage} totalPages={totalPages} disablePrevious={currentPage === 1} disableNext={currentPage === totalPages} />
             </div>
         </Common.Container>

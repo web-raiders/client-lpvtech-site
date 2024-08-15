@@ -12,13 +12,13 @@ import { PiArrowUpRight } from "react-icons/pi";
     <Common.Hero backgroundImage={'https://res.cloudinary.com/du52ca1q1/image/upload/v1721842907/african-american-technician-checks-maintenance-solar-panels-group-three-black-engineers-meeting-solar-station_1_zzyx5i.jpg'} header='Team' caption='Alone we can do so little, together we can do so much.' />
 
     <!-- Team Section -->
-    <section class="w-full min-h-[100vh] pt-10 md:pt-40">
+    <section class="w-full min-h-[100vh] pt-10 lg:pt-40">
         <Common.Container flex='flex-col'>
             <!-- Top Header -->
             <div class="w-full flex flex-col md:flex-row gap-10">
                 <div class="w-full md:w-2/4 flex-col flex-wrap">
                     <h6 class="uppercase text-green font-bold">Our Team</h6>
-                    <h2 class="text-[23px] leading-[22px] md:text-[38px] text-darkBlue font-bold mt-4 leading-[45px]">If you want to lift yourself up, lift up someone else.</h2>
+                    <h2 class="text-[23px] leading-[22px] md:text-[32px] md:leading-[30px] lg:text-[38px] text-darkBlue font-bold mt-4 lg:leading-[45px]">If you want to lift yourself up, lift up someone else.</h2>
                 </div>
                 <div class="w-full md:w-2/4">
                     <p class="text-gray-900">
@@ -31,10 +31,10 @@ import { PiArrowUpRight } from "react-icons/pi";
                 </div>
             </div>
             <!-- Team Gallery -->
-            <div class="grid grid grid-cols-1 md:grid-cols-4 gap-5 mt-20">
+            <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-20">
                 {
                     Data.members.map(item => (
-                    <div class="overflow-hidden w-full md:w-[300px] h-[300px] flex bg-cover bg-no-repeat bg-center rounded-xl" style={{ backgroundImage: `url(${item.img})`}}>
+                    <div class="overflow-hidden w-full lg:w-[300px] h-[300px] flex bg-cover bg-no-repeat bg-center rounded-xl" style={{ backgroundImage: `url(${item.img})`}}>
                         <div class="w-full h-full cursor-pointer flex-col justify-center items-center mt-20 pt-44 pb-10 text-center ease-in-out delay-150 duration-300 hover:-translate-y-20" style={{ backgroundImage: 'linear-gradient(180deg, #00384F00 0%, #00384F 100%)'}}>
                             <h6 class="text-white text-[20px] mb-6 font-bold">{item.name}</h6>
                             {/* <p class="text-[#0fcc7c] uppercase font-bold text-center">{item.title}</p> */}
@@ -71,10 +71,10 @@ import { PiArrowUpRight } from "react-icons/pi";
                     </div>
                 </div>
                 <!-- Banner -->
-                <div class="mt-10 md:mt-20 flex flex-col md:flex-row gap-x-10">
-                    <div class="w-full md:w-[45%]">
+                <div class="mt-10 md:mt-20 flex flex-col md:flex-row md:gap-x-5 lg:gap-x-10">
+                    <div class="w-full md:w-[50%] lg:w-[45%]">
                         <h6 class="uppercase text-[#0fcc7c] font-bold">Our value</h6>
-                        <h2 class="text-[28px] leading-[30px] md:text-[38px] text-white font-bold mt-4 md:leading-[45px]">
+                        <h2 class="text-[28px] leading-[30px] md:text-[28px] lg:text-[38px] text-white font-bold mt-4 lg:leading-[45px]">
                             Unlock true potential and transform your life with lpvtech today.
                         </h2>
                         <p class="text-gray-300 mt-5">
@@ -85,8 +85,8 @@ import { PiArrowUpRight } from "react-icons/pi";
                             <Common.Button path="#" text="Discover More" className="py-2 px-4 text-[16px] mt-6 text-white bg-[#0fcc7c] rounded-full baseline hover:bg-darkBlue" />
                         </div>
                     </div>
-                    <div class="w-full mt-16 md:mt-0 md:w-[55%] pl-0 md:pl-10">
-                        <div class="w-full bg-[#001721] pb-10 rounded-2xl">
+                    <div class="w-full mt-16 md:mt-0 md:w-[50%] lg:w-[55%] pl-0 lg:pl-10">
+                        <div class="w-full bg-[#001721] pb-10 rounded-2xl md:px-3">
                             <Common.Container flex='flex-col'>
                                 {
                                     Data.teams_value.map(item => (
@@ -110,12 +110,12 @@ import { PiArrowUpRight } from "react-icons/pi";
     </section>
 
     <!-- Join our team section -->
-    <section class="w-full min-h-[60vh] py-10 md:py-32">
+    <section class="w-full min-h-[60vh] md:min-h-[40vh] lg:min-h-[60vh] py-10 lg:py-32">
         <Common.Container>
             <!-- <div class="flex justify-center items-center"> -->
-                <div class="w-full md:w-[50%] mx-auto p-10 pb-20 border border-gray-200 text-center rounded-xl">
+                <div class="w-full md:w-[80%] lg:w-[50%] mx-auto p-10 pb-20 border border-gray-200 text-center rounded-xl">
                     <h6 class="uppercase text-[#0fcc7c] font-bold">Join our team</h6>
-                    <h2 class="text-[28px] leading-[30px] md:text-[36px] text-darkBlue font-bold mt-4 md:leading-[40px]">
+                    <h2 class="text-[28px] leading-[30px] lg:text-[36px] text-darkBlue font-bold mt-4 lg:leading-[40px]">
                         Ready to make a difference? Join our project team today!
                     </h2>
                     <p class="text-gray-700 mt-5">
