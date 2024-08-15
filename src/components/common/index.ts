@@ -19,7 +19,7 @@ import Appointment from "./appointment.astro";
 import ServiceList from "./service_list.astro";
 import Policy from "./policy";
 import Clients from './clients.astro';
-import Form from "./form";
+import Form from "./form.astro";
 
 export {
     Button,
