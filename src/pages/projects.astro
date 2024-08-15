@@ -25,7 +25,7 @@ const projects: CollectionEntry<'projects'>[] = await sanityClient.fetch(Queries
      <!-- Featured Section -->
      <section class="w-full min-h-screen py-10 pb-32">
         <Common.Container>
-            <div class="w-full flex flex-wrap gap-6 mt-24">
+            <div class="w-full flex flex-wrap gap-6 mt-24" data-aos='fade-up' data-aos-offset='100'>
                 {
                     projects.map(item => (
                         <Common.Featured project={item} />

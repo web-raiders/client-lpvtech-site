@@ -27,14 +27,14 @@ const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Con
 
 <Layout>
     <!-- Hero Section -->
-    <section class="h-[100vh] md:h-[60vh] lg:h-[100vh] pt-24 md:pt-32 w-full bg-no-repeat bg-cover bg-center flex justify-center items-center" style={{ backgroundImage: `linear-gradient(rgba(0, 23, 23, 0.6), rgba(0, 23, 23, 0.6)), url(${service.image.url})`}}>
+    <section class="min-h-[60vh] xxl:min-h-[100vh] pt-24 md:pt-32 w-full bg-no-repeat bg-cover bg-center flex justify-center items-center" style={{ backgroundImage: `linear-gradient(rgba(0, 23, 23, 0.6), rgba(0, 23, 23, 0.6)), url(${service.image.url})`}}>
         <div class="w-[600px] text-center flex flex-col justify-center items-center">
             <!-- Top Icon -->
             <div class="w-[max-content] p-5 rounded-full" style={{ backgroundImage: 'radial-gradient(at top left, #DDEDC1 0%, #0FCC7C 100%)'}}>
                 <GrServices color="#fff" size={'36px'} />
             </div>
             <div class="px-3 md:px-0">
-                <h1 class="text-[28px] md:text-[48px] pt-5 text-white font-bold leading-[55px]">{service.title}</h1>
+                <h1 class="text-[24px] md:text-[44px] xxl:text-[48px] pt-2 text-white font-bold leading-[55px]" data-aos='fade-up' data-aos-offset='100'>{service.title}</h1>
                 <div class="mt-10">
                     <Common.Button path='#' className="py-2 px-7 text-white bg-[#0fcc7c] font-semibold rounded-full baseline hover:bg-darkBlue" text="Get Started" />
                 </div>
@@ -57,42 +57,42 @@ const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Con
     </section>
 
     <!-- Description -->
-    <section class="w-full min-h-[100vh] py-10 md:py-20">
+    <section class="w-full min-h-[100vh] md:min-h-[50vh] py-10 md:py-20">
         <Common.Container>
             <div class="flex flex-col lg:flex-row w-full gap-y-5 lg:gap-x-20">
-                <div class="w-full lg:w-[60%]">
-                    <img src={service.image.url} alt="slide_five" class={'w-full h-[300px] md:h-[500px] rounded-xl'} />
-                    <div class="mt-5">
+                <div class="w-full lg:w-[45%]" data-aos='fade-right' data-aos-offset='100'>
+                    <img src={service.image.url} alt="slide_five" class={'w-full h-[auto] lg:h-[300px] rounded-xl'} />
+                </div>
+                <div class="w-full lg:w-[55%]" data-aos='fade-left' data-aos-offset='100'>
+                    <div>
                         <h3 class="text-darkBlue font-bold text-[36px]">Descriptions</h3>
                         <article class="pt-3">
                             <PortableText value={service.description} />
                         </article>
                     </div>
-                    <div class="mt-10">
+                    <div class="mt-5">
                         <h3 class="text-darkBlue font-semibold text-[26px] mb-5">Keys of Features</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 border-y border-y-gray-300 py-5 gap-x-10 gap-y-2">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-2">
                             {
                                 service.features.map((item: any) => (
                                         <div class="flex gap-x-2">
                                             <span><IoCheckmarkCircle color="#0FCC7C" size={'24px'} /></span>
                                             <span class="text-gray-500">{item}</span>
-
+    
                                         </div>
                                     ))
                                 }
                         </div>
                     </div>
-                </div>
-                <!-- <div class="w-full md:w-[40%]">
-                    <div class="shadow-2xl rounded-2xl bg-white">
+                    <!-- <div class="shadow-2xl rounded-2xl bg-white">
                         <div class="w-full bg-[#00384f] rounded-tr-2xl rounded-tl-2xl py-3 text-center">
                             <h6 class="text-white font-bold text-[32px]">Book an Appointment</h6>
                         </div>
                         <div class="p-5">
                             <Common.Form />
                         </div>
-                    </div>
-                </div> -->
+                    </div> -->
+                </div>
             </div>
         </Common.Container>
     </section>
@@ -104,15 +104,15 @@ const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Con
 	<Common.Solutions />
 
     <!-- FAQs -->
-    <section class="w-full min-h-[100vh] py-10 md:py-40">
+    <section class="w-full min-h-[100vh] md:min-h-[60vh] py-10 xxl:py-40 xxl:min-h-[100vh]">
         <Common.Container flex='flex-col'>
-            <div class="flex-col flex-wrap text-center">
+            <div class="flex-col flex-wrap text-center" data-aos='fade-up' data-aos-offset='100'>
                 <h6 class="uppercase text-green font-bold">Common Questions</h6>
-                <h2 class="text-[32px] md:text-[38px] text-darkBlue font-bold mt-4 leading-[45px]">Most Popular Questions</h2>
+                <h2 class="text-[24px] md:text-[38px] text-darkBlue font-bold mt-2 leading-[45px]">Most Popular Questions</h2>
             </div>
             <!-- FAQs -->
             <Common.Faqs data={faqsInPage} client:load />
-            <div class="mt-5">
+            <div class="w-full mt-5">
                 <Common.Pagination currentPage={currentPage} totalPages={totalPages} disablePrevious={currentPage === 1} disableNext={currentPage === totalPages} />
             </div>
         </Common.Container>

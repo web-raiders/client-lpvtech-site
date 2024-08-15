@@ -6,13 +6,17 @@ interface Props {
     page?: string;
 }
 ---
-<div class="w-[100%] h-[300px] lg:w-[45%] md:h-screen md:mr-10 lg:mr-20 bg-cover bg-no-repeat bg-center rounded-xl" style={{ backgroundImage: 'url(https://res.cloudinary.com/du52ca1q1/image/upload/v1721828969/vecteezy_a-power-solar-panel-field-sits-atop-a-mountain-under-blue-skies_1226604_1_ypliay.jpg)'}}>
+<div 
+    class="w-[100%] h-[300px] lg:w-[45%] md:h-[auto] md:mr-10 xl:mr-20 bg-cover bg-no-repeat bg-center rounded-xl" 
+    style={{ backgroundImage: 'url(https://res.cloudinary.com/du52ca1q1/image/upload/v1721828969/vecteezy_a-power-solar-panel-field-sits-atop-a-mountain-under-blue-skies_1226604_1_ypliay.jpg)'}}
+    data-aos='fade-right' data-aos-offset='100'
+>
     <div class="w-[150px] py-7 px-0 md:p-7 -ml-3 h-[150px] md:w-[200px] md:h-[200px] bg-white flex-col justify-center items-center rounded-full shadow-xl md:px-2 md:pt-8 text-center -mt-10 md:-ml-6">
         <span class="text-green text-[32px] md:text-[60px] font-bold">25+</span>
         <p class="text-base md:text-[18px] text-darkBlue -mt-2">Years of Experience</p>
     </div>
 </div>
-<div class="w-[100%] mt-5 md:mt-0 lg:w-[55%]">
+<div class="w-[100%] mt-5 md:mt-0 lg:w-[55%]" data-aos='fade-left' data-aos-offset='100'>
     {page === 'projects' && <h6 class="text-base uppercase font-bold text-[#0fcc7c]">What we offer</h6>}
     <h2 class=`text-[24px] leading-[32px] md:text-[40px] text-darkBlue font-bold ${page === 'landing' ? 'mt-2' : 'mt-5'} md:leading-[45px]`>The better source of energy for the better tomorrow</h2>
     <p class="text-base text-gray-700 mt-6 mb-10">
@@ -22,7 +26,7 @@ interface Props {
     <div class="grid grid-cols-1 gap-y-10 md:gap-5 mt-10 lg:grid-cols-2">
         {
             qualifications.map((item: any) => (
-                <div class="w-full md:w-[300px] h-auto items-center">
+                <div class="w-full md:w-[100%] h-auto items-center">
                         <div class="w-[60px] h-[60px] rounded-xl bg-[#e1f5ec] flex justify-center items-center">
                             <item.icon color="#0FCC7C" size={'32px'}/>
                         </div>

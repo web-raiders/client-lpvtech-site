@@ -4,6 +4,7 @@ import { Constants, Data, Queries } from "@utils/index";
 import "@styles/styles.css";
 import type { CollectionEntry } from "astro:content";
 import { sanityClient } from "sanity:client";
+import '@styles/spinner.css'
 
 const projects: CollectionEntry<'projects'>[] = await sanityClient.fetch(Queries.projects)
 const services: CollectionEntry<'services'>[] = await sanityClient.fetch(Queries.services)
@@ -42,7 +43,7 @@ const services: CollectionEntry<'services'>[] = await sanityClient.fetch(Queries
 		<Common.Container>
 			<div class="w-full flex gap-y-10 flex-col gap-x-10 md:flex md:flex-row md:gap-y-0">
 				<!-- Left Content -->
-				<div class="w-full flex-col flex-wrap md:w-2/4 md:mt-[100px]">
+				<div class="w-full flex-col flex-wrap md:w-2/4 md:mt-[100px]" data-aos='fade-right' data-aos-offset='100' data-aos-duration="500">
 					<h6 class="text-[12px] font-bold text-green uppercase md:text-base">Who we are</h6>
 					<h2 class="text-[24px] leading-[45px] mt-5 text-deepBlue font-bold text-[40px]">Renewable Energy For a Sustainable World</h2>
 					<p class="text-[14px] text-deepBlue mt-5 md:text-base md:pr-20">
@@ -56,12 +57,12 @@ const services: CollectionEntry<'services'>[] = await sanityClient.fetch(Queries
 					</div>
 				</div>
 				<!-- Right Image -->
-				<div class="w-full h-full mt-[50px] md:w-2/4 md:mt-[100px]">
+				<div class="w-full h-full mt-[50px] md:w-2/4 md:mt-[100px]" data-aos='fade-left' data-aos-offset='100' data-aos-duration="500">
 					<div class="relative">
 						<img src='https://res.cloudinary.com/du52ca1q1/image/upload/v1721828966/african-american-technician-checks-maintenance-solar-panels-group-three-black-engineers-meeting-solar-station_uwsd6x.jpg' alt={"energy image"} class={"w-full h-full rounded-xl"} />
 					</div>
 					{/* Card */}
-					<div class="absolute -mt-[100px] w-[300px] h-[auto] py-10 px-7 bg-cyan-900 rounded-xl md:-mt-[220px] md:-ml-[30px]">
+					<div class="absolute -mt-[100px] w-[300px] h-[auto] py-10 px-7 bg-cyan-900 rounded-xl md:-mt-[220px] md:-ml-[30px]" data-aos='zoom-in' data-aos-offset='100' data-aos-delay='100'>
 						<h6 class="text-green text-[15px] font-semibold md:text-[18px]">A Roadmap to Your Sustainable Energy Future.</h6>
 						<p class="text-white text-[12px] pt-3 md:text-[14px]">We aim to be at the forefront of the energy transition agenda by offering high-quality and bespoke renewable energy solutions.</p>
 						<div class="mt-7">
@@ -112,7 +113,7 @@ const services: CollectionEntry<'services'>[] = await sanityClient.fetch(Queries
 							<h6 class="text-base uppercase text-green font-bold">Featured Projects</h6>
 							<h2 class="text-[26px] leading-[28px] md:text-[34px] lg:text-[48px] text-darkBlue font-bold mt-3 lg:leading-[52px]">Keep your environment clean make the earth green</h2>
 						</div>
-						<div class="w-full flex flex-wrap gap-6 mt-14 md:mt-24">
+						<div class="w-full flex flex-wrap gap-6 lg:gap-3 xl:gap-6 mt-14 md:mt-24" data-aos='fade-up' data-aos-offset='50'>
 							{
 								projects.slice(0, Constants.LANDING_PAGE_SIZE).map(item => (
 									<Common.Featured project={item}  />

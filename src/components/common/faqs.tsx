@@ -17,7 +17,7 @@ const Faqs = ({ data }: any) => {
     }
    
     return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-y-5 md:gap-y-3 gap-x-5 mt-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-y-5 md:gap-y-3 gap-x-5 mt-10" data-aos='fade-down' data-aos-offset='100'>
         {
             data.map((item: any, i: number) => (
             <div className="w-[100%] cursor-pointer" key={i}> 

@@ -4,7 +4,7 @@ const { title = 'LpvTech Website' } = Astro.props
 interface Props {
     title?: string
 }
-
+import 'aos/dist/aos.css';
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +13,7 @@ interface Props {
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
     <title>{title}</title>
   </head>
   <body class="overflow-x-hidden">
@@ -23,5 +24,16 @@ interface Props {
       </main>
       <Footer />
       <FooterBanner />
+      <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
+      <script>
+        import AOS from 'aos';
+        AOS.init({
+          once: false,
+          offset: 100,
+          easing: 'ease-in-out',
+          delay: 50,
+          duration: 1000
+        });
+      </script>
   </body>
 </html>
