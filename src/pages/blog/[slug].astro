@@ -4,7 +4,6 @@ import { Queries, Tools } from "@utils/index";
 import Layout from '@components/layout.astro';
 import { Common } from "@components/index";
 import { FaRegCalendarAlt } from "react-icons/fa";
-import { MdOutlineMessage } from "react-icons/md";
 import { PortableText } from "astro-portabletext";
 import { FaRegUser } from "react-icons/fa";
 
@@ -61,61 +60,9 @@ const otherArticles = await sanityClient.fetch(Queries.otherArticles, { slug })
                     <article>
                         <PortableText value={post.content} />
                     </article>
-                    <!-- <div class="mt-10 flex gap-x-3">
-                        <h4 class="text-[22px] pt-1 font-semibold text-darkBlue">Share this:</h4>
-                        <div class="h-[24px]">
-                            <Common.SocialIcons size="24px" hover={true} /> 
-                        </div>
-                    </div> -->
-                    <!-- Share post and leave a comment -->
-                    <!-- <div class="mt-10">
-                        <h4 class="text-[36px] text-darkBlue font-bold">Leave a Reply</h4>
-                        <p class="text-gray-500 text-[17px] pt-3">Your email address will not be published</p>
-                        <form class='mt-3'>
-                            <div class="col-span-full mt-5">
-                                <label for="comment" class="block text-sm font-medium leading-6 text-gray-900">Comment *</label>
-                                <div class="mt-2">
-                                    <textarea id="comment" name="comment" rows="5" class="block w-full rounded-md border-0 py-1.5 bg-[#F5F7F8] px-5 placeholder:text-gray-400 focus:outline-none focus:ring focus:bg-transparent sm:text-sm sm:leading-6"></textarea>
-                                </div>
-                            </div>
-                            <div class="col-span-full mt-2">
-                                <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Name *</label>
-                                <div class="mt-2">
-                                    <input type="text" name="name" id="name" class="block w-full rounded-md border-0 py-1.5 bg-[#F5F7F8] px-5 placeholder:text-gray-400 focus:outline-none focus:ring focus:bg-transparent sm:text-sm sm:leading-6">
-                                </div>
-                            </div>
-                            <div class="col-span-full mt-2">
-                                <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email *</label>
-                                <div class="mt-2">
-                                    <input type="email" name="email" id="email" class="block w-full rounded-md border-0 py-1.5 bg-[#F5F7F8] px-5 placeholder:text-gray-400 focus:outline-none focus:ring focus:bg-transparent sm:text-sm sm:leading-6">
-                                </div>
-                            </div>
-                            <div class="col-span-full my-5">
-                                <Common.Button path="#" text="Post a comment" className=`block w-[max-content] py-1.5 px-3 text-base text-center text-white text-[14px] bg-[#0fcc7c] rounded-full baseline hover:bg-darkBlue` />
-                            </div>
-                        </form>
-                    </div> -->
                 </div>
                 <!-- Other Articles -->
                 <div class="w-full lg:w-[35%]">
-                    <!-- Newsletter -->
-                    <!-- <div class="w-[90%] p-10 rounded-xl" style={{ backgroundImage: 'linear-gradient(135deg, #00384F 0%, #0FCC7C 100%)'}}>
-                        <h5 class="text-white text-[18px] font-semibold">Signup our newsletter to get update information, news, insight or promotions.</h5>
-                        <form class="mt-5 w-full">
-                            <div class="sm:col-span-4">
-                                <div class="mt-2">
-                                    <input type="text" name="name" id="name" placeholder="Name" class="block w-full rounded-[30px] border-0 py-1.5 bg-[#F5F7F8] px-5 placeholder:text-gray-400 focus:outline-none focus:ring focus:ring-[#0fcc7c] sm:text-sm sm:leading-6">
-                                </div>
-                                <div class="mt-3">
-                                    <input type="email" name="email" id="email" placeholder="Email" class="block w-full rounded-[30px] border-0 py-1.5 bg-[#F5F7F8] px-5 placeholder:text-gray-400 focus:outline-none focus:ring focus:ring-[#0fcc7c] sm:text-sm sm:leading-6">
-                                </div>
-                                <div class="mt-3">
-                                    <Common.Button path="#" text="Sign up" className="w-full block text-center text-[16px] py-2 text-white bg-[#0fcc7c] rounded-full baseline hover:bg-darkBlue" />
-                                </div>
-                            </div>
-                        </form>
-                    </div> -->
-
                     <!-- Featured Posts -->
                     <div class="w-full lg:w-[90%] bg-gray-100 px-5 py-10 mt-5 rounded-xl">
                         <h4 class="font-semibold text-[28px] md:px-5 lg:px-0 text-darkBlue">Latest Post</h4>

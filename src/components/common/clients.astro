@@ -12,14 +12,14 @@ interface Props {
 <section class=`w-full ${page === 'landing' ? 'mt-32 md:mt-10 lg:mt-32' : 'mt-0'}`>
     <Container>
         <!-- Background card -->
-        <div class="w-full h-auto mb-0 px-5 py-7 bg-[#F5F7F8] rounded-xl md:mb-18">
+        <div class="w-full h-auto mb-0 px-3 smm:px-5 py-7 bg-[#F5F7F8] rounded-xl md:mb-18">
             <div class="w-[100%] mx-auto flex-col justify-center items-center lg:w-[90%]">
                 <h3 class="text-center font-bold text-[20px] md:text-[28px]" data-aos='fade-up' data-aos-offset='100'>LPV Technologies is trusted by 6+ million users in <br /> 175+ countries.</h3>
                 <!-- Grid container -->
                 <div class="grid grid-cols-2 gap-2 my-10 md:grid-cols-4" data-aos='fade-up' data-aos-delay='200' data-aos-offset='100'>
                     {
                         Data.clients.map(item => (
-                            <div class="w-[max-content] p-6 smm:p-10 md:p-8 bg-white rounded-[10px] flex justify-center items-center cursor-pointer lg:w-[200px] xl:w-[250px] lg:h-[100px] lg:p-0">
+                            <div class="w-[max-content] p-3 smm:p-10 md:p-8 bg-white rounded-[10px] flex justify-center items-center cursor-pointer lg:w-[200px] xl:w-[250px] lg:h-[100px] lg:p-0">
                                 <Image src={item.img} alt="client" width={100} height={100} class={'grayscale hover:grayscale-0'} />
                             </div>
                         ))

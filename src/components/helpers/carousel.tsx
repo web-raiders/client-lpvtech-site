@@ -6,7 +6,6 @@ import { Button } from '../common';
 import { Data } from '@utils/index'
 import "@styles/styles.css";
 
-// const sliders = [SlideOne, SlideTwo, SlideThree, SlideFour, SlideFive, SlideSix ]
 SwiperCore.use([EffectFade, Autoplay, Navigation, Pagination ]);
 const carousel = () => {
   return (
