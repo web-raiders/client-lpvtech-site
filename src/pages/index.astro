@@ -4,7 +4,6 @@ import { Constants, Data, Queries } from "@utils/index";
 import "@styles/styles.css";
 import type { CollectionEntry } from "astro:content";
 import { sanityClient } from "sanity:client";
-import '@styles/spinner.css'
 
 const projects: CollectionEntry<'projects'>[] = await sanityClient.fetch(Queries.projects)
 const services: CollectionEntry<'services'>[] = await sanityClient.fetch(Queries.services)
