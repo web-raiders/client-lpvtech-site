@@ -34,7 +34,7 @@ const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Con
 <Layout title='LpvTech Website - Help Center'>
     <!-- Hero Section -->
     <section 
-    class="pt-28 md:pt-40 lg:pt-48 w-full min-h-[40vh] sm:min-h-[60vh] smm:min-h-[45vh] md:min-h-[40vh] lg:min-h-[70vh] xl:min-h-[60vh] xxl:min-h-[70vh] bg-no-repeat bg-cover bg-center" 
+    class="pt-20 md:pt-40 lg:pt-48 w-full min-h-[50vh] sm:min-h-[60vh] smm:min-h-[45vh] md:min-h-[40vh] lg:min-h-[70vh] xl:min-h-[60vh] xxl:min-h-[70vh] bg-no-repeat bg-cover bg-center" 
     style={{ 
         backgroundImage: `linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(${project.image})`
     }}>
@@ -169,7 +169,7 @@ const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Con
         <Common.Container flex='flex-col'>
             <div class="flex-col flex-wrap text-center">
                 <h6 class="uppercase text-green font-bold">Common Questions</h6>
-                <h2 class="text-[28px] md:text-[38px] text-darkBlue font-bold mt-2 md:mt-4 leading-[45px]">Most Popular Questions</h2>
+                <h2 class="text-[18px] leading-[16px] md:text-[38px] text-darkBlue font-bold mt-2 md:mt-4 md:leading-[45px]">Most Popular Questions</h2>
             </div>
             <!-- FAQs -->
             <Common.Faqs data={faqsInPage} client:load />

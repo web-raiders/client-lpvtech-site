@@ -1,6 +1,5 @@
 import Button from "./button";
 import Container from "./container.astro";
-// import Form from "./form.astro";
 import SocialIcons from "./icons.astro";
 import Tags from "./tags.astro";
 import Pagination from "./pagination.astro";
@@ -15,11 +14,10 @@ import Services from "./services.astro";
 import Offer from "./offer.astro";
 import GreenCounter from "./green_counter.astro"
 import Solutions from "./solutions.astro";
-import Appointment from "./appointment.astro";
 import ServiceList from "./service_list.astro";
 import Policy from "./policy";
 import Clients from './clients.astro';
-import Form from "./form.astro";
+import Form from "./form";
 
 export {
     Button,
@@ -39,7 +37,6 @@ export {
     Offer,
     GreenCounter,
     Solutions,
-    Appointment,
     ServiceList,
     Policy,
     Clients

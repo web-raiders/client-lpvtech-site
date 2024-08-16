@@ -4,25 +4,7 @@ import Layout from '@components/layout.astro';
 ---
 
 <Layout title='LpvTech Website - Our Services'>
-    <!-- Hero Section -->
-    <!-- <section 
-    class="pt-20 md:pt-40 w-full h-[80vh] bg-no-repeat bg-cover bg-center" 
-    style={{ 
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(/images/blog_bg.jpg)`
-    }}>
-        <Common.Container flex='flex-col'>
-            <div class="w-full text-center md:w-2/4 pt-10">
-                <h6 class="text-[#0fcc7c] uppercase font-semibold mb-5">Our Services</h6>
-                <h1 class="text-[32px] leading-[32px] md:text-[48px] text-white font-bold md:leading-[55px]">Cleaner Energies for a Cleaner World.</h1>
-            </div>
-        </Common.Container>
-    </section> -->
     <Common.Hero backgroundImage={'/images/blog_bg.jpg'} header='Our Services' caption='Cleaner Energies for a Cleaner World.' />
-
-    <!-- <section class="w-full py-10"> -->
-        <!-- Decision Section -->
-        <!-- <Common.Services page='services' /> -->
-    <!-- </section> -->
 
     <!-- What we offer section -->
 	<Common.Offer />
@@ -32,9 +14,4 @@ import Layout from '@components/layout.astro';
 
     <!-- Why choose us -->
 	<Common.Solutions />
-
-    <!-- Get a Quote Section -->
-	<!-- <Common.Appointment page="services" /> -->
-
-    
 </Layout>

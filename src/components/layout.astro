@@ -13,10 +13,18 @@ import 'aos/dist/aos.css';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
     <title>{title}</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        overflow-x: hidden!important;
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+      }
+    </style>
   </head>
-  <body class="overflow-x-hidden">
+  <body>
       <NavBanner />
       <Navbar client:load />
       <main class="relative mx-0 px-0">
@@ -24,11 +32,10 @@ import 'aos/dist/aos.css';
       </main>
       <Footer />
       <FooterBanner />
-      <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
       <script>
         import AOS from 'aos';
         AOS.init({
-          once: false,
+          once: true,
           offset: 100,
           easing: 'ease-in-out',
           delay: 50,
