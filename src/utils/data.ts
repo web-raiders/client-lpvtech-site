@@ -342,39 +342,15 @@ export const footer_company = [
         path: '/about'
     },
     {
-        link: 'Careers',
-        path: '#'
-    },
-    {
-        link: 'New & Article',
-        path: '#'
-    },
-    {
-        link: 'Legal Notice',
-        path: '#'
-    },
-    {
-        link: 'Partner',
-        path: '#'
+        link: 'Blog',
+        path: '/blog'
     }
 ]
 
 export const footer_support = [
     {
-        link: 'Help Center',
-        path: '/help'
-    },
-    {
-        link: 'Ticket',
-        path: '#'
-    },
-    {
         link: 'Contact Us',
         path: '/contact'
-    },
-    {
-        link: 'Community',
-        path: '#'
     }
 ]
 
