@@ -4,11 +4,12 @@ import Layout from '@components/layout.astro';
 import { PrivacyImg } from '@assets/images'
 import { Queries } from '@utils/index';
 import { sanityClient } from "sanity:client";
+import { POLICY_PAGE_DESCRIPTION } from '@utils/constants'
 
 const policies = await sanityClient.fetch(Queries.policy);
 ---
 
-<Layout title='LpvTech Website - Privacy Policy'>
+<Layout title='Privacy Policy' description={POLICY_PAGE_DESCRIPTION}>
     <!-- Hero Section -->
     <Common.Hero backgroundImage={PrivacyImg} header='Privacy Policy' caption='Your Privacy, Our Priority' />
 

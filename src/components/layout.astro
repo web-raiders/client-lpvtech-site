@@ -1,8 +1,10 @@
 ---
 import { Navbar, NavBanner, Footer, FooterBanner } from './navigation'
 const { title = 'LpvTech Website' } = Astro.props
+import { LANDING_PAGE_DESCRIPTION } from '@utils/constants'
 interface Props {
-    title?: string
+  title?: string;
+  description?: string;
 }
 import 'aos/dist/aos.css';
 ---
@@ -12,7 +14,7 @@ import 'aos/dist/aos.css';
     <meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={LANDING_PAGE_DESCRIPTION} />
     <title>{title}</title>
     <style>
       * {

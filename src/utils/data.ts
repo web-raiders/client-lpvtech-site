@@ -334,9 +334,9 @@ export const articles = [
         Aenean commodo ligula eget dolor. Aenean massa. 
         Cum sociis natoque penatibus et magnis dis parturient montes, nascetur`
     },
-]
-
-export const footer_company = [
+] 
+export const footer_company = servicesList.length > 0 && projectsList.length > 0 ? 
+[
     {
         link: 'About Us',
         path: '/about'
@@ -344,7 +344,58 @@ export const footer_company = [
     {
         link: 'Blog',
         path: '/blog'
+    },
+    {
+        link: 'Projects',
+        path: '/projects'
+    },
+    {
+        link: 'Services',
+        path: '/services'
     }
+] : servicesList?.length > 0 && projectsList.length <= 0 ? [
+    {
+        link: 'About Us',
+        path: '/about'
+    },
+    {
+        link: 'Blog',
+        path: '/blog'
+    },
+    {
+        link: 'Services',
+        path: '/services'
+    }
+] : servicesList?.length <= 0 && projectsList.length > 0 ? [
+    {
+        link: 'About Us',
+        path: '/about'
+    },
+    {
+        link: 'Blog',
+        path: '/blog'
+    },
+    {
+        link: 'Projects',
+        path: '/projects'
+    }
+] : [
+    {
+        link: 'About Us',
+        path: '/about'
+    },
+    {
+        link: 'Blog',
+        path: '/blog'
+    },
+    {
+        link: 'Services',
+        path: '/services'
+    } ,
+    {
+        link: 'Projects',
+        path: '/projects'
+    } 
 ]
 
 export const footer_support = [
