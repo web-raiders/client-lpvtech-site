@@ -6,6 +6,7 @@ import { IoCheckmarkCircle } from "react-icons/io5";
 import type { CollectionEntry } from "astro:content";
 import { sanityClient } from "sanity:client";
 import { PortableText } from "astro-portabletext";
+import { SERVICES_PAGE_DESCRIPTION } from '@utils/constants'
 export const prerender = true;
 
 export async function getStaticPaths(){
@@ -25,7 +26,7 @@ const totalPages: number = Math.ceil(faqs.length / Constants.FAQS_PER_PAGE);
 const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Constants.FAQS_PER_PAGE, currentPage * Constants.FAQS_PER_PAGE)
 ---
 
-<Layout>
+<Layout title='Services' description={SERVICES_PAGE_DESCRIPTION}>
     <!-- Hero Section -->
     <section class="min-h-[60vh] xxl:min-h-[100vh] pt-24 md:pt-32 w-full bg-no-repeat bg-cover bg-center flex justify-center items-center" style={{ backgroundImage: `linear-gradient(rgba(0, 23, 23, 0.6), rgba(0, 23, 23, 0.6)), url(${service.image.url})`}}>
         <div class="w-[600px] text-center flex flex-col justify-center items-center">

@@ -1,9 +1,10 @@
 ---
 import { Common } from '@components/index';
 import Layout from '@components/layout.astro';
+import { SERVICES_PAGE_DESCRIPTION } from '@utils/constants'
 ---
 
-<Layout title='LpvTech Website - Our Services'>
+<Layout title='Services' description={SERVICES_PAGE_DESCRIPTION}>
     <Common.Hero backgroundImage={'/images/blog_bg.jpg'} header='Our Services' caption='Cleaner Energies for a Cleaner World.' />
 
     <!-- What we offer section -->

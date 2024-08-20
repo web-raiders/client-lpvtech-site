@@ -11,6 +11,7 @@ import { FaRegCalendarAlt, FaRegUser } from 'react-icons/fa';
 import { IoWalletOutline } from 'react-icons/io5';
 import { CiGlobe } from 'react-icons/ci';
 import type { CollectionEntry } from 'astro:content';
+import { PROJECTS_PAGE_DESCRIPTION } from '@utils/constants'
 
 export const prerender = true;
 
@@ -31,7 +32,7 @@ const totalPages: number = Math.ceil(faqs.length / Constants.FAQS_PER_PAGE);
 const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Constants.FAQS_PER_PAGE, currentPage * Constants.FAQS_PER_PAGE)
 ---
 
-<Layout title='LpvTech Website - Help Center'>
+<Layout title='Projects' description={PROJECTS_PAGE_DESCRIPTION}>
     <!-- Hero Section -->
     <section 
     class="pt-20 md:pt-40 lg:pt-48 w-full min-h-[50vh] sm:min-h-[60vh] smm:min-h-[45vh] md:min-h-[40vh] lg:min-h-[70vh] xl:min-h-[60vh] xxl:min-h-[70vh] bg-no-repeat bg-cover bg-center" 

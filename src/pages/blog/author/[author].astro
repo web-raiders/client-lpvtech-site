@@ -4,6 +4,7 @@ import { Constants, Queries } from "@utils/index";
 import type { CollectionEntry } from "astro:content";
 import { sanityClient } from "sanity:client";
 import { Tools } from "@utils/index";
+import { BLOG_PAGE_DESCRIPTION } from '@utils/constants'
 
 
 const { author } = Astro.params;
@@ -18,7 +19,7 @@ const articlesInPage: CollectionEntry<'blog'>[] = authorArticles.slice((currentP
 
 ---
 
-<Layout>
+<Layout title="Blog" description={BLOG_PAGE_DESCRIPTION}>
 
     <!-- Hero Section -->
     <section class="pt-32 md:pt-42 lg:pt-48 w-full min-h-[40vh] smm:min-h-[30vh] md:min-h-[35vh] lg:min-h-[40vh] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `linear-gradient(rgba(0, 23, 23, 0.7), rgba(0, 23, 23, 0.7)), url(${authorArticles[0].image})`}}>

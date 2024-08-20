@@ -5,11 +5,12 @@ import { Common } from '@components/index';
 import { Data, Queries } from "@utils/index";
 import type { CollectionEntry } from 'astro:content';
 import { sanityClient } from "sanity:client";
+import { PROJECTS_PAGE_DESCRIPTION } from '@utils/constants'
 
 const projects: CollectionEntry<'projects'>[] = await sanityClient.fetch(Queries.projects)
 ---
 
-<Layout title='LpvTech Website - Projects'>
+<Layout title='Projects' description={PROJECTS_PAGE_DESCRIPTION}>
     <!-- Hero Section -->
     <Common.Hero backgroundImage={ProjectThree} header='Projects' caption='Keep your Earth Clean and Green.' />
 

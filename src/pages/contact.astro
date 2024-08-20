@@ -3,9 +3,10 @@ import { SocialIcons } from '@components/common';
 import { Common } from '@components/index';
 import Layout from '@components/layout.astro';
 import { Data } from '@utils/index';
+import { CONTACT_PAGE_DESCRIPTION } from '@utils/constants'
 ---
 
-<Layout title='LpvTech Website - Contact Us'>
+<Layout title='Contact Us' description={CONTACT_PAGE_DESCRIPTION}>
     <!-- Hero Section -->
     <Common.Hero backgroundImage={'https://res.cloudinary.com/du52ca1q1/image/upload/v1721828968/african-american-technician-checks-maintenance-solar-panels-group-three-black-engineers-meeting-solar-station-make-deal-with-money_hh51ai.jpg'} header='Contact us' caption='' />
 

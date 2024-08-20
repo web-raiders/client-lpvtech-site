@@ -6,6 +6,7 @@ import { Common } from "@components/index";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { PortableText } from "astro-portabletext";
 import { FaRegUser } from "react-icons/fa";
+import { BLOG_PAGE_DESCRIPTION } from '@utils/constants'
 
 export const prerender = true;
 
@@ -24,7 +25,7 @@ const otherArticles = await sanityClient.fetch(Queries.otherArticles, { slug })
 ---
 
 
-<Layout title="Article">
+<Layout title="Blog" description={BLOG_PAGE_DESCRIPTION}>
     <!-- Hero Section -->
     <section class="pt-10 md:pt-24 lg:pt-32 w-full min-h-[50vh] md:min-h-[50vh] lg:min-h-[55vh] bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `linear-gradient(rgba(0, 23, 23, 0.5), rgba(0, 23, 23, 0.5)), url(${post.image})`}}>
         <div class="w-full md:w-[80%] lg:w-2/4 mx-auto text-center mt-40 md:mt-28">

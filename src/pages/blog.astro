@@ -4,6 +4,7 @@ import Layout from '@components/layout.astro';
 import { sanityClient } from 'sanity:client'
 import { Queries, Constants } from '@utils/index';
 import type { CollectionEntry } from 'astro:content';
+import { BLOG_PAGE_DESCRIPTION } from '@utils/constants'
 
 const articles: CollectionEntry<'blog'>[] = await sanityClient.fetch(Queries.articles)
 const currentPage: number | null = +Astro.url.searchParams.get('page')! || 1;
@@ -11,7 +12,7 @@ const totalPages: number = Math.ceil(articles.length / Constants.ARTICLES_PER_PA
 const articlesInPage: CollectionEntry<'blog'>[] = articles.slice((currentPage - 1) * Constants.ARTICLES_PER_PAGE, currentPage * Constants.ARTICLES_PER_PAGE)
 ---
 
-<Layout title='LpvTech Website - Blog'>
+<Layout title='Blog' description={BLOG_PAGE_DESCRIPTION}>
     <!-- Hero Section -->
     <Common.Hero backgroundImage={'/images/blog_bg.jpg'} header='Article & News' caption='Archives' />
 
