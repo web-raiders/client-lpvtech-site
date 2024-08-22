@@ -5,6 +5,7 @@ import { MdKeyboardArrowDown } from 'react-icons/md';
 import '@styles/navbar.css'
 import { motion } from 'framer-motion';
 import { Data } from '@utils/index';
+import { Logo } from "@assets/images";
 
 const { navlist, subNav } = Data
 
@@ -20,6 +21,9 @@ const Navbar = () => {
         <nav className="_nav">
             <div className="_container">
                 <div className="_flex_box">
+                    <div className='_logo'>
+                        <a href='/'><img src={Logo} alt='logo' width={"100"} height={"100"} /></a>
+                    </div>
                     <div className="_nav_menu">
                         <ul className="_nav_list">
                             {navlist.map((item) => (
