@@ -6,6 +6,7 @@ import SlideFour from "./slide_four.jpg?url"
 import SlideFive from "./slide_five.jpg?url"
 import SlideSix from "./slide_six.jpg?url"
 import Logo from "./logo.png?url"
+import LogoDark from "./logo_dark.png?url"
 import EnergyImg from "./energy.jpg";
 import PropertyImg from "./property.jpg";
 import CommercialImg from "./commercial.jpg";
@@ -49,6 +50,7 @@ export {
     SlideFive,
     SlideSix,
     Logo,
+    LogoDark,
     EnergyImg,
     PropertyImg,
     CommercialImg,

@@ -1,7 +1,6 @@
 ---
 import { Common } from '@components/index';
 import Layout from '@components/layout.astro';
-import { PrivacyImg } from '@assets/images'
 import { Queries } from '@utils/index';
 import { sanityClient } from "sanity:client";
 import { TERMS_PAGE_DESCRIPTION } from '@utils/constants'
@@ -11,7 +10,7 @@ const terms = await sanityClient.fetch(Queries.terms);
 
 <Layout title='Privacy Policy' description={TERMS_PAGE_DESCRIPTION}>
     <!-- Hero Section -->
-    <Common.Hero backgroundImage={PrivacyImg} header='Terms & Conditions' />
+    <Common.Hero backgroundImage={'./artifacts/texture-photovoltaic.jpg'} header='Terms & Conditions' />
 
     <section class="w-full min-h-screen md:min-h-[40vh] py-10 lg:pb-20">
         <Common.Container>

@@ -484,44 +484,6 @@ export const solutions = [
     },
 ]
 
-export const projects = [
-    {
-        img: 'https://res.cloudinary.com/du52ca1q1/image/upload/v1721837799/vecteezy_texture-of-photovoltaic-panels-solar-panel-with-city-night_4877867_1_vq2ctp.jpg',
-        title: 'Jakarta Solar Farms',
-        description: 'Justo dictumst id semper taciti lacus tortor per si habitasse platea vestibulum.',
-        icon: GoSun
-    },
-    {
-        img: 'https://res.cloudinary.com/du52ca1q1/image/upload/v1721831838/vecteezy_ai-generated-solar-photovoltaic-power-plant_41861321_bsvlxi.jpg',
-        title: 'Tangerang Wind Farms',
-        description: 'Justo dictumst id semper taciti lacus tortor per si habitasse platea vestibulum.',
-        icon: CiLocationArrow1
-    },
-    {
-        img: 'https://res.cloudinary.com/du52ca1q1/image/upload/v1721831831/vecteezy_solar-panels-under-the-background-of-blue-sky-and-white_31691595_se3pzu.jpg',
-        title: 'Dylan Family',
-        description: 'Justo dictumst id semper taciti lacus tortor per si habitasse platea vestibulum.',
-        icon: GoSun
-    },
-    {
-        img: 'https://res.cloudinary.com/du52ca1q1/image/upload/v1721831284/vecteezy_ai-generated-engineer-at-work-wind-turbine-and-solar-panel_37056502_johhif.jpg',
-        title: 'Bandung Solar Farm',
-        description: 'Justo dictumst id semper taciti lacus tortor per si habitasse platea vestibulum.',
-        icon: GoSun
-    },
-    {
-        img: 'https://res.cloudinary.com/du52ca1q1/image/upload/v1721838656/vecteezy_engineer-in-charge-of-solar-panel-installation-the_16748295_1_bkp0bz.jpg',
-        title: 'Lokamart Company',
-        description: 'Justo dictumst id semper taciti lacus tortor per si habitasse platea vestibulum.',
-        icon: GoSun
-    },
-    {
-        img: 'https://res.cloudinary.com/du52ca1q1/image/upload/v1721842474/close-up-pv-cell-produced-manufacturing-warehouse-3d-illustration_1_hee0dm.jpg',
-        title: 'Papua EV Systems',
-        description: 'Justo dictumst id semper taciti lacus tortor per si habitasse platea vestibulum.',
-        icon: PiCarBatteryLight
-    },
-]
 
 export const members = [
     {
@@ -609,7 +571,7 @@ export const contactList = [
     },
     {
         icon: SlLocationPin,
-        title: 'Lagos Office',
+        title: 'Factory Address',
         headingOne: 'Plot 1-5 Isolo Road, Ikotun Egbe',
         headingTwo: 'Lagos, Nigeria',
     },
@@ -634,9 +596,9 @@ export const contactList = [
 ]
 
 export const sliders = [
-    'https://res.cloudinary.com/du52ca1q1/image/upload/v1721825555/vecteezy_solar-panel-park-in-a-field-solar-energy-concept-generated_34040344_zygt5v.jpg',
-    'https://res.cloudinary.com/du52ca1q1/image/upload/v1721828965/vecteezy_ai-generated-construction-worker-wearing-hardhat-planning_36209196_sccxkz.jpg',
-    'https://res.cloudinary.com/du52ca1q1/image/upload/v1721828968/medium-shot-engineers-discussing-about-solar-pannels_ot4q55.jpg',
-    'https://res.cloudinary.com/du52ca1q1/image/upload/v1721831829/vecteezy_solar-energy-solar-photovoltaic-panels-for-renewable_33880873_rzovni.jpg',
-    'https://res.cloudinary.com/du52ca1q1/image/upload/v1721831288/vecteezy_ai-generated-creating-sustainable-energy-using-solar-panels_37056492_zpttl5.jpg'
+    './artifacts/solar-panel-park-field.jpg',
+    './artifacts/construction-worker-wearing-hardhat.jpg',
+    './artifacts/engineers-discussing-about-solar.jpg',
+    './artifacts/solar-energy-photovoltaic-panels.jpg',
+    './artifacts/reating-sustainable-energy-using-solar.jpg'
 ]

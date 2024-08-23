@@ -1,11 +1,11 @@
 ---
 import { Container } from "../common";
-import { Logo } from "@assets/images";
+import { LogoDark } from "@assets/images";
 import { Data } from "@utils/index";
 import { SocialIcons } from "../common";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 import { FiPhone } from "react-icons/fi";
-import { MdOutlineEmail } from "react-icons/md";
+import { MdOutlineEmail, MdOutlineLocationOn } from "react-icons/md";
 ---
 
 <footer class="w-full h-[auto] lg:h-[400px] bg-[#e1f5ec]">
@@ -14,8 +14,7 @@ import { MdOutlineEmail } from "react-icons/md";
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-x-10 my-[30px] md:mt-[100px]">
             <!-- Column 1 -->
             <div class="col-span-4 mx-14 md:mx-0 md:col-span-2 lg:col-span-1">
-                <img src={Logo} alt={"logo"} width={"200"} height={"200"} />
-                <p class="text-darkBlue text-center md:text-left mt-5 font-bold">9, Thaba Tseka Street, Off Adetokunbo Ademola, Wuse 2, FCT, Nigeria</p>
+                <img src={LogoDark} alt={"logo"} width={"180"} height={"180"} />
                 <div class="mt-5">
                     <SocialIcons size={'20px'} />
                 </div>
@@ -62,22 +61,31 @@ import { MdOutlineEmail } from "react-icons/md";
                     <!-- Circle -->
                     <div class="flex gap-x-3 mt-5">
                         <div class="w-[50px] h-[50px] p-4 bg-[#0FCC7C] flex justify-center items-center rounded-full">
-                            <MdOutlineEmail color={"#fff"} size={"30px"} />
+                            <MdOutlineLocationOn color={"#fff"} size={"25px"} />
+                        </div>
+                        <div class="flex-col">
+                            <p class="text-[16px] font-semibold text-gray-700">Address</p>
+                            <h6 class="text-[16px] md:text-[24px] lg:text-[14px] xl:text-[16px] font-semibold text-darkBlue">Plot 1-5 Isolo Road, Ikotun Egbe, Lagos Nigeria</h6>
+                        </div>
+                    </div>
+                    <div class="flex gap-x-3 mt-5">
+                        <div class="w-[50px] h-[50px] p-4 bg-[#0FCC7C] flex justify-center items-center rounded-full">
+                            <MdOutlineEmail color={"#fff"} size={"25px"} />
                         </div>
                         <div class="flex-col text-pretty">
-                            <p class="text-[18px] font-semibold text-gray-700">Email Support</p>
-                            <h6 class="text-[20px] md:text-[24px] lg:text-[14px] xl:text-[20px] font-semibold text-darkBlue">info@lpvtechnolgies.com</h6>
+                            <p class="text-[16px] font-semibold text-gray-700">Email Support</p>
+                            <h6 class="text-[16px] md:text-[24px] lg:text-[14px] xl:text-[16px] font-semibold text-darkBlue">info@lpvtechnolgies.com</h6>
                         </div>
                     </div>
 
                     <!-- Circle -->
                     <div class="flex gap-x-3 mt-5">
                         <div class="w-[50px] h-[50px] p-4 bg-[#0FCC7C] flex justify-center items-center rounded-full">
-                            <FiPhone color={"#fff"} size={"30px"} />
+                            <FiPhone color={"#fff"} size={"25px"} />
                         </div>
                         <div class="flex-col">
-                            <p class="text-[18px] font-semibold text-gray-700">24/7 Emergency Service</p>
-                            <h6 class="text-[20px] md:text-[24px] font-semibold text-darkBlue">09062892870</h6>
+                            <p class="text-[16px] font-semibold text-gray-700">24/7 Emergency Service</p>
+                            <h6 class="text-[16px] md:text-[18px] font-semibold text-darkBlue">09062892870</h6>
                         </div>
                     </div>
                 </div>
@@ -88,6 +96,18 @@ import { MdOutlineEmail } from "react-icons/md";
             <div class="grid grid-cols-4 gap-x-5">
                 <!-- <div class="flex-col mt-2"> -->
                 <!-- Column 4 -->
+                <div class="col-span-2">
+                        <!-- Circle -->
+                    <div class="flex gap-x-3 mt-5">
+                        <div class="w-[50px] h-[50px] p-4 bg-[#0FCC7C] flex justify-center items-center rounded-full">
+                            <MdOutlineLocationOn color={"#fff"} size={"30px"} />
+                        </div>
+                        <div class="flex-col">
+                            <p class="text-[18px] font-semibold text-gray-700">Address</p>
+                            <h6 class="text-[20px] md:text-[24px] font-semibold text-darkBlue">Plot 1-5 Isolo Road, Ikotun Egbe, Lagos Nigeria</h6>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-span-2">
                         <!-- Circle -->
                     <div class="flex gap-x-3 mt-5">

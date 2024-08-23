@@ -15,7 +15,7 @@ interface Props {
         <div class={`flex flex-col md:flex-row justify-between ${page === 'services' && 'flex-row-reverse'} items-center gap-x-20`}>
             <div class="w-full md:w-[45%] h-full" data-aos='fade-left' data-aos-offset='100'>
                 <div class="relative">
-                    <img src='https://res.cloudinary.com/du52ca1q1/image/upload/v1721828978/vecteezy_view-of-solar-panels-in-the-solar-farm-with-green-tree-and_4951376_2_c6jsuj.jpg' alt={"energy_image"} class={"object-contain w-25 h-30 rounded-xl"} />
+                    <img src='./artifacts/solar-panels-in-solar-farm.jpg' alt={"energy_image"} class={"object-contain w-25 h-30 rounded-xl"} />
                 </div>
                 {/* Card */}
                 <div class="flex flex-col items-center absolute w-[180px] h-[auto] bg-green rounded-xl -mt-[220px] ml-[20px] text-white">
@@ -41,7 +41,7 @@ interface Props {
                                     </div>
                                 </div>
                                 <div class="w-full md:w-3/4 flex-col flex-wrap ml-0">
-                                    <h3 class="text-[18px] font-bold text-deepBlue">{item.title}</h4>
+                                    <h3 class="text-[18px] font-bold text-deepBlue">{item.title}</h3>
                                     <p class="text-base text-gray-600 mt-1 pr-0 md:pr-20">
                                         {item.description}
                                     </p>
