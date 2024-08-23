@@ -1,5 +1,5 @@
 ---
-import { Navbar, NavBanner, Footer, FooterBanner } from './navigation'
+import { Navbar, Footer, FooterBanner } from './navigation'
 const { title = 'LpvTech Website' } = Astro.props
 import { LANDING_PAGE_DESCRIPTION } from '@utils/constants'
 interface Props {
@@ -27,7 +27,6 @@ import 'aos/dist/aos.css';
     </style>
   </head>
   <body>
-      <NavBanner />
       <Navbar client:load />
       <main class="relative mx-0 px-0">
           <slot />

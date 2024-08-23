@@ -4,16 +4,20 @@ import { PiInstagramLogo } from "react-icons/pi";
 import { FaLinkedinIn } from "react-icons/fa";
 const iconList = [
     {
-        icon: TiSocialFacebook
+        icon: TiSocialFacebook,
+        path: 'https://www.facebook.com/profile.php?id=61560458116815'
     },
     {
-        icon: TiSocialTwitter
+        icon: TiSocialTwitter,
+        path: 'https://x.com/lpvtech?s=21&t=lZ-O3M8lg9ESTO5F0U7EXQ'
     },
     {
-        icon: PiInstagramLogo
+        icon: PiInstagramLogo,
+        path: 'https://www.instagram.com/lpvtechnologies?igsh=MXhkd2Q1cGFsdzZvdQ=='
     },
     {
-        icon: FaLinkedinIn
+        icon: FaLinkedinIn,
+        path: 'https://www.linkedin.com/company/levene-photo-voltaic-technologies/'
     }
 ]
 const { size = "16px", hover = false } = Astro.props
@@ -29,10 +33,11 @@ interface Props {
 <div class="flex gap-1 justify-center items-center md:justify-start md:items-left">
     {
         iconList.map(item => (
-            
-            <div class={`w-[max-content] bg-[#0FCC7C] cursor-pointer p-2 rounded-full ${hover && 'hover:bg-darkBlue cursor-pointer'}`}>
-                <item.icon color="#fff" size={size} />
-            </div>
+            <a href={item.path} target="_blank" rel="noreferrer">
+                <div class={`w-[max-content] bg-[#0FCC7C] cursor-pointer p-2 rounded-full ${hover && 'hover:bg-darkBlue cursor-pointer'}`}>
+                    <item.icon color="#fff" size={size} />
+                </div>
+            </a>
         ))
     }
 </div>
