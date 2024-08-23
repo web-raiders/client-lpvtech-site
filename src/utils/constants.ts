@@ -4,36 +4,36 @@ export const LANDING_PAGE_SIZE = 3;
 export const FAQS_PER_PAGE = 10;
 export const LANDING_PAGE_DESCRIPTION = `
 Welcome to LPV Technologies, your trusted partner in sustainable energy solutions. 
-Explore our innovative services to power a greener future.`
+Explore our innovative services to power a greener future. A Web Raiders Studio Production`
 export const ABOUT_PAGE_DESCRIPTION = `
 Learn about LPV Technologies' mission, vision, and commitment to providing cutting-edge energy solutions. 
-Discover our journey towards a sustainable future.`
+Discover our journey towards a sustainable future. A Web Raiders Studio Production`
 export const CONTACT_PAGE_DESCRIPTION = `
 Get in touch with LPV Technologies for all your energy needs. 
-Our team is ready to assist you with expert advice and tailored solutions.`
+Our team is ready to assist you with expert advice and tailored solutions. A Web Raiders Studio Production`
 export const SERVICES_PAGE_DESCRIPTION = `
 Explore the range of energy solutions offered by LPV Technologies. 
-From renewable energy systems to energy efficiency consulting, we power your future`
+From renewable energy systems to energy efficiency consulting, we power your future. A Web Raiders Studio Production`
 export const PROJECTS_PAGE_DESCRIPTION = `
 Discover LPV Technologies' portfolio of successful energy projects. 
-See how we deliver sustainable and innovative energy solutions worldwide.`
+See how we deliver sustainable and innovative energy solutions worldwide. A Web Raiders Studio Production`
 export const TEAMS_PAGE_DESCRIPTION = `
 Meet the dedicated professionals behind LPV Technologies. 
-Our expert team drives innovation and excellence in energy solutions.`
+Our expert team drives innovation and excellence in energy solutions. A Web Raiders Studio Production`
 export const POLICY_PAGE_DESCRIPTION = `
 Understand how LPV Technologies protects your privacy and personal information. 
-Read our comprehensive privacy policy to learn more.
+Read our comprehensive privacy policy to learn more. A Web Raiders Studio Production
 `
 export const TERMS_PAGE_DESCRIPTION = `
 Review the terms and conditions governing the use of LPV Technologies' website and services. 
-Your compliance ensures a smooth experience.
+Your compliance ensures a smooth experience. A Web Raiders Studio Production
 `
 export const FAQS_PAGE_DESCRIPTION = `
 Find answers to common questions about Technologies' energy solutions, services, and processes. 
-Get the information you need quickly.
+Get the information you need quickly. A Web Raiders Studio Production
 `
 export const BLOG_PAGE_DESCRIPTION = `
 Stay updated with the latest insights, news, and trends in the energy industry. 
-Read LPV Technologies' blog for expert articles and resources.
+Read LPV Technologies' blog for expert articles and resources. A Web Raiders Studio Production
 `
 
