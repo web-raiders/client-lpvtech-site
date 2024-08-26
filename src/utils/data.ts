@@ -61,10 +61,10 @@ export const navlist = servicesList.length < 1 && projectsList.length < 1 ? [
         name: 'More',
         path: '#',
         subMenu: [
-            {
-                name: 'Team',
-                path: '/team'
-            }, 
+            // {
+            //     name: 'Team',
+            //     path: '/team'
+            // }, 
             {
                 name: 'FAQ',
                 path: '/faq'
@@ -102,10 +102,10 @@ export const navlist = servicesList.length < 1 && projectsList.length < 1 ? [
         name: 'More',
         path: '#',
         subMenu: [
-            {
-                name: 'Team',
-                path: '/team'
-            }, 
+            // {
+            //     name: 'Team',
+            //     path: '/team'
+            // }, 
             {
                 name: 'FAQ',
                 path: '/faq'
@@ -143,10 +143,10 @@ export const navlist = servicesList.length < 1 && projectsList.length < 1 ? [
         name: 'More',
         path: '#',
         subMenu: [
-            {
-                name: 'Team',
-                path: '/team'
-            }, 
+            // {
+            //     name: 'Team',
+            //     path: '/team'
+            // }, 
             {
                 name: 'FAQ',
                 path: '/faq'
@@ -194,10 +194,10 @@ export const navlist = servicesList.length < 1 && projectsList.length < 1 ? [
         name: 'More',
         path: '#',
         subMenu: [
-            {
-                name: 'Team',
-                path: '/team'
-            }, 
+            // {
+            //     name: 'Team',
+            //     path: '/team'
+            // }, 
             {
                 name: 'FAQ',
                 path: '/faq'
@@ -402,6 +402,10 @@ export const footer_support = [
     {
         link: 'Contact Us',
         path: '/contact'
+    },
+    {
+        link: 'FAQs',
+        path: '/faq'
     }
 ]
 

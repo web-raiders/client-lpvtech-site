@@ -45,9 +45,9 @@ interface Props {
                 ))
             }
         </div>
-        <div class="mt-5">
+        <div class="mt-10">
             {
-                page === 'landing' ? <a href="/services" class="flex justify-center items-center pt-10">View More</a> : <Pagination currentPage={currentPage} totalPages={totalPages} disablePrevious={currentPage === 1} disableNext={currentPage === totalPages} />
+                page === 'landing' ? <Button path="/projects" text="View More" className="py-2 px-4 text-[14px] mt-6 text-white bg-green rounded-full baseline hover:bg-darkBlue" /> : <Pagination currentPage={currentPage} totalPages={totalPages} disablePrevious={currentPage === 1} disableNext={currentPage === totalPages} />
             }
         </div>
     </Common.Container>
