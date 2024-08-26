@@ -19,7 +19,7 @@ import 'aos/dist/aos.css';
     <style>
       * {
         box-sizing: border-box;
-        overflow-x: hidden!important;
+        /* overflow-x: hidden!important; */
         margin: 0;
         padding: 0;
         scroll-behavior: smooth;
@@ -28,7 +28,7 @@ import 'aos/dist/aos.css';
   </head>
   <body>
       <Navbar client:load />
-      <main class="relative mx-0 px-0">
+      <main>
           <slot />
       </main>
       <Footer />

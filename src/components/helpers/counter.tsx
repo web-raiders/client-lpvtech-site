@@ -30,7 +30,7 @@ const Counter = ({ from, to, animatedOptions, fontSize }: ICounter) => {
         return () => controls.stop()
     }, [ref, from, to, inView])
 
-  return <span ref={ref} className={`text-${fontSize || '[46px]'} font-semibold font-mono`} />
+  return <span ref={ref} className={`text-${fontSize || '[36px]'} font-semibold font-mono`} />
 }
 
 export default Counter
