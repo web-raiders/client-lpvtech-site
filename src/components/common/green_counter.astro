@@ -18,24 +18,24 @@ interface Props {
         </div>
     </div>
     <!-- Bottom Banner -->
-     <div class="w-full h-[300px] md:h-[150px] bg-cyan-900 mt-[100px] lg:mt-[180px] flex justify-center items-center">
+    <div class="w-full h-[300px] md:h-[150px] bg-cyan-900 mt-[100px] lg:mt-[180px] flex justify-center items-center">
         <div class="w-[90%] -mt-[120px] md:w-4/5 h-[100px] grid grid-cols-2 md:grid-cols-4 md:-mt-0">
             <div class="flex flex-col justify-center items-center border-r-2 border-b-2 border-b-gray-500 border-r-gray-500 pb-5 md:pb-0 md:border-b-0">
                 <span class="text-green text-[24px] font-bold"><Counter client:load from={0} to={100} />MW</span>
-                <p class="text-white text-[14px] lg:text-[18px] font-semibold">Production Capacity</p>
+                <p class="text-white text-[14px] lg:text-[18px] font-semibold">Utilized Capacity</p>
             </div>
             <div class="flex flex-col justify-center items-center md:border-r-2 border-b-2 border-b-gray-500 md:border-r-gray-500 pb-5 md:pb-0 md:border-b-0">
-                <span class="text-green text-center text-[24px] font-bold"><Counter client:load from={0} to={600} />W</span>
-                <p class="text-white text-[14px] lg:text-[18px] font-semibold">Max Model</p>
+                <span class="text-green text-center text-[24px] font-bold"><Counter client:load from={0} to={600} />Wp</span>
+                <p class="text-white text-[14px] lg:text-[18px] font-semibold">Output</p>
             </div>
             <div class="flex flex-col justify-center items-center border-r-2 border-r-gray-500">
-                <span class="text-green text-[24px] font-bold">20-25 years</span>
-                <p class="text-white text-[14px] lg:text-[18px] mt-3 font-semibold">Warranty</p>
+                <span class="text-green text-[24px] font-bold"><Counter client:load from={0} to={180} />K+</span>
+                <p class="text-white text-[14px] lg:text-[18px] mt-3 font-semibold">PV Module/Annum</p>
             </div>
             <div class="flex flex-col justify-center items-center">
                 <span class="text-green text-[24px] font-bold"><Counter client:load from={0} to={157} />M+</span>
                 <p class="text-white text-[14px] lg:text-[18px] font-semibold text-center xxl:text-left">Annual CO2 Reduction(lbs)</p>
             </div>
         </div>
-     </div>
+    </div>
 </section>
