@@ -35,7 +35,6 @@ const Form = () => {
                 import.meta.env.PUBLIC_MAIL_PUBLIC_KEY as string
             );
             if (mail) {
-                console.log(mail)
                 setAlertMessage('Thank you for reaching out to us! Be rest assured we will revert soon');
                 setDisplay(true)
                 setTimeout(() => setDisplay(false), 5000)

@@ -8,22 +8,31 @@
 
 ._nav {
     width: 100%!important;
-    height: 150px;
-    background-color: transparent;
-    position: absolute;
-    top: 20px;
-    z-index: 2;
+    /* height: 150px; */
+    background-color: #e1f5ec;
+    transition: top 0.8s ease-in-out;
+    position: fixed;
+    padding: 10px 0;
+    /* top: 10px; */
+    z-index: 20;
     right: 0!important;
     left: 0!important;
 }
+.navbar.hidden {
+    top: -100px;
+}
+
+.navbar.visible {
+    top: 0;
+}
 ._container {
     width: 80%;
-    padding: 15px 0;
+    padding: 10px 0;
     margin: 0 auto;
 }
-._logo {
-    margin-top: -15px;
-}
+/* ._logo {
+    margin-top: 5px;
+} */
 ._flex_box {
     width: 100%;
     display: flex;
@@ -43,7 +52,7 @@
     cursor: pointer;
 }
 ._nav_list_item {
-    color: #fff;
+    color: var(--darkBlue);
     padding-left: 30px;
     white-space: no-wrap!important;
     position: relative; 
@@ -123,7 +132,7 @@
 /* Tablet screen */
 @media only screen and (max-width: 992px) {
     ._nav {
-        margin-top: 10px;
+        padding: 0!important;
     }
     ._nav_list { 
         display: none!important;
@@ -163,8 +172,8 @@
     }
 
     ._nav_list_item_mobile:hover {
-        color: var(--white)!important;
-        background-color: var(--green)!important;
+        background-color: #e1f5ec;
+        /* background-color: var(--green)!important; */
     }
     ._sub_list_mobile {
         padding-top: 30px;
@@ -187,20 +196,16 @@
 
     ._icon {
         display: flex!important;
-        margin-top: 0;
+        margin-top: -5px;
         cursor: pointer;
     }
 
     ._logo {
-        margin-top: 0!important;
+        margin-top: 10px!important;
     }
 }
 /* mobile screen */
 @media only screen and (max-width: 480px) {
-    ._nav {
-        max-width: 100%!important;
-        top: 10px;
-    }
     ._nav_list_mobile {
         width: 100%!important;
         left: 0!important;
@@ -213,15 +218,8 @@
         padding-bottom: 1rem;
         font-size: 16px!important;
     }
-    ._icon {
+    /* ._icon {
         margin-top: 3px!important;
-    }
-
-}
-
-@media only screen and (max-width: 360px) {
-    ._nav {
-        top: 5px;
-    }
+    } */
 
 }
