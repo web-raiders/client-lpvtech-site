@@ -2,6 +2,7 @@
 import { Navbar, Footer, FooterBanner } from './navigation'
 const { title = 'LpvTech Website' } = Astro.props
 import { LANDING_PAGE_DESCRIPTION } from '@utils/constants'
+import { Cookies } from './common'
 interface Props {
   title?: string;
   description?: string;
@@ -33,6 +34,7 @@ import 'aos/dist/aos.css';
       </main>
       <Footer />
       <FooterBanner />
+      <Cookies client:only="react" />
       <script>
         import AOS from 'aos';
         AOS.init({

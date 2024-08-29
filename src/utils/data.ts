@@ -588,8 +588,7 @@ export const contactList = [
     {
         icon: MdOutlineEmail,
         title: 'Email Support',
-        headingOne: 'info@lpvtechnolgies.com',
-        headingTwo: 'support@lpvtech.com',
+        headingOne: 'info@lpvtechnolgies.com'
     },
     {
         icon: FiPhone,
