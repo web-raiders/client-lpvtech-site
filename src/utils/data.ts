@@ -20,13 +20,11 @@ import {
     MemberFour,
     MemberFive,
     MemberSix,
-    MemberSeven
+    MemberSeven,
 } from "@assets/images"
 import { LiaToolsSolid } from "react-icons/lia";
 import { IoSettingsOutline } from "react-icons/io5";
 import { IoDiamondOutline } from "react-icons/io5";
-import { GoSun } from "react-icons/go";
-import { CiLocationArrow1 } from "react-icons/ci";
 import { PiCarBatteryLight } from "react-icons/pi";
 import { GiBamboo } from "react-icons/gi";
 import { MdOutlineEnergySavingsLeaf } from "react-icons/md";
@@ -607,5 +605,5 @@ export const sliders = [
     './artifacts/construction-worker-wearing-hardhat.jpg',
     './artifacts/engineers-discussing-about-solar.jpg',
     './artifacts/solar-energy-photovoltaic-panels.jpg',
-    './artifacts/reating-sustainable-energy-using-solar.jpg'
+    './artifacts/creating-sustainable-energy-using-solar.jpg'
 ]
