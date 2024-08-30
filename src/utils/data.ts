@@ -601,9 +601,9 @@ export const contactList = [
 ]
 
 export const sliders = [
-    './artifacts/solar-panel-park-field.jpg',
-    './artifacts/construction-worker-wearing-hardhat.jpg',
-    './artifacts/engineers-discussing-about-solar.jpg',
-    './artifacts/solar-energy-photovoltaic-panels.jpg',
-    './artifacts/creating-sustainable-energy-using-solar.jpg'
+    '/artifacts/solar-panel-park-field.jpg',
+    '/artifacts/construction-worker-wearing-hardhat.jpg',
+    '/artifacts/engineers-discussing-about-solar.jpg',
+    '/artifacts/solar-energy-photovoltaic-panels.jpg',
+    '/artifacts/creating-sustainable-energy-using-solar.jpg'
 ]
