@@ -281,22 +281,22 @@ export const benefits = [
 export const qualifications = [
     {
         title: 'Reliability and Affordability',
-        description: 'Ensures uninterrupted power and cost-effective solar energy, making clean energy accessible and reducing costs.',
+        description: 'Our solution ensures uninterrupted power and cost-effective solar energy, making clean energy accessible and reducing costs.',
         icon: MdOutlineEnergySavingsLeaf
     },
     {
         title: 'Local Manufacturing',
-        description: 'Promotes job creation and economic development, ensuring faster delivery and reduced logistical costs.',
+        description: 'Our services promote job creation and economic development, ensuring faster delivery and reduced logistical costs.',
         icon: SlBadge
     },
     {
         title: 'Partnerships for Large-scale Projects',
-        description: 'Collaborates with various entities to implement large-scale solar projects, addressing energy poverty and fostering community development.',
+        description: 'We collaborate with various entities to implement large-scale solar projects, addressing energy poverty and fostering community development.',
         icon: MdOutlineEnergySavingsLeaf
     },
     {
         title: 'Customization',
-        description: 'Offers tailored solar solutions for hybrid, off-grid, and grid-tied systems, ensuring optimal performance.',
+        description: 'LPV Technologies offers tailored solar solutions for hybrid, off-grid, and grid-tied systems, ensuring optimal performance.',
         icon: SlSupport
     },
 ]
@@ -406,6 +406,10 @@ export const footer_support = [
     {
         link: 'FAQs',
         path: '/faq'
+    },
+    {
+        link: 'Reach Us',
+        path: 'mailto:support@lpvtechnologies.com'
     }
 ]
 
@@ -587,9 +591,8 @@ export const contactList = [
     },
     {
         icon: MdOutlineEmail,
-        title: 'Email Support',
-        headingOne: 'info@lpvtechnolgies.com',
-        headingTwo: 'support@lpvtech.com',
+        title: 'Email',
+        headingOne: 'info@lpvtechnolgies.com'
     },
     {
         icon: FiPhone,

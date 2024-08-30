@@ -18,6 +18,7 @@ import ServiceList from "./service_list.astro";
 import Policy from "./policy";
 import Clients from './clients.astro';
 import Form from "./form";
+import Cookies from "./cookies";
 
 export {
     Button,
@@ -39,5 +40,6 @@ export {
     Solutions,
     ServiceList,
     Policy,
-    Clients
+    Clients,
+    Cookies
 }
