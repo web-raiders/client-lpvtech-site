@@ -39,11 +39,124 @@ import type { CollectionEntry } from 'astro:content';
 import { sanityClient } from "sanity:client";
 import * as Queries from './queries'
 
-const servicesList: CollectionEntry<'services'>[] = await sanityClient.fetch(Queries.services)
-const projectsList: CollectionEntry<'projects'>[] = await sanityClient.fetch(Queries.projects)
+// const servicesList: CollectionEntry<'services'>[] = await sanityClient.fetch(Queries.services)
+// const projectsList: CollectionEntry<'projects'>[] = await sanityClient.fetch(Queries.projects)
 
-export const navlist = servicesList.length < 1 && projectsList.length < 1 ? [
-    {
+// export const navlist = servicesList.length < 1 && projectsList.length < 1 ? [
+//     {
+//         name: 'Home',
+//         path: '/'
+//     },
+//     {
+//         name: 'About Us',
+//         path: '/about'
+//     },
+//     {
+//         name: 'Contact Us',
+//         path: '/contact'
+//     },
+//     {
+//         name: 'More',
+//         path: '#',
+//         subMenu: [
+//             // {
+//             //     name: 'Team',
+//             //     path: '/team'
+//             // }, 
+//             {
+//                 name: 'FAQ',
+//                 path: '/faq'
+//             }, 
+//             {
+//                 name: 'Blog',
+//                 path: '/blog'
+//             }
+//         ]
+//     }
+// ] : servicesList.length < 1 ? [
+//     {
+//         name: 'Home',
+//         path: '/'
+//     },
+//     {
+//         name: 'About Us',
+//         path: '/about'
+//     },
+//     {
+//         name: 'Projects',
+//         path: '/projects',
+//         subMenu: projectsList.slice(0, 5).map(item => {
+//             return {
+//                 name: item.name,
+//                 path: `/projects/${item.slug}`
+//             }
+//         })
+//     },
+//     {
+//         name: 'Contact Us',
+//         path: '/contact'
+//     },
+//     {
+//         name: 'More',
+//         path: '#',
+//         subMenu: [
+//             // {
+//             //     name: 'Team',
+//             //     path: '/team'
+//             // }, 
+//             {
+//                 name: 'FAQ',
+//                 path: '/faq'
+//             }, 
+//             {
+//                 name: 'Blog',
+//                 path: '/blog'
+//             }
+//         ]
+//     }
+// ] : projectsList.length < 1 ? [
+//     {
+//         name: 'Home',
+//         path: '/'
+//     },
+//     {
+//         name: 'About Us',
+//         path: '/about'
+//     },
+//     {
+//         name: 'Services',
+//         path: '/services',
+//         subMenu: servicesList.slice(0, 5).map(item => {
+//             return {
+//                 name: item.title,
+//                 path: `/services/${item.slug}`
+//             }
+//         })
+//     },
+//     {
+//         name: 'Contact Us',
+//         path: '/contact'
+//     },
+//     {
+//         name: 'More',
+//         path: '#',
+//         subMenu: [
+//             // {
+//             //     name: 'Team',
+//             //     path: '/team'
+//             // }, 
+//             {
+//                 name: 'FAQ',
+//                 path: '/faq'
+//             }, 
+//             {
+//                 name: 'Blog',
+//                 path: '/blog'
+//             }
+//         ]
+//     }
+// ] : [
+ export const navlist = [   {
         name: 'Home',
         path: '/'
     },
@@ -51,139 +164,26 @@ export const navlist = servicesList.length < 1 && projectsList.length < 1 ? [
         name: 'About Us',
         path: '/about'
     },
-    {
-        name: 'Contact Us',
-        path: '/contact'
-    },
-    {
-        name: 'More',
-        path: '#',
-        subMenu: [
-            // {
-            //     name: 'Team',
-            //     path: '/team'
-            // }, 
-            {
-                name: 'FAQ',
-                path: '/faq'
-            }, 
-            {
-                name: 'Blog',
-                path: '/blog'
-            }
-        ]
-    }
-] : servicesList.length < 1 ? [
-    {
-        name: 'Home',
-        path: '/'
-    },
-    {
-        name: 'About Us',
-        path: '/about'
-    },
-    {
-        name: 'Projects',
-        path: '/projects',
-        subMenu: projectsList.slice(0, 5).map(item => {
-            return {
-                name: item.name,
-                path: `/projects/${item.slug}`
-            }
-        })
-    },
-    {
-        name: 'Contact Us',
-        path: '/contact'
-    },
-    {
-        name: 'More',
-        path: '#',
-        subMenu: [
-            // {
-            //     name: 'Team',
-            //     path: '/team'
-            // }, 
-            {
-                name: 'FAQ',
-                path: '/faq'
-            }, 
-            {
-                name: 'Blog',
-                path: '/blog'
-            }
-        ]
-    }
-] : projectsList.length < 1 ? [
-    {
-        name: 'Home',
-        path: '/'
-    },
-    {
-        name: 'About Us',
-        path: '/about'
-    },
-    {
-        name: 'Services',
-        path: '/services',
-        subMenu: servicesList.slice(0, 5).map(item => {
-            return {
-                name: item.title,
-                path: `/services/${item.slug}`
-            }
-        })
-    },
-    {
-        name: 'Contact Us',
-        path: '/contact'
-    },
-    {
-        name: 'More',
-        path: '#',
-        subMenu: [
-            // {
-            //     name: 'Team',
-            //     path: '/team'
-            // }, 
-            {
-                name: 'FAQ',
-                path: '/faq'
-            }, 
-            {
-                name: 'Blog',
-                path: '/blog'
-            }
-        ]
-    }
-] : [
-    {
-        name: 'Home',
-        path: '/'
-    },
-    {
-        name: 'About Us',
-        path: '/about'
-    },
-    {
-        name: 'Services',
-        path: '/services',
-        subMenu: servicesList.slice(0, 5).map(item => {
-            return {
-                name: item.title,
-                path: `/services/${item.slug}`
-            }
-        })
-    },
-    {
-        name: 'Projects',
-        path: '/projects',
-        subMenu: projectsList.slice(0, 5).map(item => {
-            return {
-                name: item.name,
-                path: `/projects/${item.slug}`
-            }
-        })
-    },
+    // {
+    //     name: 'Services',
+    //     path: '/services',
+    //     subMenu: servicesList.slice(0, 5).map(item => {
+    //         return {
+    //             name: item.title,
+    //             path: `/services/${item.slug}`
+    //         }
+    //     })
+    // },
+    // {
+    //     name: 'Projects',
+    //     path: '/projects',
+    //     subMenu: projectsList.slice(0, 5).map(item => {
+    //         return {
+    //             name: item.name,
+    //             path: `/projects/${item.slug}`
+    //         }
+    //     })
+    // },
     {
         name: 'Contact Us',
         path: '/contact'
@@ -333,51 +333,52 @@ export const articles = [
         Cum sociis natoque penatibus et magnis dis parturient montes, nascetur`
     },
 ] 
-export const footer_company = servicesList.length > 0 && projectsList.length > 0 ? 
-[
-    {
-        link: 'About Us',
-        path: '/about'
-    },
-    {
-        link: 'Blog',
-        path: '/blog'
-    },
-    {
-        link: 'Projects',
-        path: '/projects'
-    },
-    {
-        link: 'Services',
-        path: '/services'
-    }
-] : servicesList?.length > 0 && projectsList.length <= 0 ? [
-    {
-        link: 'About Us',
-        path: '/about'
-    },
-    {
-        link: 'Blog',
-        path: '/blog'
-    },
-    {
-        link: 'Services',
-        path: '/services'
-    }
-] : servicesList?.length <= 0 && projectsList.length > 0 ? [
-    {
-        link: 'About Us',
-        path: '/about'
-    },
-    {
-        link: 'Blog',
-        path: '/blog'
-    },
-    {
-        link: 'Projects',
-        path: '/projects'
-    }
-] : [
+// export const footer_company = servicesList.length > 0 && projectsList.length > 0 ? 
+// [
+//     {
+//         link: 'About Us',
+//         path: '/about'
+//     },
+//     {
+//         link: 'Blog',
+//         path: '/blog'
+//     },
+//     {
+//         link: 'Projects',
+//         path: '/projects'
+//     },
+//     {
+//         link: 'Services',
+//         path: '/services'
+//     }
+// ] : servicesList?.length > 0 && projectsList.length <= 0 ? [
+//     {
+//         link: 'About Us',
+//         path: '/about'
+//     },
+//     {
+//         link: 'Blog',
+//         path: '/blog'
+//     },
+//     {
+//         link: 'Services',
+//         path: '/services'
+//     }
+// ] : servicesList?.length <= 0 && projectsList.length > 0 ? [
+//     {
+//         link: 'About Us',
+//         path: '/about'
+//     },
+//     {
+//         link: 'Blog',
+//         path: '/blog'
+//     },
+//     {
+//         link: 'Projects',
+//         path: '/projects'
+//     }
+// ] : [
+export const footer_company = [
     {
         link: 'About Us',
         path: '/about'
