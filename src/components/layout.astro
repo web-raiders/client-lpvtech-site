@@ -8,6 +8,13 @@ interface Props {
   description?: string;
 }
 import 'aos/dist/aos.css';
+
+import type { CollectionEntry } from "astro:content";
+import { sanityClient } from "sanity:client";
+import { Queries } from '@utils/index';
+
+const serviceList: CollectionEntry<'services'>[] = await sanityClient.fetch(Queries.services)
+const projectList: CollectionEntry<'projects'>[] = await sanityClient.fetch(Queries.projects)
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +35,7 @@ import 'aos/dist/aos.css';
     </style>
   </head>
   <body>
-      <Navbar client:load />
+      <Navbar client:load serviceList={serviceList} projectList={projectList} />
       <main>
           <slot />
       </main>

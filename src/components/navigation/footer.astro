@@ -1,11 +1,69 @@
 ---
 import { Container } from "../common";
 import { LogoDark } from "@assets/images";
-import { Data } from "@utils/index";
+import { Data, Queries } from "@utils/index";
 import { SocialIcons } from "../common";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 import { FiPhone } from "react-icons/fi";
 import { MdOutlineEmail, MdOutlineLocationOn } from "react-icons/md";
+import type { CollectionEntry } from "astro:content";
+import { sanityClient } from "sanity:client";
+
+const servicesList: CollectionEntry<'services'>[] = await sanityClient.fetch(Queries.services)
+const projectsList: CollectionEntry<'projects'>[] = await sanityClient.fetch(Queries.projects)
+const footerCompany = servicesList.length > 0 && projectsList.length > 0 ? [
+    {
+        link: 'About Us',
+        path: '/about'
+    },
+    {
+        link: 'Blog',
+        path: '/blog'
+    },
+    {
+        link: 'Services',
+        path: '/services'
+    },
+    {
+        link: 'Projects',
+        path: '/projects'
+    }
+] : servicesList.length > 0 && projectsList.length === 0 ? [
+    {
+        link: 'About Us',
+        path: '/about'
+    },
+    {
+        link: 'Blog',
+        path: '/blog'
+    },
+    {
+        link: 'Services',
+        path: '/services'
+    }
+] : servicesList.length === 0 && projectsList.length > 0 ? [
+    {
+        link: 'About Us',
+        path: '/about'
+    },
+    {
+        link: 'Blog',
+        path: '/blog'
+    },
+    {
+        link: 'Projects',
+        path: '/projects'
+    }
+] : [
+    {
+        link: 'About Us',
+        path: '/about'
+    },
+    {
+        link: 'Blog',
+        path: '/blog'
+    }
+]
 ---
 
 <footer class="w-full h-[auto] lg:min-h-[300px] bg-[#e1f5ec]">
@@ -25,14 +83,17 @@ import { MdOutlineEmail, MdOutlineLocationOn } from "react-icons/md";
                 <h4 class="text-[24px] font-semibold text-darkBlue">Company</h4>
                 <ul class="mt-5 cursor-pointer">
                     {
-                        Data.footer_company.map(item => (
-                            <div class="flex gap-2 mb-3">
-                                <div class="w-[20px] h-[20px] bg-[#0FCC7C] flex justify-center items-center rounded-full">
-                                    <LiaLongArrowAltRightSolid color={"#fff"} size={"18px"} />
+                        footerCompany.map((item: any) => {
+                            return (
+                                <div class="flex gap-2 mb-3">
+                                    <div class="w-[20px] h-[20px] bg-[#0FCC7C] flex justify-center items-center rounded-full">
+                                        <LiaLongArrowAltRightSolid color={"#fff"} size={"18px"} />
+                                    </div>
+                                    <a href={item.path} class="font-semibold text-darkBlue">{item.link}</a>
                                 </div>
-                                <a href={item.path} class="font-semibold text-darkBlue">{item.link}</a>
-                            </div>
-                        ))
+                            )
+                        }
+                        )
                     }
                 </ul>
             </div>

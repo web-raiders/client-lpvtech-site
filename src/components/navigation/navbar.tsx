@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { IoMdClose } from 'react-icons/io';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { MdKeyboardArrowDown } from 'react-icons/md';
@@ -7,14 +7,15 @@ import { motion } from 'framer-motion';
 import { Data } from '@utils/index';
 import { Logo } from "@assets/images";
 
-const { navlist, subNav } = Data
+const { subNav } = Data
 
-const Navbar = () => {
+const Navbar = ({ serviceList, projectList }: any) => {
     const [isOpen, setIsOpen] = useState(false)
     const [openMenu, setOpenMenu] = useState(null)
     const [showNavbar, setShowNavbar] = useState(true)
     const [lastScrollY, setLastScrollY] = useState(0)
-    const threshold = 200
+    const threshold = 200;
+    
 
     function handleToggle(type: string, name?: any){
         type === 'menu' ? setIsOpen(!isOpen) : setOpenMenu(openMenu === name ? null : name)
@@ -40,6 +41,171 @@ const Navbar = () => {
         };
 
     }, [lastScrollY])
+    const navlist = serviceList.length > 0 && projectList.length > 0 ? [
+        {
+            name: 'Home',
+            path: '/'
+        },
+        {
+            name: 'About Us',
+            path: '/about'
+        },
+        {
+            name: 'Services',
+            path: '/services',
+            subMenu: serviceList.slice(0, 5).map((item: any) => {
+                return {
+                    name: item.title,
+                    path: `/services/${item.slug}`
+                }
+            })
+        },
+        {
+            name: 'Projects',
+            path: '/projects',
+            subMenu: projectList.slice(0, 5).map((item: any) => {
+                return {
+                    name: item.name,
+                    path: `/projects/${item.slug}`
+                }
+            })
+        },
+        {
+            name: 'Contact Us',
+            path: '/contact'
+        },
+        {
+            name: 'More',
+            path: '#',
+            subMenu: [
+                // {
+                //     name: 'Team',
+                //     path: '/team'
+                // }, 
+                {
+                    name: 'FAQ',
+                    path: '/faq'
+                }, 
+                {
+                    name: 'Blog',
+                    path: '/blog'
+                }
+            ]
+        }
+    ] : serviceList.length > 0 && projectList.length === 0 ? [
+        {
+            name: 'Home',
+            path: '/'
+        },
+        {
+            name: 'About Us',
+            path: '/about'
+        },
+        {
+            name: 'Services',
+            path: '/services',
+            subMenu: serviceList.slice(0, 5).map((item: any) => {
+                return {
+                    name: item.title,
+                    path: `/services/${item.slug}`
+                }
+            })
+        },
+        {
+            name: 'Contact Us',
+            path: '/contact'
+        },
+        {
+            name: 'More',
+            path: '#',
+            subMenu: [
+                // {
+                //     name: 'Team',
+                //     path: '/team'
+                // }, 
+                {
+                    name: 'FAQ',
+                    path: '/faq'
+                }, 
+                {
+                    name: 'Blog',
+                    path: '/blog'
+                }
+            ]
+        }
+    ] : serviceList.length === 0 && projectList.length > 0 ? [
+        {
+            name: 'Home',
+            path: '/'
+        },
+        {
+            name: 'About Us',
+            path: '/about'
+        },
+        {
+            name: 'Projects',
+            path: '/projects',
+            subMenu: projectList.slice(0, 5).map((item: any) => {
+                return {
+                    name: item.title,
+                    path: `/projects/${item.slug}`
+                }
+            })
+        },
+        {
+            name: 'Contact Us',
+            path: '/contact'
+        },
+        {
+            name: 'More',
+            path: '#',
+            subMenu: [
+                // {
+                //     name: 'Team',
+                //     path: '/team'
+                // }, 
+                {
+                    name: 'FAQ',
+                    path: '/faq'
+                }, 
+                {
+                    name: 'Blog',
+                    path: '/blog'
+                }
+            ]
+        }
+    ] : [
+        {
+            name: 'Home',
+            path: '/'
+        },
+        {
+            name: 'About Us',
+            path: '/about'
+        },
+        {
+            name: 'Contact Us',
+            path: '/contact'
+        },
+        {
+            name: 'More',
+            path: '#',
+            subMenu: [
+                // {
+                //     name: 'Team',
+                //     path: '/team'
+                // }, 
+                {
+                    name: 'FAQ',
+                    path: '/faq'
+                }, 
+                {
+                    name: 'Blog',
+                    path: '/blog'
+                }
+            ]
+        }
+    ]
 
   return (
         <nav className={`_nav ${showNavbar ? 'visible' : 'hidden'}`}>
@@ -50,14 +216,14 @@ const Navbar = () => {
                     </div>
                     <div className="_nav_menu">
                         <ul className="_nav_list">
-                            {navlist.map((item) => (
+                            {navlist.map((item: any) => (
                                 <div key={item?.name} onClick={() => handleToggle('subMenu', item?.name)}>
                                     <li className={'_nav_list_item'}>
                                     <a href={item.path}>{item.name}</a>
                                     {
                                         item.subMenu && (
                                         <ul className="_dropdown_list">
-                                            {item.subMenu.map((link) => (
+                                            {item.subMenu.map((link: any) => (
                                                 <li key={link?.name} className={'_dropdown_list_item'}><a href={link.path}>{link.name}</a></li>
                                             ))}
                                         </ul>
@@ -82,7 +248,7 @@ const Navbar = () => {
                         animate={{ opacity: 1, y: 25 }}
                         initial={{ opacity: 0, y: 5 }}
                         >
-                            {navlist.map((item) => (
+                            {navlist.map((item: any) => (
                                     <div key={item?.name} className='inline-flex' onClick={() => handleToggle('subMenu', item?.name)}>
                                         <motion.li 
                                         className={'_nav_list_item_mobile'}
@@ -95,7 +261,7 @@ const Navbar = () => {
                                             animate={{ opacity: 1, y: 0 }}
                                             initial={{ opacity: 0, y: 15 }}
                                             >
-                                                {item.subMenu.map((link, i) => (
+                                                {item.subMenu.map((link: any, i: React.Key) => (
                                                     <li key={i} className='_sub_list_item_mobile'>
                                                         <a href={link.path}>{link.name}</a>
                                                     </li>
