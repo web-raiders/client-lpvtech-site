@@ -41,6 +41,11 @@ import BlogTwo from "./blog_two.jpg?url"
 import BlogFour from "./blog_four.jpg?url"
 import PrivacyImg from "./privacy.jpg?url"
 import PolicyImage from "./policy.jpg"
+import CarouselSlideOne from './solar-panel-park-field.jpg?url'
+import CarouselSlideTwo from './construction-worker-wearing-hardhat.jpg?url'
+import CarouselSlideThree from './engineers-discussing-about-solar.jpg?url'
+import CarouselSlideFour from './solar-energy-photovoltaic-panels.jpg?url'
+import CarouselSlideFive from './creating-sustainable-energy-using-solar.jpg?url'
 
 export {
     SlideOne,
@@ -84,5 +89,10 @@ export {
     BlogTwo,
     BlogFour,
     PrivacyImg,
-    PolicyImage
+    PolicyImage,
+    CarouselSlideOne,
+    CarouselSlideTwo,
+    CarouselSlideThree,
+    CarouselSlideFour,
+    CarouselSlideFive
 }
