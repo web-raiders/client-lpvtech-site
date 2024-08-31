@@ -3,8 +3,6 @@ import 'swiper/swiper-bundle.css';
 import SwiperCore from 'swiper';
 import { EffectFade, Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Button } from '../common';
-import { Data } from '@utils/index'
-import "@styles/styles.css";
 import { CarouselSlideOne, CarouselSlideTwo, CarouselSlideThree, CarouselSlideFour, CarouselSlideFive } from '@assets/images';
 
 const sliders = [CarouselSlideOne, CarouselSlideTwo, CarouselSlideThree, CarouselSlideFour, CarouselSlideFive]
@@ -18,7 +16,7 @@ const carousel = () => {
         delay: 2500,
         disableOnInteraction: false
       }}
-      className="mySwiper"
+      style={{ zIndex: 1 }}
     >
       {sliders.map((item, i) => (
         <SwiperSlide key={i}>
