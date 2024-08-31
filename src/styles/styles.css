@@ -5,10 +5,6 @@
     --lightGrey: #e5e5e5;
 }
 
-.mySwiper {
-    z-index: 1;
-}
-
 ._solutions_card:nth-child(2) {
     background-color: #00d084;
 }
