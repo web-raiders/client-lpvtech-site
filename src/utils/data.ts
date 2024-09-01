@@ -172,7 +172,7 @@ export const footer_support = [
         path: '/faq'
     },
     {
-        link: 'Reach Us',
+        link: 'Email Us',
         path: 'mailto:support@lpvtechnologies.com'
     }
 ]

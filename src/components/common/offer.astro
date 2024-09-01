@@ -47,7 +47,7 @@ interface Props {
         </div>
         <div class="mt-10">
             {
-                page === 'landing' ? <Button path="/projects" text="View More" className="py-2 px-4 text-[14px] mt-6 text-white bg-green rounded-full baseline hover:bg-darkBlue" /> : <Pagination currentPage={currentPage} totalPages={totalPages} disablePrevious={currentPage === 1} disableNext={currentPage === totalPages} />
+                page === 'landing' ? <Button path="/services/our-business-model" text="View More" className="py-2 px-4 text-[14px] mt-6 text-white bg-green rounded-full baseline hover:bg-darkBlue" /> : <Pagination path={'services'} currentPage={currentPage} totalPages={totalPages} disablePrevious={currentPage === 1} disableNext={currentPage === totalPages} />
             }
         </div>
     </Common.Container>

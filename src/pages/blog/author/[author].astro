@@ -41,7 +41,7 @@ const articlesInPage: CollectionEntry<'blog'>[] = authorArticles.slice((currentP
                 ))}
             </div>
             <div class="w-full mt-5">
-                <Common.Pagination currentPage={currentPage} totalPages={totalPages} disablePrevious={currentPage === 1} disableNext={currentPage === totalPages} />
+                <Common.Pagination path={'blog'} currentPage={currentPage} totalPages={totalPages} disablePrevious={currentPage === 1} disableNext={currentPage === totalPages} />
             </div>
         </Common.Container>
     </section>

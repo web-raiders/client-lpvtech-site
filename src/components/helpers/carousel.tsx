@@ -27,8 +27,8 @@ const carousel = () => {
                     <h6 className="text-xs text-[#fff] font-bold uppercase md:text-xl" data-aos='fade-up' data-aos-offset='100'>Welcome to LPV Technologies</h6>
                     <h1 className=" text-4xl pt-5 font-bold md:text-6xl" data-aos='fade-down' data-aos-offset='100'>Cleaner Energies for a Cleaner World</h1>
                     <div className="flex flex-col gap-y-5 justify-center items-center space-x-4 mt-10 md:flex md:flex-row md:gap-y-0" data-aos='fade-up' data-aos-offset='100'>
-                        <Button path="#" className="py-3 px-24 font-bold text-white bg-green rounded-full baseline hover:bg-darkBlue" text="Get a Quote" />
-                        <Button path="#" className="flex justify-center items-center font-bold py-3 px-20 text-white bg-transparent border-solid border-2 border-white rounded-full baseline hover:border-darkBlue hover:bg-darkBlue" text="Discover More" />
+                        <Button path="/contact" className="py-3 px-24 font-bold text-white bg-green rounded-full baseline hover:bg-darkBlue" text="Get a Quote" />
+                        <Button path="/blog" className="flex justify-center items-center font-bold py-3 px-20 text-white bg-transparent border-solid border-2 border-white rounded-full baseline hover:border-darkBlue hover:bg-darkBlue" text="Discover More" />
                     </div>
                 </div>
             </section>

@@ -36,9 +36,9 @@ const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Con
             </div>
             <div class="px-3 md:px-0">
                 <h1 class="text-[24px] md:text-[44px] xxl:text-[48px] pt-2 text-white font-bold leading-[55px]" data-aos='fade-up' data-aos-offset='100'>{service.title}</h1>
-                <div class="mt-10">
+                <!-- <div class="mt-10">
                     <Common.Button path='#' className="py-2 px-7 text-white bg-[#0fcc7c] font-semibold rounded-full baseline hover:bg-darkBlue" text="Get Started" />
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -106,7 +106,7 @@ const faqsInPage: CollectionEntry<'faqs'>[] = faqs.slice((currentPage - 1) * Con
             <!-- FAQs -->
             <Common.Faqs data={faqsInPage} client:load />
             <div class="w-full mt-5">
-                <Common.Pagination currentPage={currentPage} totalPages={totalPages} disablePrevious={currentPage === 1} disableNext={currentPage === totalPages} />
+                <Common.Pagination path={'faq'} currentPage={currentPage} totalPages={totalPages} disablePrevious={currentPage === 1} disableNext={currentPage === totalPages} />
             </div>
         </Common.Container>
     </section>
