@@ -360,9 +360,9 @@ export const contactList = [
     },
     {
         icon: FiPhone,
-        title: `Let's Talk`,
-        headingOne: 'Phone : 09062892870',
-        headingTwo: 'Alt : 09062948514',
+        title: 'Telephone',
+        headingOne: '09062892870',
+        headingTwo: '09062948514',
     },
 ]
 
