@@ -18,12 +18,12 @@ export default defineConfig({
     dataset,
     // Set useCdn to false if you're building statically.
     useCdn: true,
-    studioBasePath: studioUrl,
-    partytown({
-      config: {
-        forward: ["dataLayer.push"],
-      },
-    }),
+    studioBasePath: studioUrl
+  }),
+  partytown({
+    config: {
+      forward: ["dataLayer.push"],
+    },
   })],
   devToolbar: {
     enabled: false
