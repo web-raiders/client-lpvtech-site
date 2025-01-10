@@ -218,8 +218,8 @@ export const clients = [
 export const services = [
     {
         icon: IoSettingsOutline,
-        title: 'Assembly Plant',
-        description: 'LPV Technologies operates a state-of-the-art 100MW solar panel assembly plant.'
+        title: 'Manufacturing Plant',
+        description: 'LPV Technologies operates a state-of-the-art 100MW solar panel manufacturing plant.'
     },
     {
         icon: IoSettingsOutline,
